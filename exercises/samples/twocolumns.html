@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Floats</title>
+    <style>
+        body{
+            background-color: #ccc;
+        }
+        .row{
+            background-color:#fff;
+            width:80%;
+            margin:0 auto;
+            margin:10px auto;
+        }
+        .column-50{
+            width:48%;
+            margin:10px 1%;
+            float:left;
+            min-height: 100px;
+            background-color: #666;
+        }
+        .column-33{
+            width:31%;
+            margin:10px 1%;
+            float:left;
+            min-height: 100px;
+            background-color: #666;
+        }
+        .clearfix{
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column-50"></div>
+        <div class="column-50"></div>
+        <div class="clearfix"></div>
+    </div>
+
+        <div class="row">
+        <div class="column-33"></div>
+        <div class="column-33"></div>
+        <div class="column-33"></div>
+        <div class="clearfix"></div>
+    </div>
+</body>
+</html>

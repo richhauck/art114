@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Off-Canvas Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        main{
+            width: 100%;
+            overflow: hidden;
+        }
+        #site-canvas {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          backface-visibility: hidden;
+          background-color:aliceblue;
+        }
+        .panel{
+          width: 300px;
+          position: relative;
+          background: #999;
+          position: absolute;
+          top: 0;
+          transition: 300ms ease all;
+          height: 100%;
+        }
+        #content{
+            background-color: #ccc;
+            width: 100%;
+            transition: 300ms ease all;
+        }
+        
+        /* LEFT PANEL */
+        #left-panel {
+          left: -300px;
+        }
+        #left-panel .toggle-left{
+            position: absolute;
+            right: 1em;
+            top: 1em;
+        }
+        .show-left #content {
+            transform: translateX(300px);
+            transform: translate3d(300px, 0, 0);
+        }
+        .show-left #left-panel {
+            transform: translateX(300px);
+            transform: translate3d(300px, 0, 0);
+        }
+        
+        /* RIGHT PANEL */
+        #right-panel {
+          right: -300px;
+        }
+        #right-panel .toggle-right{
+                position: absolute;
+                right: 1em;
+                top: 1em;
+            }
+        .show-right #content {
+            width: calc(100% - 300px);
+        }
+        .show-right #right-panel {
+            transform: translateX(-300px);
+            transform: translate3d(-300px, 0, 0);
+        }
+        .toggle-right{
+            float: right;
+            text-align: right;
+        }
+        /* BOTH EXPOSED */
+        .show-right.show-left #left-panel{
+            transform: translateX(300px);
+            transform: translate3d(300px, 0, 0);
+        }
+        .show-right.show-left #right-panel{
+            transform: translateX(-300px);
+            transform: translate3d(-300px, 0, 0);
+        }
+        .show-right.show-left #content{
+            width: calc(100% - 600px);
+            transform: translateX(300px);
+            transform: translate3d(300px, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <a class="nav-toggle toggle-left" href="#">&#9776; LEFT MENU</a>
+    <a class="nav-toggle toggle-right" href="#">RIGHT MENU &#9776;</a>
+    <main>
+        <div id="site-canvas">
+            <div id="left-panel" class="panel">
+               <a class="toggle-left" href="#">X</a>
+                <p>Left Panel</p>
+            </div>
+
+            <div id="content">
+                <h1>Content</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil soluta aut, id inventore quo dolorem maxime doloremque minus, earum in fuga, commodi fugiat animi non doloribus? Incidunt sit dolorem nulla.</p>
+            </div>
+            
+            <div id="right-panel" class="panel">
+               <a class="toggle-right" href="#">X</a>
+                <p>Right Panel</p>
+            </div>
+            
+        </div>
+    </main>
+    
+
+   <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+   <script>
+        $('.toggle-left').click(function() {
+        $('body').toggleClass('show-left');
+        });
+        $('.toggle-right').click(function() {
+        $('body').toggleClass('show-right');
+        });
+    </script>
+</body>
+</html>

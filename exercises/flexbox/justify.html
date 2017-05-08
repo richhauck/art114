@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inline Flexbox</title>
+  <style>
+    .wrapper{
+      display:flex;
+      background-color: lightgray;
+      margin:10px 0;
+      height:200px;
+    }
+    .wrapper div{
+      background-color: white;
+      margin:10px;
+      padding:20px;
+    }
+    .wrapper.center{
+      justify-content:center;
+    }
+    .wrapper.flex-end{
+      justify-content:flex-end;
+    }
+    .wrapper.space-between{
+      justify-content:space-between;
+    }
+    .wrapper.space-around{
+      justify-content:space-around;
+    }
+  </style>
+</head>
+.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+<body>
+    <p>flex-start</p>
+  <div class="wrapper flex-start">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+  <p>justify-content:center;</p>
+  <div class="wrapper center">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+  <p>justify-content:flex-end;</p>
+  <div class="wrapper flex-end">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+  <p>justify-content:space-between;</p>
+  <div class="wrapper space-between">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+
+  <p>justify-content:space-around;</p>
+  <div class="wrapper space-around">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+
+</body>
+</html>

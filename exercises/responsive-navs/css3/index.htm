@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Desserts Etc.</title>
+<meta id="viewport" name="viewport" content="width=device-width, maximum-scale=1.0">
+<style>
+	body,td,th {margin: 0; padding: 0; background:#eee;}
+	a, li{
+		transition: all .3s ease-in-out;
+		-moz-transition: all .3s ease-in-out;
+		-webkit-transition: all .3s ease-in-out;
+	}
+	nav{display:block;}
+	ul{margin:0; padding:0;}
+
+  #navHolder{height:40px; margin:0 auto; z-index:15;}
+  #mainnav{z-index:200; text-align:center; width:750px; margin:0 auto 0 auto;}
+  #mainnav li{background:#ccc; margin:0; list-style:none; display:inline-block;}
+  #mainnav li a{display:block; padding:10px 20px;}
+  #mainnav li.close{display:none;}
+  .nav-toggle{display:none;}
+
+	#content{position:relative; width:90%; padding:40px 5%; background:#fff; margin:0 auto;}
+
+	@media all and (max-width: 480px){
+		.nav-toggle{display:inline-block; padding-top:10px;}
+		#nav {
+		    max-height: 0;
+			overflow:hidden;
+		    /* Usage @include transition(max-height,0.5s,ease-out); */
+		    transition: max-height 0.4s ease-out; }
+		#topwrap:target #nav {max-height: 25em;}
+		#topwrap .close {border:none;}
+		#topwrap:target .close {
+	        display: block;
+	        position: absolute;
+	        bottom: 0;
+	        right: 0;
+	        width: 100%;
+	        background: none;
+	        text-indent: -99999em; }
+
+		.nav-toggle:after {content: " ▼ "; font-size: 0.8rem; }
+
+		/* End MainNav */
+		#mainnav{background:#ccc;}
+		#mainnav li{display:block; border-bottom:1px solid #333;}
+		#mainnav{position:relative; text-align:center; width:100%; margin:0 auto 0 auto;}
+	}
+</style>
+</head>
+<body id="page">
+	<div id="topwrap">
+    <div id="navHolder">
+        <nav id="mainnav">
+	        <ul id="nav" class="nav">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Projects</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Contact</a></li>
+						<li class="close"><a href="#page"></a></li>
+	        </ul>
+					<a href="#topwrap" class="nav-toggle">&#9776; MENU</a>
+        </nav>
+    </div>
+	</div>
+    <div id="content">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.</p>
+          <p>Quisque facilisis erat a dui. Nam malesuada ornare dolor. Cras gravida, diam sit amet rhoncus ornare, erat elit consectetuer erat, id egestas pede nibh eget odio. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis. Fusce et ipsum et nulla tristique facilisis. Donec eget sem sit amet ligula viverra gravida. Etiam vehicula urna vel turpis. Suspendisse sagittis ante a urna. Morbi a est quis orci consequat rutrum. Nullam egestas feugiat felis. Integer adipiscing semper ligula.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #output{
+            min-height: 200px;
+            border:1px solid #999;
+            background-color: #ccc;
+            padding:10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+   
+   <div id="output"></div>
+   <button id="randomBtn">Random Beatle</button>
+   <button id="u2ListBtn">List U2 Members</button>
+    
+    <script>
+        // Beatles
+        let beatlesMembers = new Array();
+        beatlesMembers[0] = 'John';
+        beatlesMembers[1] = 'Paul';
+        beatlesMembers[2] = 'George';
+        beatlesMembers[3] = 'Ringo';
+        
+        // U2
+        let u2Members = ['Bono', 'The Edge', 'Adam Clayton', 'Larry Mullen, Jr.'];
+        document.getElementById('output').innerHTML = u2Members[0];
+        
+        // Tell JavaScript to remember certain buttons
+        var randomBtn = document.getElementById('randomBtn');
+        var u2ListBtn = document.getElementById('u2ListBtn');
+        
+        // Tell JavaScript to tell buttons to behave on event
+        randomBtn.onclick = function(event){
+            showRandomBeatle(event);
+        }
+        u2ListBtn.onclick = function(event){
+            listU2Members(event);
+        }
+        // Define functions
+        function showRandomBeatle(event){
+            var rand = Math.random()*3;
+            rand = Math.round(rand);
+            document.getElementById('output').innerHTML = beatlesMembers[rand];
+        }
+        function listU2Members(event){
+            let u2List = '<ul>';
+            for (let i = 0; i < u2Members.length; i++) { 
+                u2List += '<li>' + u2Members[i] + '</li>';
+            }
+            u2List += '</ul>';
+            document.getElementById('output').innerHTML = u2List;
+        }
+    </script>
+</body>
+</html>

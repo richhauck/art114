@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fluid grid with calc()</title>
+    <style>
+    * { box-sizing: border-box; }
+    body{background-color: gray;}
+    header, footer{
+      display: block;
+      text-align: center;
+      background: #ccc;
+    }
+    main{background-color: #fff;}
+
+    main.wrapper {
+      padding: 0.5em;
+      width: 90%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding-right: 2.08333333%;
+    }
+    .row {
+      padding: 0.5em 0;
+      clear: both;
+    }
+    .col {
+      float: left;
+      margin-left: 2.08333333%;
+      width: 6.25%;
+      background: #ccc;
+    }
+    .col.span2 { width: calc((6.25%*2) + 2.08333333%); }
+    .col.span3 { width: calc((6.25%*3) + (2.08333333%*2)); }
+    .col.span4 { width: calc((6.25%*4) + (2.08333333%*3)); }
+    .col.span5 { width: calc((6.25%*5) + (2.08333333%*4)); }
+    .col.span6 { width: calc((6.25%*6) + (2.08333333%*5)); }
+    .col.span7 { width: calc((6.25%*7) + (2.08333333%*6)); }
+    .col.span8 { width: calc((6.25%*8) + (2.08333333%*7)); }
+    .col.span9 { width: calc((6.25%*9) + (2.08333333%*8)); }
+    .col.span10 { width: calc((6.25%*10) + (2.08333333%*9)); }
+    .col.span11 { width: calc((6.25%*11) + (2.08333333%*10)); }
+    .col.span12 { width: calc((6.25%*12) + (2.08333333%*11)); }
+        
+        .mybox{
+            background-color: red;
+            min-height: 100px;
+            width: calc(100% - 400px);
+        }
+    </style>
+  </head>
+  <body>
+   
+    <div class="mybox"></div>
+   
+    <main class="wrapper">
+        <header><h1>Header</h1></header>
+        
+        <div class="row">
+            <aside class="col span3">
+                <nav>
+                    <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Yet Another Link</li>
+                </ul>
+                </nav>
+            </aside>
+            <div class="col span9">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente mollitia, nisi sit beatae tenetur magnam amet. Eos velit dolorem impedit nisi repellendus aut corrupti recusandae laborum quod, fuga incidunt deleniti.</p>
+            </div>
+        </div>
+        
+        <div class="row">
+           
+            <div class="col span6"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, quidem dolorum vel corporis assumenda libero tempora quibusdam, nemo autem, perspiciatis obcaecati dolorem iure. Dicta laborum eligendi, atque excepturi, quas molestiae?</p></div>
+            
+            <div class="col span6"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, quidem dolorum vel corporis assumenda libero tempora quibusdam, nemo autem, perspiciatis obcaecati dolorem iure. Dicta laborum eligendi, atque excepturi, quas molestiae?</p></div>
+            
+        </div>
+        
+        
+        <div class="row">
+           
+            <div class="col span4"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, quidem dolorum vel corporis assumenda libero tempora quibusdam, nemo autem, perspiciatis obcaecati dolorem iure. Dicta laborum eligendi, atque excepturi, quas molestiae?</p></div>
+            
+            <div class="col span4"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, quidem dolorum vel corporis assumenda libero tempora quibusdam, nemo autem, perspiciatis obcaecati dolorem iure. Dicta laborum eligendi, atque excepturi, quas molestiae?</p></div>
+            
+             <div class="col span4"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, quidem dolorum vel corporis assumenda libero tempora quibusdam, nemo autem, perspiciatis obcaecati dolorem iure. Dicta laborum eligendi, atque excepturi, quas molestiae?</p></div>
+            
+        </div>
+        
+        
+        
+        <footer class="row">Footer</footer>
+    </main>
+  </body>
+</html>

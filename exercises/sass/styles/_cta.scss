@@ -1,0 +1,26 @@
+.cta{
+    padding:20px;
+    color:darkblue;
+    font-family: sans-serif;
+    background-color: darkgrey;
+}
+.cta__row{
+    padding:20px;
+    background-color: aliceblue;
+}
+.cta__col1{
+    width:30%;
+    float:left;
+    
+    img{
+        width:100%;
+        height:auto;
+        border-radius:10px;
+    }
+}
+.cta__col2{
+    width:64%;
+    padding:2%;
+    float:right;
+    background-color: aqua;
+}

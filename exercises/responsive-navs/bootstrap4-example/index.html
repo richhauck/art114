@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fluid grid with calc()</title>
+    <link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-grid.min.css">
+    <style>
+        div { 
+            background-color: red;
+            min-height: 100px;
+        }
+        .row > div{
+            background-color: lightblue;
+            border:5px solid white;
+            
+        }
+    </style>
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      1 of 2
+    </div>
+    <div class="col-6">
+      1 of 2
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quam eius, consequuntur vitae dicta maxime quae labore illo, voluptate aliquid corporis quia, qui voluptatibus, eligendi autem animi ipsum. Eos, alias.</p>
+    </div>
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col">
+      1 of 3
+    </div>
+  </div>
+  <div class="row">
+        <div class="col-3 offset-6">
+            <p></p>
+        </div>
+        <div class="col-3">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-12">
+            
+        </div>
+        <div class="col-md-3 col-12">
+            <div></div>
+        </div>
+        <div class="col-md-3 col-12">
+            
+        </div>
+        <div class="col-md-3 col-12">
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dolorem, fugit itaque atque vitae, nostrum mollitia voluptatem inventore neque voluptatum non enim quas amet. Sapiente minus odio vel veniam aspernatur.</p>
+            
+        </div>
+    </div>
+</div>  
+</body>
+</html>

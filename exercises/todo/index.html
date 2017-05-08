@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Do List</title>
+  <style>
+  .done {
+      text-decoration: line-through;
+  }
+  </style>
+</head>
+<body>
+
+  <div id="todo-container">
+        <h1>To Do List</h1>
+              <form id="todo-form">
+                  <input id="todo-input" placeholder="What would you like to do?" />
+                  <input type="submit" value="Add To Do"> | <a href="#" id="clear-btn">Clear All</a>
+              </form>
+          <ul id="todo-list"></ul>
+  </div>
+
+  <script src="scripts/jquery-2.2.0.min.js"></script>
+  <script>
+  $(document).ready(function() {
+      var i = 0;
+      for (i = 0; i < localStorage.length; i++) {
+          var todoID = 'todo-' + i;
+          $('#todo-list').append('<li id="' + todoID + '">' + localStorage.getItem(todoID) + ' <a href="#" class="done-btn">Done</a> <a href="#" class="delete-btn">[X]</a></li>');
+      }
+
+      function submitToDo(){
+        if ($('#todo-input').val() !== '') {
+          var todoID = "todo-" + i;
+          var todoMessage = $('#todo-input').val();
+          localStorage.setItem(todoID, todoMessage);
+          $('#todo-list').append('<li class="todo" id="' + todoID + '">' + todoMessage + ' <a href="#" class="done-btn">Done</a> <a href="#" class="delete-btn">[X]</a></li>');
+          var todo = $('#' + todoID);
+          todo.css('display', 'none');
+          todo.slideDown();
+          $('#todo-input').val('');
+          i++;
+        }
+      }
+
+      $('#todo-form').submit(function() {
+          submitToDo();
+          return false;
+      });
+
+      // Primary Controls
+      $('#clear-btn').click(function() {
+          localStorage.clear();
+          for (i = 0; i < $('#todo-list').length; i++) {
+              var todoID = "todo-" + i;
+              $('#todo-list li').slideUp('slow', function() {
+                  self.remove();
+              });
+          }
+      });
+      $('#add-btn').click(function() {
+        submitToDo();
+      });
+
+      // Assign button actions to list
+      $('#todo-list').on('click', '.done-btn', function() {
+        $(this).parent().addClass('done');
+      });
+
+      $('#todo-list').on('click', '.delete-btn', function() {
+          var parent = $(this).parent();
+          todoID = parent.attr('id');
+          localStorage.removeItem(todoID);
+          parent.slideUp('slow', function() {
+              parent.remove();
+          });
+      });
+  });
+  </script>
+</body>
+</html>

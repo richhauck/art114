@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Responsive Nav 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+body,td,th {
+	margin:0; padding:0;
+	background:#eee;
+}
+header, footer{display:block; min-height:40px; padding:2%; background:#eee;}
+#mainnav{margin-top:10px;}
+#mainnav ul{margin:0; padding:0;}
+#mainnav li{list-style:none; display:inline-block; background:#eee; padding:7px 2%; margin:0 1% 0 0;}
+#mainnav a{text-decoration:none;}
+#main{width:70%; min-height:400px; background:#fff; margin:0 auto; padding:2% 5%;}
+
+@media all and (max-width: 320px){
+	#main{width:90%;}
+	#mainnav li{text-align:center; list-style:none; display:block; background:#eee; padding:7px 0; margin:0 0 10px 0;}
+}
+</style>
+</head>
+<body>
+	<div id="main">
+    	<header>
+        	<h1>Sample Responsive Navigation</h1>
+        </header>
+        <nav id="mainnav">
+       	  <ul>
+        	  <li><a href="#">Home</a></li>
+        	  <li><a href="#">About</a></li>
+        	  <li><a href="#">Projects</a></li>
+        	  <li><a href="#">Events</a></li>
+        	  <li><a href="#">Contact</a></li>
+      	  </ul>
+        </nav>
+        <div id="content">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.</p>
+          <p>Quisque facilisis erat a dui. Nam malesuada ornare dolor. Cras gravida, diam sit amet rhoncus ornare, erat elit consectetuer erat, id egestas pede nibh eget odio. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis. Fusce et ipsum et nulla tristique facilisis. Donec eget sem sit amet ligula viverra gravida. Etiam vehicula urna vel turpis. Suspendisse sagittis ante a urna. Morbi a est quis orci consequat rutrum. Nullam egestas feugiat felis. Integer adipiscing semper ligula.</p>
+        </div>
+		<footer></footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Homework</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+            padding: 10px;
+            background-color: aquamarine;
+            border: 1px dashed black;
+        }
+
+        #squares div {
+            min-height: 20px;
+            background-color: rgba(255, 0, 0, 0.25);
+            margin: 10px;
+            padding: 10px;
+        }
+
+        hr {
+            margin: 20px;
+        }
+
+        #gradient {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to top, #000 0%, #fff 100%);
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        .sans {
+            font-family: Bebas, "Arial Rounded", Helvetica, Arial, sans-serif;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .textboxes div {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    Hint: look into display:inline with li
+    <ul>
+        <li>Bono</li>
+        <li>Edge</li>
+        <li>Larry</li>
+        <li>Adam</li>
+    </ul>
+    <hr> Hint: look into rgba background colors.
+    <div id="squares">
+        <div class="box1">
+            <div class="box2">
+                <div class="box3">
+                    <div class="box4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr> Hint: look into css background gradients and margin:0 auto
+    <div id="gradient"></div>
+
+    <hr> Hint: look into CSS display property
+    <div class="textboxes">
+        <div>
+            <p>Serif</p>
+        </div>
+        <div class="sans">
+            <p>Sans</p>
+        </div>
+        <div class="uppercase">
+            <p>Uppercase</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

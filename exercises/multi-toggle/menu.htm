@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<title>The Multi-Toggle Menu</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script>
+jQuery(document).ready(function($) {
+
+		  var $menu = $('#menu'),
+		  	  $menulink = $('.menu-link'),
+		  	  $menuTrigger = $('.menu-item-has-children > a');
+
+		$menulink.click(function(e) {
+			if(window.innerWidth < 768){
+          e.preventDefault();
+       }
+			$menulink.toggleClass('active');
+			$menu.toggleClass('active');
+		});
+
+		$menuTrigger.click(function(e) {
+			if(window.innerWidth < 768){
+            e.preventDefault();
+        }
+			var $this = $(this);
+			$this.toggleClass('active').next('ul').toggleClass('active');
+		});
+
+
+});
+</script>
+
+</head>
+<body>
+	<div class="container">
+		<a class="menu-link" href="#menu">Menu</a>
+		<nav id="menu" class="menu">
+			<ul>
+      	<li class="menu-item-has-children"><a href="#">Parent A</a>
+      	<ul class="sub-menu">
+				<li><a href="#">Child 1</a></li>
+				<li><a href="#">Child 2</a></li>
+				<li><a href="#">Child 3</a></li>
+				<li><a href="#">Child 4</a></li>
+      		</ul>
+      	</li>
+      	<li class="menu-item-has-children"><a href="#">Parent B</a>
+      		<ul class="sub-menu">
+						<li><a href="#">Child 1</a></li>
+						<li><a href="#">Child 2</a></li>
+						<li><a href="#">Child 3</a></li>
+      		</ul>
+      	</li>
+      	<li><a href="#">Parent C (no children)</a></li>
+      	<li class="menu-item-has-children"><a href="#">Parent D</a>
+      		<ul class="sub-menu">
+				<li><a href="#">Child 1</a></li>
+				<li class="menu-item-has-children">
+      			<a href="#">Child 2</a>
+      			<ul>
+      				<li><a href="#">Grandchild 1</a></li>
+							<li><a href="#">Grandchild 2</a></li>
+      			</ul>
+      			 </li>
+						<li><a href="#">Child 3</a></li>
+      		</ul>
+      	</li>
+      </ul>
+		</nav>
+	</div>
+</body>
+</html>

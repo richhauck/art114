@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+	body{
+		text-align: center;
+	}
+	#wrapper{
+		overflow:hidden;
+		width:500px;
+		height:500px;
+		margin:0 auto;
+		background-color:#ccc;
+		position:relative;
+	}
+	div#box{
+		position:absolute;
+		width:50px;
+		height:50px;
+		top:215px;
+		background-color:#f00;
+	 }
+</style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="box"></div>
+    </div>
+    <p>This example uses JavaScript's <a href="http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/">requestAnimationFrame()</a>, which is more efficient than setInterval().</p>
+<script>
+// Request animation frame with polyfill
+window.requestAnimationFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 30);
+          };
+})();
+
+// call init when window has loaded
+window.addEventListener('load', init, false);
+
+
+function init(){
+    // tell javascript to remember the HTML elements
+	var wrapper = document.getElementById('wrapper');
+	var box = document.getElementById('box');
+
+    // used to define left position of box in pixels
+	var count = 0;
+
+    /* Declare end position as width of wrapper
+        use offsetWidth since non-inline CSS values can't be easily calculated
+    */
+    var max = parseInt(wrapper.offsetWidth);
+
+    // start loop
+    loop();
+
+  // recursively calls itself
+	function loop(){
+    requestAnimationFrame(loop);
+		box.style.left = count + 'px';
+
+		count += 10;
+
+        // if target is reached, reset position to start
+		if(count >= max){
+			count = -50;
+		}
+	}
+}
+</script>
+</body>
+</html>

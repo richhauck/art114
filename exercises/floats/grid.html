@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Grid</title>
+        <style>
+        body{
+            background: #ccc;
+        }
+        .wrapper{
+            background: #fff;
+        }
+        .wrapper a{
+            width:200px;
+            height:150px;
+
+            display: block;
+            margin:20px;
+            float:left;
+        }
+        .wrapper a:link,
+        .wrapper a:visited
+        {
+        background: red;
+        }
+        .wrapper a:hover{
+            background: lightblue;
+        }
+        .clearfix{clear:both;}
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">7</a>
+    <a href="#">8</a>
+    <a href="#">9</a>
+    <div class="clearfix"></div>
+</div>
+</body>
+</html>
