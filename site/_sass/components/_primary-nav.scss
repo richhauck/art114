@@ -1,0 +1,87 @@
+#primary-nav{
+  transition: $transition;
+  top: $headerHeight;
+  width: 300px;
+  background-color: $lightGray;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 10;
+  height: 100%;
+
+  @include mappy-bp(max-width medium) {
+    width: 0;
+  }
+
+  #inner-nav{
+    padding: 2em 2em 4em 2em;
+
+    a:link, a:visited{
+      color: $textColor;
+    }
+    a:hover{
+      color: $blue;
+    }
+  }
+
+  .group{
+    ul{
+      margin: 1em 0;
+      padding: 0 0 2em 0;
+    }
+    input[type="image"]{
+      transition: all 0.3s ease-out;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: auto;
+      vertical-align: middle;
+    }
+    div{
+      transition: all 0.6s ease-in;
+      overflow: hidden;
+      max-height: 0;
+    }
+
+    &.open{
+      div{
+        max-height: 1000px;
+      }
+      input[type="image"]{
+        transform: rotate(90deg);
+      }
+    }
+
+  }
+
+  ul{
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+    border-bottom: 1px solid $borderColor;
+
+    & > li{
+      position: relative;
+      list-style: none;
+      font-weight: bold;
+
+      ul{
+        margin-top: 0.5em;
+        li{
+          margin-left: 1em;
+          font-weight: normal;
+        }
+      }
+
+    }
+  }
+}
+
+.nav-open{
+  overflow: hidden;
+  #primary-nav{
+   width: 100%;
+ }
+}

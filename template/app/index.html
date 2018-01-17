@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>template</title>
+    <title>hii boilerplate</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -23,97 +23,50 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <header id="primary-header" class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <h1>Art 114: Web Design</h1>
-          <a class="nav-toggle" href="#">&#9776; MENU</a>
-        </div>
-      </div>
-    </header>
-    <main>
-        <div id="site-canvas">
-            <div id="site-panel">
-               <a class="nav-toggle" href="#">X</a>
-               <nav id="primary-nav">
-                 <ul>
-                   <li class="group"><a href="#">Development Environment
-                     <ul>
-                       <li><a href="#">Text Editors</a></li>
-                       <li><a href="#">Plugins</a></li>
-                       <li><a href="#">Browser Inspectors</a></li>
-                     </ul>
-                   </a></li>
-                   <li><a href="#">Wireframing</a></li>
-                   <li><a href="#">Color Palettes</a></li>
-                   <li><a href="#">Style Guides</a></li>
-                   <li class="group"><a href="#">Starter Kits
-                     <ul>
-                       <li><a href="#">HTML5 Boilerplate</a></li>
-                       <li><a href="#">Folder Structure</a></li>
-                     </ul>
-                   </a></li>
-                   <li><a href="#">Web Fonts</a></li>
-                   <li><a href="#">Connect to FTP</a></li>
-                   <li><a href="#">CSS Media Queries</a></li>
-                   <li class="group"><a href="#">CSS Grids
-                     <ul>
-                       <li><a href="#">Frameworks</a></li>
-                     </ul>
-                   </a></li>
-                   <li><a href="#">Responsive Navigation</a></li>
-                   <li><a href="#">Intro to JavaScript</a></li>
-                   <li><a href="#">JQuery</a></li>
-                   <li class="group"><a href="#">JQuery Plugins
-                     <ul>
-                       <li><a href="#">Carousel</a></li>
-                       <li><a href="#">Lightbox</a></li>
-                     </ul>
-                   </a></li>
-                   <li class="group"><a href="#">Web Animation
-                     <ul>
-                       <li><a href="#">JavaScript</a></li>
-                       <li><a href="#">CSS</a></li>
-                     </ul>
-                   </a></li>
-                   <li class="group"><a href="#">PHP
-                     <ul>
-                       <li><a href="#">Includes</a></li>
-                       <li><a href="#">Email Form</a></li>
-                     </ul>
-                   </a></li>
-                   <li><a href="#">Google Analytics</a></li>
-                   <li><a href="#">LESS, SASS</a></li>
-                   <li><a href="#">Content Management Systems</a></li>
-                   <li><a href="#">Business Side of design</a></li>
-                 </ul>
-               </nav>
-            </div>
+    @@include('includes/header.html')
+    <div id="main">
+      @@include('includes/primary-nav.html')
+      <div id="content">
+        <div id="inner-content">
+          <h1>1 Heading</h1>
+          <h2>2 Heading</h2>
+          <h3>3 Heading</h3>
+          <h4>4 Heading</h4>
+          <h5>5 Heading</h5>
+          <h6>6 Heading</h6>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro esse deleniti sunt voluptates sequi vel impedit, doloremque itaque animi ipsam voluptatum eum culpa. Minima eaque dolorem facilis voluptatum iste.</p>
 
-            <div id="content">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-9">
-                      <h1>page</h1>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, numquam cupiditate ipsa nobis, pariatur a temporibus ratione perspiciatis delectus quia, sint obcaecati. Corrupti ipsam quae tenetur, hic possimus delectus quidem.</p>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer id="primary-footer" class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <p>&copy;2017</p>
+          <hr>
+
+          @@include('includes/footer.html')
+
         </div>
       </div>
-    </footer>
+
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/tether/dist/js/tether.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
