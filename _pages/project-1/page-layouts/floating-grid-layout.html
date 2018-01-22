@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grid</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <style>
+      body{
+        background: #999;
+        text-align: center;
+      }
+      main{
+        display: inline-block;
+        background: #fff;
+        padding: 10px;
+        margin: 20px auto;
+      }
+      .wrapper{
+        border: 1px dotted red;
+        max-width: 660px;
+      }
+      .wrapper a{
+        transition: background 0.3s ease-out;
+        color: #fff;
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        float:left;
+        text-decoration: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .wrapper a:link,
+      .wrapper a:visited{
+      background: #999;
+      }
+      .wrapper a:hover{
+          background: #666;
+      }
+      .clearfix{clear: both;}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="wrapper">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+        <div class="clearfix"></div>
+      </div>
+  </main>
+</body>
+</html>
