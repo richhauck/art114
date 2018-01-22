@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Keyframe Steps CSS3 Animate</title>
+<style>
+	body{
+		text-align: center;
+	}
+	#wrapper{
+		overflow:hidden;
+		width:500px;
+		height:500px;
+		margin:0 auto;
+		background-color:#ccc;
+		position:relative;
+	}
+	div#box{
+		position:absolute;
+		left:0;
+		width:50px;
+		height:50px;
+		top:0;
+		background-color:#f00;
+
+		animation-name: moveBox;
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+		animation-direction:normal;
+		animation-timing-function: ease-out;
+	}
+	@keyframes moveBox {
+	    0%   {left:0; top:0;}
+	    25%  {left:450px; top:0;}
+	    50%  {left:450px; top:450px;}
+	    75%  {left:0; top:450px;}
+	    100% {left:0px; top:0px;}
+	}
+</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="box"></div>
+	</div>
+	<p>This keyframe animation changes box properties at different steps</p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="{{ site.description }}">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/friendly.css">
+
+  {% if page.desc %}
+  <meta name="description" content="{{ page.desc }}" />
+  {% else %}
+  <meta name="description" content="Art 114" />
+  {% endif %}
+
+  <meta name="keywords" content="" />
+
+  <meta property="og:title" content="Art 114"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="http://www.lassenadvisors.com/"/>
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content=""/>
+  <meta property="og:image" content=""/>
+
+  <link rel="stylesheet" href="{{ "/styles/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/styles/vendor.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+  <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" href="{{ "/apple-touch-icon.png" | prepend: site.baseurl }}">
+</head>

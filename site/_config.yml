@@ -17,10 +17,10 @@ title: Web Design
 email: rdhauck@hacc.edu
 description: >- # this means to ignore newlines until "baseurl:"
   Art 114 web design at HACC.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+baseurl: "/art114" # the subpath of your site, e.g. /blog
+url: "https://richhauck.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: mandalatv
+github_username:  richhauck
 highlighter: rouge
 
 # Build settings
@@ -28,7 +28,7 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
+include: ['_pages']
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

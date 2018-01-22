@@ -52,7 +52,9 @@
       margin: 0;
       font-size: 2em;
       line-height: 1.1em;
-
+      a{
+        color: #fff;
+      }
       span{
         color: $red;
       }
@@ -61,5 +63,12 @@
   #meta{
     display: flex;
     align-items: center;
+
+    a:link, a:visited{
+      color: #fff;
+    }
+    a:hover{
+      color: $red;
+    }
   }
 }
