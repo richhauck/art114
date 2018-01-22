@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Page Layout With Rows</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <style>
+    *{
+    	box-sizing: border-box;
+    }
+    body{
+      background-color: #666;
+      text-align: center;
+    }
+    /*
+    We will use the .row class below to define universal padding
+    header, footer, div{
+      padding: 20px;
+    }
+    */
+    main{
+      padding: 20px;
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+    }
+    header, #content{
+      margin-bottom: 20px;
+      background-color: #ccc;
+    }
+    footer{
+      background-color: #ccc;
+    }
+    #content div{
+      border: 1px solid #ccc;
+    }
+    .col1, .col2{
+      min-height: 400px;
+      margin-bottom: 20px;
+    }
+    .col1{
+      width: calc(100% - 300px);
+      float: left;
+    }
+    .col2{
+      width: 280px;
+      float: right;
+    }
+    .clearfix{
+      clear: both;
+    }
+    /* .row classes below */
+    .row{
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
+      background-color: rgba(255,0,0,0.2);
+    }
+    .row div{
+      background-color: rgba(255,255,255,0.5);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="row">
+        <div>Header</div>
+      </div>
+    </header>
+    <div id="content">
+      <div class="row">
+        <div class="col1">col1</div>
+        <div class="col2">col2</div>
+        <div class="clearfix">clearfix</div>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div>Footer</div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
