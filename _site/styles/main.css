@@ -1,0 +1,314 @@
+/**
+* Strip units
+**/
+/**
+* Facilitate fluid typography
+* @see https://css-tricks.com/snippets/css/fluid-typography/
+**/
+html {
+  height: 100%;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+  html {
+    font-size: 0.8rem; }
+    @media screen and (min-width: 20rem) {
+      html {
+        font-size: calc(0.8rem + 0.2 * ((100vw - 20rem) / 40)); } }
+    @media screen and (min-width: 60rem) {
+      html {
+        font-size: 1rem; } }
+
+body {
+  line-height: 1.5rem; }
+
+a {
+  color: #3081F2; }
+
+p {
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #353843;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem; }
+
+h1 {
+  font-size: 2.8561em;
+  margin: calc($baseline - $h1) 0;
+  line-height: 1em; }
+
+h2 {
+  font-size: 2.197em;
+  margin: 1.0985em 0; }
+
+h3 {
+  font-size: 1.69em;
+  margin: 0.845em 0; }
+
+h4 {
+  font-size: 1.3em;
+  margin: 1.3em 0; }
+
+h5 {
+  font-size: 1em;
+  margin: 1em 0; }
+
+h6 {
+  font-size: 0.7692307692em;
+  margin: 0.7692307692em 0; }
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  color: #707070;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; }
+
+a {
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  text-decoration: none; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #DCDEE6;
+  margin: 2em 0; }
+
+* {
+  box-sizing: border-box; }
+
+#content {
+  margin: 100px 0 0 320px; }
+  @media all and (max-width: 47.875em) {
+    #content {
+      margin: 100px 0 0 0; } }
+
+#inner-content {
+  padding: 1em;
+  width: 65%; }
+  @media all and (max-width: 63.9375em) {
+    #inner-content {
+      width: 100%; } }
+
+main {
+  position: static;
+  height: 100%;
+  display: flex; }
+
+#primary-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background-color: dodgerblue; }
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -3px; }
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease; }
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block; }
+
+.hamburger-inner::before {
+  top: -5px; }
+
+.hamburger-inner::after {
+  bottom: -5px; }
+
+/*
+   * Squeeze
+   */
+.hamburger--squeeze .hamburger-inner {
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--squeeze .hamburger-inner::before {
+  transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
+
+.hamburger--squeeze .hamburger-inner::after {
+  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--squeeze.is-active .hamburger-inner {
+  transform: rotate(45deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.hamburger--squeeze.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
+
+.hamburger--squeeze.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+#toggle-nav {
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #353843;
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  display: none;
+  z-index: 100; }
+  #toggle-nav:hover {
+    background-color: #3081F2; }
+  @media all and (max-width: 47.875em) {
+    #toggle-nav {
+      display: block; } }
+
+#primary-header {
+  color: #fff;
+  background-color: #353843;
+  padding: 2em;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0; }
+  @media all and (max-width: 63.9375em) {
+    #primary-header {
+      padding: 1em; } }
+  #primary-header .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; }
+    @media all and (max-width: 29.9375em) {
+      #primary-header .row {
+        flex-direction: column; } }
+  #primary-header #title {
+    display: flex;
+    align-items: center; }
+    #primary-header #title h1 {
+      color: #fff;
+      margin: 0;
+      font-size: 2em;
+      line-height: 1.1em; }
+      #primary-header #title h1 a {
+        color: #fff; }
+      #primary-header #title h1 span {
+        color: #AF3737; }
+  #primary-header #meta {
+    display: flex;
+    align-items: center; }
+    #primary-header #meta a:link, #primary-header #meta a:visited {
+      color: #fff; }
+    #primary-header #meta a:hover {
+      color: #AF3737; }
+
+#primary-nav {
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  top: 100px;
+  width: 300px;
+  background-color: #F9F9FA;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 10;
+  height: 100%; }
+  @media all and (max-width: 47.875em) {
+    #primary-nav {
+      width: 0; } }
+  #primary-nav #inner-nav {
+    padding: 2em 2em 4em 2em; }
+    #primary-nav #inner-nav a:link, #primary-nav #inner-nav a:visited {
+      color: #707070; }
+    #primary-nav #inner-nav a:hover {
+      color: #3081F2; }
+  #primary-nav .group ul {
+    margin: 1em 0;
+    padding: 0 0 2em 0; }
+  #primary-nav .group input[type="image"] {
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: auto;
+    vertical-align: middle; }
+  #primary-nav .group div {
+    transition: all 0.6s ease-in;
+    overflow: hidden;
+    max-height: 0; }
+  #primary-nav .group.open div {
+    max-height: 1000px; }
+  #primary-nav .group.open input[type="image"] {
+    transform: rotate(90deg); }
+  #primary-nav ul {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+    border-bottom: 1px solid #DCDEE6; }
+    #primary-nav ul > li {
+      position: relative;
+      list-style: none;
+      font-weight: bold; }
+      #primary-nav ul > li ul {
+        margin-top: 0.5em; }
+        #primary-nav ul > li ul li {
+          margin-left: 1em;
+          font-weight: normal; }
+
+.nav-open {
+  overflow: hidden; }
+  .nav-open #primary-nav {
+    width: 100%; }
+
+#primary-footer {
+  text-align: right; }
