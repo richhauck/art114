@@ -6,7 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>FTP | Web Design</title>
+  <title>FTP and Site Setup | Web Design</title>
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/friendly.css">
 
@@ -25,7 +25,7 @@
 
   <link rel="stylesheet" href="/art114/styles/main.css">
   <link rel="stylesheet" href="/art114/styles/vendor.css">
-  <link rel="canonical" href="https://richhauck.github.io/art114/project-1/ftp">
+  <link rel="canonical" href="https://richhauck.github.io/art114/project-1/ftp-site-setup">
 
   <link rel="shortcut icon" href="/art114/favicon.ico">
   <link rel="apple-touch-icon" href="/art114/apple-touch-icon.png">
@@ -89,11 +89,11 @@
        <input type="image" src="/art114/images/arrow.svg" alt="arrow button">
        <div>
          <ul>
+           <li><a href="/art114/project-1/ftp-site-setup">FTP and Site Setup</a></li>
            <li><a href="/art114/project-1/page-layouts">Page Layouts</a></li>
            <li><a href="/art114/project-1/media-queries">Media Queries</a></li>
            <li><a href="/art114/project-1/web-fonts">Web Fonts</a></li>
            <li><a href="/art114/project-1/responsive-images">Responsive Images</a></li>
-           <li><a href="/art114/project-1/ftp">FTP</a></li>
          </ul>
        </div>
      </li>
@@ -185,8 +185,59 @@
 
         <div id="content">
           <div id="inner-content">
-            <h1>FTP</h1>
-            <p>Coming Soon.</p>
+            <h1>FTP and Site Setup</h1>
+            <p><strong>FTP</strong> stands for <strong>F</strong>ile <strong>T</strong>ransfer <strong>P</strong>rotocol, and it's a way transfer files from a client to a server. There are many FTP clients (software) available, but for this course we will use the open source (free) <a href="https://filezilla-project.org">FileZilla</a> client. Check out <a href="https://wiki.filezilla-project.org/Using">FileZilla's Wiki</a> on how to use it.</p>
+
+
+<section>
+  <h2>Connecting to Your Server</h2>
+  <p>In order to connect to your shared hosting account, you will need to provide FileZilla with the following:</p>
+
+  <ul>
+    <li><b>Host</b>. Typically something like: ftp.yourwebsite.com</li>
+    <li><b>Username</b>. The username your hosting provider assigned to you and emailed you.</li>
+    <li><b>Password</b>. Your hosting password.</li>
+    <li><b>Port</b>. You can usually keep this blank.</li>
+  </ul>
+  <p>Once you connect (depending upon your hosting provider), the remote side often has a /public_html folder. Navigate inside of this folder, as it represents your site files.</p>
+</section>
+
+
+<section>
+  <h2>Site Setup/Folder Structure</h2>
+  <p>You will want to dedicate a folder on your hard drive to be a mirror image of your site folder. This way, you will code locally, save to your local website folder, then upload with the confidence that the content on both the local and remote folders is identical.</p>
+  <p>How you setup your structure is up to you, but I would HIGHLY encourage setting up your folder similar to a structure as follows:</p>
+
+  <div class="box">
+
+    <pre>
+      index.html
+      404.html
+      robots.txt
+      favicon.ico
+      icon.png
+        /images
+        /styles
+        /scripts
+        /web-design
+            /project-1
+              /images
+              /styles
+              /scripts
+            /project-2
+      etc.
+    </pre>
+  </div>
+</section>
+
+<aside>
+  <h3>Tips</h3>
+  <ul>
+    <li>Your master FTP account is usually the username/password provided by your hosting provider--it's often the same credentials for logging into the service.</li>
+    <li>Most hosts allow you to create additional FTP accounts in their control panel. You can access this by logging into your host's website.</li>
+    <li>Production files (PSDs, AIs, etc.) should not be a part of the site. These files often take up a lot of space and aren't interpreted by a browser.</li>
+  </ul>
+</aside>
 
 <!--
             <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">            <span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="s1">'hi'</span><span class="p">;</span>
