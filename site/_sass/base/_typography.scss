@@ -47,6 +47,7 @@ h1{
 h2{
   font-size: $h2;
   margin: $h2/2 0;
+  line-height: 1em;
 }
 h3{
   font-size: $h3;
@@ -63,4 +64,8 @@ h5{
 h6{
   font-size: $h6;
   margin: $h6 0;
+}
+li{
+	list-style: square;
+	margin-bottom: $base-padding;
 }

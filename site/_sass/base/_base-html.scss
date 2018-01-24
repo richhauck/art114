@@ -16,6 +16,7 @@ a{
   text-decoration: none;
 }
 img{
+	border: 1px solid $borderColor;
 	max-width: 100%;
 	height: auto;
 }
@@ -24,4 +25,19 @@ hr{
 	height: 1px;
 	background-color: $borderColor;
 	margin: 2em 0;
+}
+section{
+	padding-bottom: $base-padding;
+	border-top: 1px solid $borderColor;
+}
+aside{
+	h2, h3{
+		margin-top: 0;
+	}
+	margin: $base-padding auto;
+	padding: $base-padding;
+	background-color: $lightGray;
+}
+figure{
+	margin: 0;
 }
