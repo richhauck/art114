@@ -6,7 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>JavaScript | Web Design</title>
+  <title>Starting a Project | Web Design</title>
 
   
   <meta name="description" content="Art 114" />
@@ -22,7 +22,7 @@
   <meta property="og:image" content=""/>
 
   <link rel="stylesheet" href="/art114/styles/main.css">
-  <link rel="canonical" href="https://richhauck.github.io/art114/project-2/javascript">
+  <link rel="canonical" href="https://richhauck.github.io/art114/starting-a-project/">
 
   <link rel="shortcut icon" href="/art114/favicon.ico">
   <link rel="apple-touch-icon" href="/art114/apple-touch-icon.png">
@@ -182,8 +182,30 @@
 
         <div id="content">
           <div id="inner-content">
-            <h1>JavaScript</h1>
-            <p>Coming Soon</p>
+            <h1>Starting a Project</h1>
+            <p>Where do you start when creating a website? You could obviously type out a new HTML page, or you could keep a template folder around that you copy each time you start a new project. That said, there are some tools out there that can help:</p>
+<ul>
+  <li><a href="https://html5boilerplate.com/">HTML5 Boilerplate</a> - an open source and great starting point for creating a website. While it is an opnionated approach, it includes nearly everything you need to get started.</li>
+  <li><a href="https://developers.google.com/web/tools/starter-kit/">Google Web Starter Kit</a> (no longer supported)</li>
+  <li>You can create a new HTML boilerplate page with your text editor using Emmet.
+    <ol>
+      <li>Create a new document in your text editor</li>
+      <li>Save it with an .html extension</li>
+      <li>In the file, type <strong>html:5 </strong>and then hit tab.</li>
+    </ol>
+  </li>
+</ul>
+<p><strong>Items your starting project should include:</strong></p>
+<ul>
+  <li>Every page should contain the following meta tag (to assist with responsive layouts):
+		<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span></code></pre></figure>
+	</li>
+  <li>You should dedicate a folder for vendor, or third-party code. This should be a place that houses third-party code you have downloaded for use in your site, and it should remain untouched by you, as it will make updating easier.</li>
+  <li>A <a href="www.robotstxt.org">robots.txt</a> file</li>
+  <li>A <a href="https://en.wikipedia.org/wiki/Favicon">favicon</a></li>
+  <li>An <a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Apple Touch Icon</a></li>
+  <li>An <a href="http://ogp.me/">Open Graph</a> image for popular services like Facebook (see: <a href="https://developers.facebook.com/docs/sharing/webmasters">Facebook for Developers Guide</a>)</li>
+</ul>
 
 
             <hr>

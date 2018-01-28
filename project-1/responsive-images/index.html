@@ -6,7 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>JavaScript | Web Design</title>
+  <title>Responsive Images | Web Design</title>
 
   
   <meta name="description" content="Art 114" />
@@ -22,7 +22,7 @@
   <meta property="og:image" content=""/>
 
   <link rel="stylesheet" href="/art114/styles/main.css">
-  <link rel="canonical" href="https://richhauck.github.io/art114/project-2/javascript">
+  <link rel="canonical" href="https://richhauck.github.io/art114/project-1/responsive-images/">
 
   <link rel="shortcut icon" href="/art114/favicon.ico">
   <link rel="apple-touch-icon" href="/art114/apple-touch-icon.png">
@@ -182,8 +182,51 @@
 
         <div id="content">
           <div id="inner-content">
-            <h1>JavaScript</h1>
-            <p>Coming Soon</p>
+            <h1>Responsive Images</h1>
+            <section>
+  <h2>Scalable Images</h2>
+  <p>This technique relies upon the parent container scaling responsively. This basically ensures that the child image doesn't break out of the container. The <code>height</code> property is set to "auto" to ensure the image's aspect ratio isn't compressed or stretched. You may wish to also set the <code>max-width</code> property to ensure the image doesn't exceed the container size.</p>
+  <p><b>In CSS:</b></p>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css">  <span class="nt">img</span><span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="p">}</span>
+  </code></pre></figure>
+</section>
+
+<section>
+  <h2>Responsive Background Image</h2>
+  <p>This technique utilizes media queries to define a different background image based on browser properties.</p>
+  <p><b>In CSS:</b></p>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css">  <span class="nf">#background</span><span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="sx">url(flowers-800.jpg)</span> <span class="nb">no-repeat</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">800px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">#background</span><span class="p">{</span>
+      <span class="nl">background</span><span class="p">:</span> <span class="sx">url(flowers-600.jpg)</span> <span class="nb">no-repeat</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  </code></pre></figure>
+
+  <p><a class="button" href="/art114/project-1/responsive-images/background-image" target="_blank">See Example</a></p>
+</section>
+
+<section>
+  <h2>Picture tag</h2>
+  <p>A group of images based on different source definitions. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture">MDN's Picture element documentation</a>.</p>
+
+  <figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;picture&gt;</span>
+   <span class="nt">&lt;source</span> <span class="na">media=</span><span class="s">"(min-width: 800px)"</span> <span class="na">srcset=</span><span class="s">"flowers-800.jpg"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;source</span> <span class="na">media=</span><span class="s">"(min-width: 600px)"</span> <span class="na">srcset=</span><span class="s">"flowers-600.jpg"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"flowers-320.jpg"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;img</span> <span class="na">srcset=</span><span class="s">"flowers.jpg"</span> <span class="na">alt=</span><span class="s">"This picture loads on non-supporting browsers."</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/picture&gt;</span>
+  </code></pre></figure>
+
+  <p><a class="button" href="/art114/project-1/responsive-images/picture" target="_blank">See Example</a></p>
+
+
+</section>
 
 
             <hr>
