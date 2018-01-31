@@ -6,7 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>JavaScript | Web Design</title>
+  <title>Responsive Navigation | Web Design</title>
 
   
   <meta name="description" content="Art 114" />
@@ -22,7 +22,7 @@
   <meta property="og:image" content=""/>
 
   <link rel="stylesheet" href="/art114/styles/main.css">
-  <link rel="canonical" href="https://richhauck.github.io/art114/project-2/javascript">
+  <link rel="canonical" href="https://richhauck.github.io/art114/project-1/responsive-navigation/">
 
   <link rel="shortcut icon" href="/art114/favicon.ico">
   <link rel="apple-touch-icon" href="/art114/apple-touch-icon.png">
@@ -183,48 +183,72 @@
 
         <div id="content">
           <div id="inner-content">
-            <h1>JavaScript</h1>
-            <section>
-  <p>JavaScript is one of, if not the most popular programming language in the world, in part because it runs in a web browser, which is available on nearly every computer. While JavaScript's use extends beyond browsers, it's most frequently associated with creating dynamic interactions in a web page. When you think of interactive animations, content loading without a page refresh, or changes in the page's state (menus remaining opened or closed, for instance), it's most likely JavaScript working behind the scenes.</p>
-  <p>Much like CSS, JavaScript can be placed within an HTML document inline:<br>
+            <h1>Responsive Navigation</h1>
+              <section>
+    <p>Here's a very simple example where JavaScript is used to toggle the body.class attribute, which in-turn determines how the menu displays.</p>
+    <a class="button" href="/art114/project-1/responsive-navigation/simple.html">View Simple Responsive Nav</a>
+    <p>At its core, we are creating a CSS breakpoint, but adding a rule at the bottom that overrides the max-height property of #primary-nav:</p>
+    <figure class="highlight"><pre><code class="language-css" data-lang="css">    <span class="c">/* This media query defines how the page displays beneath a breakpoint */</span>
+    <span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">767px</span><span class="p">){</span>
+      <span class="nf">#toggle-nav</span><span class="p">{</span>
+        <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span> <span class="c">/* display button beneath breakpoint */</span>
+      <span class="p">}</span>
+      <span class="nf">#primary-nav</span><span class="p">{</span>
+        <span class="nl">max-height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nf">#primary-nav</span> <span class="nt">li</span><span class="p">{</span>
+        <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c">/* Here, we override the rule when the body has a class of nav-open */</span>
+      <span class="nt">body</span><span class="nc">.nav-open</span> <span class="nf">#primary-nav</span><span class="p">{</span>
+        <span class="nl">max-height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span></code></pre></figure>
 
-  <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"alert('Hello JavaScript!')"</span><span class="nt">&gt;</span>Trigger an alert<span class="nt">&lt;/button&gt;</span></code></pre></figure>
-  </p>
+    <p>The JavaScript used is pretty simple, but very powerful in how our page displays. Basically, we dynamically change the class attribute on a HTML element and let CSS handle the styling from there.</p>
+    <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="c1">// Perform this after the window has loaded</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// First, tell JavaScript to remember which DOM element (in this case, a button) to reference (by id)</span>
+      <span class="kd">let</span> <span class="nx">toggleNav</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'toggle-nav'</span><span class="p">);</span>
 
-  <p>within &lt;script&gt; tags:<br>
+      <span class="c1">// Tell button to do something on click</span>
+      <span class="nx">toggleNav</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
 
-  <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"demo"</span><span class="nt">&gt;&lt;/div&gt;</span>
-    <span class="nt">&lt;script&gt;</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'demo'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'Hello JavaScript!'</span><span class="p">;</span>
-    <span class="nt">&lt;/script&gt;</span></code></pre></figure>
-  </p>
+        <span class="c1">// toggle the body's class attribute</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s1">'nav-open'</span><span class="p">);</span>
 
-  <p>and as a separate document (again using &lt;script&gt;).<br>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    ...
-      <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"file.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;/body&gt;</span>
-    <span class="nt">&lt;/html&gt;</span></code></pre></figure>
-  </p>
-  <p>The last method is most preferrable, as it eliminates redundancy across multiple pages. While &lt;script&gt; can be placed in the &lt;head&gt;, you may often come across it at the bottom of the HTML page, as JavaScript needs the page to load before performing any changes. When using JS within a script tag, you typically want to include JavaScript code that waits for the document to load. Here's an example:
-
-    <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="c1">// Do this once page has loaded</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="s1">'Hello JavaScript!'</span><span class="p">);</span>
+      <span class="p">});</span>
     <span class="p">};</span></code></pre></figure>
-</section>
+  </section>
+  <section>
+    <h2>Other Examples</h2>
+    <ul>
+      <li><a href="/art114/project-1/responsive-navigation/responsive-nav-example.html">View an example</a> using <a href="http://responsive-nav.com/#instructions">Responsive Nav</a></li>
+      <li>Here's an example using an <a href="/art114/project-1/responsive-navigation/off-canvas-menu.html">off-canvas menu (using JQuery)</a></li>
+      <li>For single pages, have a look at <a href="https://css-tricks.com/snippets/jquery/smooth-scrolling/">CSS-Tricks Smooth Scrolling</a></li>
+    </ul>
+  </section>
+  <section>
+    <h2>On Hamburger Menus</h2>
+    <p>Originally introduced from <a href="https://www.cultofmac.com/272311/apple-borrowed-ioss-hamburger-icon-xerox-parc/">Xerox PARC</a>, the hamburger menu has been <a href="https://lmjabreu.com/post/why-and-how-to-avoid-hamburger-menus/">a controversial design</a> choice (also see this <a href="https://www.nngroup.com/articles/hamburger-menus/">Nielsen Norman Group article</a>).</p>
+    <p>It can be implemented into your design via a unicode character (a Chinese glyph for the trigram for heaven):<br>
 
-<section>
-  <h2>What is JQuery?</h2>
-  <p><a href="http://jquery.com/">JQuery</a> is an open source third party library that, at its core, is used to make querying HTML tags easier. By including JQuery in your page, you can select DOM elements using CSS selectors.</p>
-  <p>An extremely popular library for a long time, JQuery helped ensure JavaScript worked consistently across browsers. With the introduction of new features in JavaScript and emerging browser support, there's a good chance <a href="http://youmightnotneedjquery.com">You Might Not Need JQuery</a> (also see this <a href="https://css-tricks.com/now-ever-might-not-need-jquery/">CSS-Tricks article</a>) for custom JavaScript.</p>
-  <p>In many cases where you seek interactive "plugins" for your pages (such as carousels, slideshows, tooltips, popups, etc.) JQuery will be required, as the respective author likely wrote their plugin with JQuery for broad support.</p>
-</section>
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span><span class="ni">&amp;#9776;</span><span class="nt">&lt;/button&gt;</span></code></pre></figure>
+    </p>
+    <p>Hamburger menus should be executed as buttons and not hyperlinks to be symantically correct. Despite the default styling, you can redefine the background, borders, and appearance of a button using CSS.</p>
+    <button type="button">&#9776;</button>
 
-<aside>
-  <h2>More Resources</h2>
+    <p>Alternatively, you can use an image file or SVG icon like <a href="https://material.io/icons/#ic_menu">Google Materials ic_menu</a> or <a href="https://fontawesome.com/icons/bars?style=solid">FontAwesome's bars icon</a>. If you want to get ambitious, there's also <a href="https://jonsuh.com/hamburgers/">animated hamburger icons</a>.</p>
+
+  </section>
+
+  <aside>
+  <h2>Resources</h2>
   <ul>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics">Check out MDN's JavaScript Basics</a></li>
-    <li><a href="https://www.w3schools.com/js/default.asp">Learn JavaScript on W3 Schools</a></li>
+    <li><a href="http://bradfrost.com/blog/web/responsive-nav-patterns/">Brad Frost's article on responsive navigation patterns</a></li>
+    <li><a href="https://www.w3schools.com/howto/howto_js_topnav_responsive.asp">W3 Schools Responsive Nav Example</a></li>
+    <li><a href="http://responsivenavigation.net/">ResponsiveNavigation.net</a></li>
+    <li><a href="http://responsive-nav.com/">Responsive Nav Plugin</a></li>
   </ul>
 </aside>
 
