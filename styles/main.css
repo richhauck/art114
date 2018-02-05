@@ -105,6 +105,26 @@ aside {
 figure {
   margin: 0; }
 
+table {
+  border-spacing: 0;
+  border: 0.5px solid #DCDEE6; }
+
+th {
+  text-align: left;
+  color: #fff;
+  background-color: #353843; }
+
+td, th {
+  font-size: 14px;
+  border: 0.5px solid #DCDEE6;
+  padding: 2px 4px;
+  vertical-align: top; }
+  td ul, th ul {
+    margin-top: 0; }
+  td p, td li, th p, th li {
+    margin: 0;
+    padding: 0; }
+
 * {
   box-sizing: border-box; }
 
