@@ -130,5 +130,58 @@
   <span class="dot"></span>
 </nav>
 
+<script>
+// 1. DEFINE VARIABLES
+// Create variable to remember id of current slide
+var slideIndex = 1;
+
+// Remember HTML buttons
+var previousButton = document.getElementById('previous-button');
+var nextButton = document.getElementById('next-button');
+var dots = document.getElementsByClassName('dot');
+
+// 2. DEFINE FUNCTIONS
+function incrementSlide(num) {
+  slideIndex += num;
+  showSlide(slideIndex);
+}
+function setCurrentSlide(num) {
+  slideIndex = Number(num);
+  showSlide(slideIndex);
+}
+function showSlide(id) {
+  var i;
+  var slides = document.getElementsByClassName('slide');
+  var dots = document.getElementsByClassName('dot');
+  if (id > slides.length) {
+    slideIndex = 1;
+  }
+  if (id < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(' active', '');
+  }
+  slides[slideIndex-1].style.display = 'block';
+  dots[slideIndex-1].className += ' active';
+}
+// 3. ASSIGN BEHAVIORS
+previousButton.onclick = function(event){
+  incrementSlide(-1);
+}
+nextButton.onclick = function(event){
+  incrementSlide(1);
+};
+for(var i = 0; i < dots.length; i++){
+  dots[i].id = i + 1;
+  dots[i].onclick = function(event){
+    setCurrentSlide(this.id);
+  };
+}
+showSlide(slideIndex);
+</script>
 </body>
 </html>

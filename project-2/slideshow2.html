@@ -60,7 +60,7 @@
         }
 
         /* Number text (1/3 etc) */
-        .slide__number {
+        #slide__number {
           color: #f2f2f2;
           text-shadow: 2px 0 #000;
           font-size: 12px;
@@ -101,20 +101,18 @@
 </head>
 <body>
     <div class="slideshow-container">
+      <div id="slide__number"></div>
       <div class="slide fade">
-        <div class="slide__number">1 / 3</div>
         <img src="http://placehold.it/600x400" alt="image" />
         <div class="slide__caption">Caption Text</div>
       </div>
 
       <div class="slide fade">
-        <div class="slide__number">2 / 3</div>
         <img src="http://lorempixel.com/400/200/sports/random" alt="image" />
         <div class="slide__caption">Caption Two</div>
       </div>
 
       <div class="slide fade">
-        <div class="slide__number">3 / 3</div>
         <img src="https://unsplash.it/200/300/?random"  alt="image" />
         <div class="slide__caption">Caption Three</div>
       </div>
@@ -130,5 +128,64 @@
   <span class="dot"></span>
 </nav>
 
+<script>
+// 1. DEFINE VARIABLES
+// Create variable to remember id of current slide
+var slideIndex = 1;
+
+// Remember HTML buttons
+var previousButton = document.getElementById('previous-button');
+var nextButton = document.getElementById('next-button');
+var dots = document.getElementsByClassName('dot');
+var slides = document.getElementsByClassName('slide');
+
+// 2. DEFINE FUNCTIONS
+var incrementSlide = (num) => {
+  slideIndex += num;
+  showSlide(slideIndex);
+}
+var setCurrentSlide = (num) => {
+  slideIndex = Number(num);
+  showSlide(slideIndex);
+}
+var setSlideNumber = () => {
+  var slideNumber = document.getElementById('slide__number');
+  slideNumber.innerHTML = slideIndex + '/' + slides.length;
+}
+var showSlide = (id) => {
+  var i;
+  var dots = document.getElementsByClassName('dot');
+  if (id > slides.length) {
+    slideIndex = 1;
+  }
+  if (id < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(' active', '');
+  }
+  slides[slideIndex-1].style.display = 'block';
+  dots[slideIndex-1].className += ' active';
+
+  setSlideNumber();
+}
+// 3. ASSIGN BEHAVIORS
+previousButton.onclick = function(event){
+  incrementSlide(-1);
+}
+nextButton.onclick = function(event){
+  incrementSlide(1);
+};
+for(var i = 0; i < dots.length; i++){
+  dots[i].id = i + 1;
+  dots[i].onclick = function(event){
+    setCurrentSlide(this.id);
+  };
+}
+showSlide(slideIndex);
+</script>
 </body>
 </html>
