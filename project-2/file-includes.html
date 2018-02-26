@@ -187,7 +187,104 @@
         <div id="content">
           <div id="inner-content">
             <h1>File Includes in PHP</h1>
-            <p>Coming Soon</p>
+            <p>PHP is a popular open source server-side scripting language. You can learn more via the <a href="http://us3.php.net/manual/en/">PHP Manual</a> or on <a href="https://www.w3schools.com/php/default.asp">W3Schools</a>.</p>
+
+<p>Though not required to use in this class, using PHP file includes can significantly cut down the amount of code in your page templates. For instance, rather than incorporating header and footer HTML code in each page on your site, you could instead include a single file representing those pieces into your pages.</p>
+
+<p>To use PHP, files must have a .php file extension and any PHP code must reside in PHP tags (example below).</p>
+
+<p>PHP requires a server to interpret the code, so you can't simply open it in a browser like an HTML page. For this reason, we will use <a href="https://www.mamp.info/en/">MAMP</a> locally (PHP will work automatically when you upload it to your website, since your shared hosting server runs PHP).</p>
+
+<p>Consider a scenario where you have a simple three-page site with home, about, and contact pages. You have already built your page template in HTML and CSS, and all three pages share will share the same header and footer. Rather than maintain redundant markup, you could organize it with PHP like so:</p>
+
+<div class="box">
+  <pre>
+    index.php
+    about.php
+    contact.php
+    /lib
+      - header.php
+      - footer.php
+  </pre>
+</div>
+
+<p>Here's the code for the pages:</p>
+
+<h2>lib/header.php</h2>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span><span class="cp">?&gt;</span> | My Website<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;main&gt;</span>
+        <span class="nt">&lt;nav&gt;</span>
+            <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/index.php"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/about.php"</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/contact.php"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/nav&gt;</span>
+        <span class="nt">&lt;hr&gt;</span>
+        <span class="nt">&lt;h1&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span><span class="cp">?&gt;</span><span class="nt">&lt;/h1&gt;</span></code></pre></figure>
+
+<h2>lib/footer.php</h2>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="nt">&lt;/main&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>Notice we're opening HTML tags in header.php that we're closing in footer.php. We're letting PHP put the page together for us before it hits the browser.</p>
+
+<h2>index.php</h2>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+  <span class="nv">$title</span> <span class="o">=</span> <span class="s2">"Home"</span><span class="p">;</span>
+  <span class="k">include</span> <span class="s1">'inc/header.php'</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+<span class="nt">&lt;p&gt;</span>Page content goes here<span class="nt">&lt;/p&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">include</span> <span class="s1">'inc/footer.php'</span><span class="p">;</span> <span class="cp">?&gt;</span></code></pre></figure>
+
+<h2>about.php</h2>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$title</span> <span class="o">=</span> <span class="s2">"About"</span><span class="p">;</span>
+<span class="k">include</span> <span class="s1">'inc/header.php'</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">include</span> <span class="s1">'inc/footer.php'</span><span class="p">;</span> <span class="cp">?&gt;</span></code></pre></figure>
+
+<h2>contact.php</h2>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$title</span> <span class="o">=</span> <span class="s2">"Contact"</span><span class="p">;</span>
+<span class="k">include</span> <span class="s1">'inc/header.php'</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">include</span> <span class="s1">'inc/footer.php'</span><span class="p">;</span> <span class="cp">?&gt;</span></code></pre></figure>
+
+<p>Notice that since the page title is something that will change across pages we define it as a variable at the top of each page in PHP. When the header.php file loads, it injects the value into the title and h1 tags.</p>
+
+<h2>File includes in subdirectories</h2>
+<p>This will work with pages in folders, as well. For instance, imagine you added a "projects" folder. The folder structure would look like this:</p>
+
+<div class="box">
+  <pre>
+    index.php
+    about.php
+    contact.php
+    /projects
+      - index.php
+    /lib
+      - header.php
+      - footer.php
+  </pre>
+</div>
+
+<p>Your projects/index.php page might look like this:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$title</span> <span class="o">=</span> <span class="s2">"Projects"</span><span class="p">;</span>
+<span class="k">include</span> <span class="s1">'../inc/header.php'</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">include</span> <span class="s1">'../inc/footer.php'</span><span class="p">;</span> <span class="cp">?&gt;</span></code></pre></figure>
+
+<p>Notice that the path to the include files just has to go up a directory.</p>
 
 
             <hr>
