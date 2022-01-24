@@ -1,0 +1,56 @@
+---
+layout: default.njk
+title: FTP and Site Setup
+---
+<p><strong>FTP</strong> stands for <strong>F</strong>ile <strong>T</strong>ransfer <strong>P</strong>rotocol, and it's a way transfer files from a client to a server. There are many FTP clients (software) available, but for this course we will use the open source (free) <a href="https://filezilla-project.org">FileZilla</a> client. Check out <a href="https://wiki.filezilla-project.org/Using">FileZilla's Wiki</a> on how to use it.</p>
+
+
+<section>
+  <h2>Connecting to Your Server</h2>
+  <p>In order to connect to your shared hosting account, you will need to provide FileZilla with the following:</p>
+
+  <ul>
+    <li><b>Host</b>. Typically something like: ftp.yourwebsite.com (note: if using GoDaddy, try the <a href="https://www.godaddy.com/help/what-is-my-websites-ip-address-5232">IP address</a>).</li>
+    <li><b>Username</b>. The username your hosting provider assigned to you and emailed you.</li>
+    <li><b>Password</b>. Your hosting password.</li>
+    <li><b>Port</b>. You can usually keep this blank.</li>
+  </ul>
+  <p>Once you connect (depending upon your hosting provider), the remote side often has a /public_html folder. Navigate inside of this folder, as it represents your site files.</p>
+</section>
+
+
+<section>
+  <h2>Site Setup/Folder Structure</h2>
+  <p>You will want to dedicate a folder on your hard drive to be a mirror image of your site folder. This way, you will code locally, save to your local website folder, then upload with the confidence that the content on both the local and remote folders is identical.</p>
+  <p>How you setup your structure is up to you, but I would HIGHLY encourage setting up your folder similar to a structure as follows:</p>
+
+  <div class="box">
+
+    <pre>
+      index.html
+      404.html
+      robots.txt
+      favicon.ico
+      icon.png
+        /images
+        /styles
+        /scripts
+        /web-design
+            /project-1
+              /images
+              /styles
+              /scripts
+            /project-2
+      etc.
+    </pre>
+  </div>
+</section>
+
+<aside>
+  <h3>Tips</h3>
+  <ul>
+    <li>Your master FTP account is usually the username/password provided by your hosting provider--it's often the same credentials for logging into the service.</li>
+    <li>Most hosts allow you to create additional FTP accounts in their control panel. You can access this by logging into your host's website.</li>
+    <li>Production files (PSDs, AIs, etc.) should not be a part of the site. These files often take up a lot of space and aren't interpreted by a browser.</li>
+  </ul>
+</aside>

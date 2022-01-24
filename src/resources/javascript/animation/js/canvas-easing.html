@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Easing in Canvas</title>
+<style>
+body{
+	text-align:center;
+}
+canvas{
+	background-color:#ccc;
+}
+</style>
+<script>
+window.addEventListener('load', init, false);
+
+function init(){
+	var canvas = document.getElementById('canvas');
+	if (canvas.getContext('2d')){
+  		main(canvas);
+	} else {
+    	console.log('Canvas tag is not supported');
+	}
+}
+function main(canvas){
+	var canvas = canvas;
+	var ctx = canvas.getContext('2d');
+
+	const CANVAS_WIDTH = canvas.width;
+	const CANVAS_HEIGHT = canvas.height;
+
+	var targetX = 450;				// ending x-position for our square
+	var speed = 10;						// speed of animation
+	var distanceX;						// distance between starting point and end point
+	var movementX;						// distance divided by speed
+	var xPos = 0;							// current position of our square
+
+	// set style
+	ctx.fillStyle = '#f00';
+
+	// remember interval so we can clear it later.
+	var interval = setInterval(draw, 30);
+
+	function draw() {
+		// clear canvas
+		clear();
+
+		// calculate position
+		distanceX = targetX-xPos;
+		movementX = distanceX/speed;
+		xPos += movementX;
+
+		// Draw box
+		ctx.fillRect(xPos, 215, 50, 50);
+
+		/*
+		If shape is close enough to target, remove interval and avoid Zeno's Paradox!
+		*/
+		if(Math.abs(movementX) < 1){
+			clearInterval(interval);
+		}
+	}
+	function clear(){
+		ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+	}
+}
+</script>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500">
+        Your browser does not support HTML5 Canvas.
+    </canvas>
+    <p>Canvas easing example that avoids <a href="https://en.wikipedia.org/wiki/Zeno's_paradoxes#Achilles_and_the_tortoise">Zeno's Paradox</a></p>
+</body>
+</html>

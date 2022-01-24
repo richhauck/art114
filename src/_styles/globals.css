@@ -1,0 +1,12 @@
+:root {
+    --red: #CD6060;
+    --blue: #3081F2;
+    --headertextcolor: #353843;
+    --textColor: #707070;
+    --darkGray: #353843;
+    --lightGray: #F9F9FA;
+    --borderColor: #DCDEE6;
+    --basePadding: 1em;
+    --headerHeight: 120px;
+    --transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  }

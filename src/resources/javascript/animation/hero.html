@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hero</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+<style>
+    *{
+        animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+    }
+	body{
+		text-align: center;
+	}
+	#hero{
+		overflow:hidden;
+		width:800px;
+		height:400px;
+		margin:0 auto;
+		background-color:#ccc;
+		position:relative;
+	}
+	#hero__caption{
+        color: #fff;
+		position:absolute;
+		width:320px;
+		height:380px;
+        right:1200px;
+		top:0;
+		background-color:#000;
+        text-align: left;
+        padding: 20px;
+
+		animation-name: moveCaption;
+		animation-duration: 1s;
+		animation-delay: 0;
+	}
+    #bgd{
+        width: 800px;
+        height: 400px;
+        background-image: url(https://placeimg.com/800/400/any);
+        opacity: 0;
+        animation-name: fadeBgd;
+		animation-duration: 2s;
+		animation-delay: 1s;
+         transition-timing-function: ease-out;
+    }
+    #hero__title{
+        opacity: 0;
+        animation-name: fadeIn;
+		animation-duration: 1s;
+		animation-delay: 2.4s;
+    }
+    #hero__meta{
+        opacity: 0;
+        animation-name: fadeIn;
+		animation-duration: 1s;
+		animation-delay: 3s;
+    }
+    #hero__cta{
+        opacity: 0;
+        animation-name: fadeIn;
+		animation-duration: 1s;
+		animation-delay: 4s;
+        display: inline-block;
+        border: 2px solid #fff;
+        padding:5px 10px;
+    }
+	@keyframes moveCaption {
+	    from {right:-1200px;}
+	    to {right:0;}
+	}
+
+    @keyframes fadeIn {
+	    from {opacity:0;}
+	    to {opacity:1;}
+	}
+    @keyframes fadeBgd {
+	    from {opacity:0; filter:blur(10px); background-size: 200%;}
+	    to {opacity:1; filter:blur(0); background-size: 100%;}
+	}
+
+</style>
+</head>
+
+<body>
+	<div id="hero">
+	    <div id="bgd"></div>
+		<div id="hero__caption">
+		    <div id="hero__title"><h1>Title of Exhibit</h1></div>
+		    <div id="hero__meta"><p>by: Artist Name</p>
+		    <p>September 25, 2017</p></div>
+            <div id="hero__cta">Learn More</div>
+		</div>
+	</div>
+</body>
+</html>

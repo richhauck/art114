@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Page Layout With Floats</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <style>
+    *{
+    	box-sizing: border-box;
+    }
+    body{
+      background-color: #666;
+      text-align: center;
+    }
+    header, footer, div{
+      padding: 20px;
+    }
+    main{
+      padding: 20px;
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+    }
+    header, #content{
+      margin-bottom: 20px;
+      background-color: #ccc;
+    }
+    footer{
+      background-color: #ccc;
+    }
+    #content > div{
+      background-color: #fff;
+    }
+    .col1, .col2{
+      min-height: 400px;
+      margin-bottom: 20px;
+    }
+    .col1{
+      width: calc(100% - 300px);
+      float: left;
+    }
+    .col2{
+      width: 280px;
+      float: right;
+    }
+    .clearfix{
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>Header</header>
+    <div id="content">
+      <div class="col1">col1</div>
+      <div class="col2">col2</div>
+      <div class="clearfix">clearfix</div>
+    </div>
+    <footer>Footer</footer>
+  </main>
+</body>
+</html>

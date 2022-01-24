@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slideshow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+    <style>
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 600px;
+          position: relative;
+          margin: auto;
+          background-color: #000;
+          height: 400px;
+          overflow: hidden;
+        }
+        .slide img{
+          display: block;
+          max-width: 100%;
+          max-height: 100%;
+          margin: 0 auto;
+          height: 100%;
+        }
+        /* Next & previous buttons */
+        #previous-button, #next-button {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          margin-top: -22px;
+          padding: 16px;
+          color: white;
+          transition: 0.6s ease;
+          border: none;
+          background-color: transparent;
+        }
+
+        /* Position the "next button" to the right */
+        #next-button {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .previous-button:hover, .next-button:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .slide__caption {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 0;
+          width: calc(100% - 24px);
+          text-align: center;
+          background-color: rgba(0,0,0,0.5);
+        }
+
+        /* Number text (1/3 etc) */
+        #slide__number {
+          color: #f2f2f2;
+          text-shadow: 2px 0 #000;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        #subnav{
+          text-align: center;
+        }
+        .dot {
+          cursor:pointer;
+          height: 13px;
+          width: 13px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+
+        /* Fading animation */
+        @keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+      <div id="slide__number"></div>
+      <div class="slide fade">
+        <img src="https://placehold.it/600x400" alt="image" />
+        <div class="slide__caption">Caption Text</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="https://lorempixel.com/400/200/sports/random" alt="image" />
+        <div class="slide__caption">Caption Two</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="https://unsplash.it/200/300/?random"  alt="image" />
+        <div class="slide__caption">Caption Three</div>
+      </div>
+
+      <button id="previous-button">&#10094;</button>
+      <button id="next-button">&#10095;</button>
+</div>
+<br>
+
+<nav id="subnav">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</nav>
+
+<script>
+// 1. DEFINE VARIABLES
+// Create variable to remember id of current slide
+let slideIndex = 1;
+
+// Remember HTML buttons
+const previousButton = document.getElementById('previous-button');
+const nextButton = document.getElementById('next-button');
+const dots = document.getElementsByClassName('dot');
+const slides = document.getElementsByClassName('slide');
+
+// 2. DEFINE FUNCTIONS
+const incrementSlide = (num) => {
+  slideIndex += num;
+  showSlide(slideIndex);
+}
+const setCurrentSlide = (num) => {
+  slideIndex = Number(num);
+  showSlide(slideIndex);
+}
+const setSlideNumber = () => {
+  const slideNumber = document.getElementById('slide__number');
+  slideNumber.innerHTML = slideIndex + '/' + slides.length;
+}
+const showSlide = (id) => {
+  let i;
+  const dots = document.getElementsByClassName('dot');
+  if (id > slides.length) {
+    slideIndex = 1;
+  }
+  if (id < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(' active', '');
+  }
+  slides[slideIndex-1].style.display = 'block';
+  dots[slideIndex-1].className += ' active';
+
+  setSlideNumber();
+}
+// 3. ASSIGN BEHAVIORS
+previousButton.onclick =(event) => {
+  incrementSlide(-1);
+}
+nextButton.onclick = (event) => {
+  incrementSlide(1);
+};
+for(let i = 0; i < dots.length; i++){
+  dots[i].id = i + 1;
+  dots[i].onclick = (event) => {
+    setCurrentSlide(this.id);
+  };
+}
+showSlide(slideIndex);
+</script>
+</body>
+</html>

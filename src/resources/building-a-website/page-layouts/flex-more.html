@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Page Layout With Flexbox</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <style>
+    *{
+    	box-sizing: border-box;
+    }
+    body{
+      background-color: #666;
+      text-align: center;
+    }
+    main{
+      padding: 20px;
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+    }
+    header, #content{
+      margin-bottom: 20px;
+      background-color: #ccc;
+    }
+    footer{
+      background-color: #ccc;
+    }
+    #content div{
+      border: 1px solid #ccc;
+    }
+    .col1, .col2{
+      min-height: 400px;
+    }
+    .col1{
+      width: calc(100% - 300px);
+    }
+    .col2{
+      width: 280px;
+    }
+    .col-33{
+      width: 33.3%;
+    }
+    .col-half{
+      width: 50%;
+    }
+    .row{
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+    .row--flex{
+      display: flex;
+    }
+    .row div{
+      background-color: rgba(255,255,255,0.5);
+    }
+    .wrapper{
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="row">
+        <div>Header</div>
+      </div>
+    </header>
+    <div id="content">
+
+      <div class="row row--flex">
+        <div class="col1">col1</div>
+        <div class="col2">col2</div>
+      </div>
+
+      <div class="row row--flex">
+        <div class="col-half">col-half</div>
+        <div class="col-half">col-half</div>
+      </div>
+
+      <div class="row row--flex">
+        <div class="col-33">col 33</div>
+        <div class="col-33">col 33</div>
+        <div class="col-33">col 33</div>
+      </div>
+
+    </div>
+
+    <footer>
+      <div class="row">
+        <div>Footer</div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="wrapper">
+    <div class="row row--flex">
+      <div class="col1">col1</div>
+      <div class="col2">col2</div>
+    </div>
+  </div>
+
+</body>
+</html>

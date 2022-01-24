@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Two Column Grid</title>
+    <style>
+        :root{
+            --white: #fff;
+            --boxBg: #ccc;
+            --pageBg: #666;
+            --basePadding: 20px;
+            --baseMargin: 20px;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: var(--pageBg);
+            text-align: center;
+        }
+        header, footer, #content, aside{
+            padding: var(--basePadding);
+        }
+        main{
+            padding: var(--basePadding);
+            width: 80%;
+            margin: 20px auto;
+            background-color: var(--white);
+            display: grid;
+            grid-gap: var(--basePadding);
+            grid-template-columns: auto auto 280px;
+            grid-template-areas:
+                "header header header"
+                "col1 col1 col2"
+                "footer footer footer"
+        }
+        header{
+            grid-area: header;
+            background-color: var(--boxBg);
+        }
+        footer{
+            grid-area: footer;
+            background-color: var(--boxBg);
+        }
+        header, footer, article, aside{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #content > article, #content > aside{
+            background-color: var(--white);
+        }
+        .col1, .col2{
+            min-height: 200px;
+            background-color: var(--boxBg);
+        }
+        .col1{
+            grid-area: col1;
+        }
+        .col2{
+            grid-area: col2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Two Column Grid</h1>
+    <main>
+        <header>Header</header>
+        <article class="col1">col1</article>
+        <aside class="col2">col2</aside>
+        <footer>Footer</footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Animate Div With setInterval()</title>
+<style>
+	body{
+		text-align: center;
+	}
+	#wrapper{
+		overflow:hidden;
+		width:500px;
+		height:500px;
+		margin:0 auto;
+		background-color:#ccc;
+		position:relative;
+	}
+	div#box{
+		position:absolute;
+		width:50px;
+		height:50px;
+		top:215px;
+		background-color:#f00;
+	 }
+</style>
+<script>
+window.addEventListener('load', init, false);
+
+function init(){
+    // tell javascript to remember the HTML elements
+	var wrapper = document.getElementById('wrapper');
+	var box = document.getElementById('box');
+
+    // used to define left position of box in pixels
+	var count = 0;
+
+    /* Declare end position as width of wrapper
+        use offsetWidth since non-inline CSS values can't be easily calculated
+    */
+    var max = parseInt(wrapper.offsetWidth);
+
+    // call loop every 30 milliseconds
+	setInterval(loop, 30);
+
+	function loop(){
+		box.style.left = count + 'px';
+
+		count+=10;
+
+        // if target is reached, reset position to start
+		if(count >= max){
+			count = -50;
+		}
+	}
+}
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="box"></div>
+	</div>
+    <p>This example uses JavaScript's <a href="http://www.w3schools.com/jsref/met_win_setinterval.asp">setInterval()</a></p>
+</svg>
+</body>
+</html>

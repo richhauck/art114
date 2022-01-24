@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+{% include "head.njk" %}
+<body>
+{% include "header.njk" %}
+
+      <div id="main">
+        {% include "nav.njk" %}
+
+        <div id="content">
+          <div id="code-sample">
+            <h1>{{ title }}</h1>
+            {{ content | safe }}
+
+            {% include "footer.njk" %}
+          </div>
+          </div>
+
+          </div>
+          <script src="{{ "/scripts/main.js" | url }}"></script>
+</body>
+</html>
