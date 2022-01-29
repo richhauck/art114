@@ -12,6 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
 
+  eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' })
   eleventyConfig.addShortcode('version', function () {
     return now
   })
@@ -23,7 +24,8 @@ module.exports = function (eleventyConfig) {
 			includes: "_includes"
 		},
 		templateFormats: ["html", "md", "njk"],
-		htmlTemplateEngine: "njk"
+		htmlTemplateEngine: "njk",
+    pathPrefix: "/art114/"
 	};
 
 }
