@@ -59,6 +59,7 @@ aside{
 }
 .links{
 	display: block;
+	margin: 1em 0;
 	padding: 1em;
 	background-color: rgb(224, 238, 240);
 }

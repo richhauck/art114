@@ -4,7 +4,7 @@
     height: 40px;
     padding: 10px;
     border-radius: 50%;
-    background-color: var(--darkgray);
+    background-color: var(--darkGray);
     position: fixed;
     bottom: 1em;
     left: 1em;
@@ -12,7 +12,7 @@
     z-index: 100;
   
     &:hover{
-      background-color: blue;
+      background-color: var(--blue);
     }
   
     @media (max-width: 767px) {

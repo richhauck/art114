@@ -13,7 +13,7 @@ title: File Includes in PHP
     index.php
     about.php
     contact.php
-    /lib
+    /inc
       - header.php
       - footer.php
   </pre>
@@ -21,7 +21,7 @@ title: File Includes in PHP
 
 <p>Here's the code for the pages:</p>
 
-<h2>lib/header.php</h2>
+<h2>inc/header.php</h2>
 {%highlight "php" %}
 <!doctype html>
 <html>
@@ -42,7 +42,7 @@ title: File Includes in PHP
         <h1><?php echo $title;?></h1>
 {% endhighlight %}
 
-<h2>lib/footer.php</h2>
+<h2>inc/footer.php</h2>
 {%highlight "php" %}
     </main>
   </body>
@@ -91,7 +91,7 @@ include 'inc/header.php';
     contact.php
     /projects
       - index.php
-    /lib
+    /inc
       - header.php
       - footer.php
   </pre>

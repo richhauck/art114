@@ -17,7 +17,6 @@ h1{
 	color: var(--darkGray);
 }
 #content h1{
-	border-bottom: 1px solid var(--borderColor);
 	margin-bottom: 0.5em;
 }
 h2{

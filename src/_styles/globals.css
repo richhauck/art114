@@ -10,3 +10,8 @@
     --headerHeight: 120px;
     --transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
+
+  @custom-media --xsmall (max-width: 320px);
+  @custom-media --small (max-width: 480px);
+  @custom-media --medium (max-width: 767px);
+

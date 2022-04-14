@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch from API Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <script>
+        /**
+         * Fetch people from Star Wars API.
+        */
+        const fetchPeople = () => {
+            return fetch('https://swapi.dev/api/people/')
+            .then(resp => resp.json())
+            .then(json => renderPeople(json));
+        }
+        /**
+         * Get data and write to our HTML page.
+        */
+        const renderPeople = (data) => {
+            const content = document.querySelector('#content')
+            content.innerHTML = '';
+            data.results.forEach(person => {
+                const h2 = document.createElement('h2')
+                h2.innerHTML = `<h2>${person.name}</h2>`
+                content.appendChild(h2)
+            })
+        }
+        // Start script once page has loaded
+        document.addEventListener('DOMContentLoaded', fetchPeople());
+    </script>
+    <style>
+        main{
+            width: 60%;
+            margin: 0 auto;
+        }
+        #content{
+            text-align: center;
+            background-color: #ccc;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Using Fetch to Populate a Page</h1>
+        <p>The page contains a script that calls <a href="https://swapi.dev/">SWAPI</a> and lists characters from Star Wars</p>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Documentation on the JavaScript Fetch call</a></p>
+        <div id="content">
+            Loading...
+        </div>
+    </main>
+</body>
+</html>
