@@ -1,0 +1,48 @@
+---
+layout: default.njk
+title: MAMP
+---
+<p><a href="https://www.mamp.info" target="_blank">MAMP</a> is a free software that easily allows you to run an <strong>A</strong>pache/<strong>M</strong>ySQL/<strong>P</strong>HP web server on your own computer with minimal configuration. More can be learned from <a href="https://documentation.mamp.info/" target="_blank">MAMP's documentation</a>.</p>
+<p>For this class, we will use MAMP to leverage <a href="{{ "/lessons/file-includes/" | url }}">PHP File Includes</a> and later set up a WordPress site locally.</p>
+
+
+<ol>
+    <li>Download <a href="https://www.mamp.info/" target="_blank">MAMP</a> (free version, not MAMP Pro).</li>
+    <li>Click &quot;Preferences&quot;. Under the &quot;Server&quot; tab, choose your Document root. This is the folder on your computer's hard drive that you want to behave like the server &quot;root&quot;, or top-level folder.
+        <img src="{{ "/images/lessons/mamp/mamp-server.png" | url }}" alt="MAMP Server screen">
+
+    </li>
+    <li>Hit &quot;OK&quot;</li>
+    <li>Click the &quot;Start&quot; button in the top right corner</li>
+    <li>You should now see the MAMP homepage when visiting <a href="http://localhost:8888/MAMP/?language=English">http://localhost:8888/MAMP/?language=English.</a>
+        <img src="{{ "/images/lessons/mamp/mamp-landing-page.png" | url }}" alt="MAMP Landing Page">
+    </li>
+    <li>If you change the URL to: <a href="http://localhost:8888/" target="_blank">http://localhost:8888/</a> you should see the contents of the document root you defined in step 2.
+        <img src="{{ "/images/lessons/mamp/mamp-index-screen.png" | url }}" alt="MAMP Index Page">
+    </li>
+    <li>Try testing PHP by creating the following file as page.php and then navigating to <a href="http://localhost:8888/page.php">http://localhost:8888/page.php</a>. 
+
+        {% highlight "html" %}
+        <?php
+        $title = 'Hello There.';
+        ?>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+            <h1><?php echo $title; ?></h1>
+        </body>
+        </html>
+      {% endhighlight %}
+
+    </li>
+  </ol>
+  <hr>
+  <p>To stop the server, click "Stop" in the MAMP window or quit MAMP.</p>
+
+  <p>From here, try incorporating <a href="{{ "/lessons/file-includes/" | url }}">PHP File Includes</a>.</p>

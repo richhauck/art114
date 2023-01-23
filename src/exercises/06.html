@@ -1,0 +1,76 @@
+---
+layout: "default.njk"
+title: Exercise 6
+---
+<h3>APIs power the web</h3>
+<p>Application Programming Interfaces (APIs) is a way for two computer programs to communicate with one another. Below is an example of JavaScript retrieving the names of Star Wars films from <a href="https://swapi.dev">SWAPI</a> and populating a table with the results.</p>
+<p>For this assignment, you are to choose an API from this list of <a href="https://github.com/public-apis/public-apis">Public APIs</a> and have the results output to your HTML page. It can be in tabular format like the example, or simply output to the page.</p>
+<p>NOTE: APIs typically require authentication (for accountability). If you choose one that has Auth, you may need to register for access.</p>
+
+{% highlight "html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Films via API</title>
+</head>
+<body>
+
+        <h1>Star Wars Films</h1>
+        <span role="status" id="loading">Loading...</span>
+        <table id="movies"></table>
+
+
+<script>
+// api url
+const api_url = "https://swapi.dev/api/films";
+  
+    // Defining async function
+    async function getData(url) {
+    
+    // Storing response
+    const response = await fetch(url);
+    
+    // Storing data in form of JSON
+    let data = await response.json();
+    
+    if (response) {
+        hideloader();
+    }
+    show(data);
+}
+// Calling that async function
+getData(api_url);
+  
+// Function to hide the loader
+function hideloader() {
+    document.getElementById('loading').style.display = 'none';
+}
+// Function to define innerHTML for HTML table
+function show(data) {
+    let tableData = 
+        `<tr>
+          <th>Title</th>
+          <th>Episode ID</th>
+          <th>Opening Crawl</th>
+          <th>Director</th>
+         </tr>`;
+    
+    // Loop to access all rows 
+    for (let r of data.results) {
+        tableData += `<tr> 
+            <td>${r.title} </td>
+            <td>${r.episode_id}</td>
+            <td>${r.opening_crawl}</td> 
+            <td>${r.director}</td>
+        </tr>`;
+    }
+    // Setting innerHTML as tab variable
+    document.getElementById("movies").innerHTML = tableData;
+}
+    </script>
+</body>
+</html>
+{% endhighlight %}

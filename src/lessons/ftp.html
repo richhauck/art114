@@ -1,0 +1,50 @@
+---
+layout: default.njk
+title: FTP
+---
+<p>FTP stands for File Transfer Protocol, and it's a method to upload and download web site files. In order to use FTP, you need an FTP client (or software).</p>
+<p>For this class, you can use the free FTP clients <a href="https://filezilla-project.org/" target="_blank">FileZilla</a> or <a href="https://cyberduck.io/" target="_blank">Cyberduck</a>.</p>
+
+<figure>
+    <img src="{{ "/images/lessons/ftp/filezilla.png" | url }}" alt="FileZilla Interface">
+    <figcaption>
+        <ol>
+            <li> These credentials are supplied by your registrar. The username and password are typically the same credentials you use to log into your registrar.<br>
+                <strong>Host</strong>: your domain (ex: yoursite.com)<br>
+                <strong>Username</strong>: username assigned by your registrar<br>
+                <strong>Password</strong>: Password assigned by your registrar
+            </li>
+            <li>Real-time status of your connection</li>
+            <li>Folders on your local hard drive</li>
+            <li>Folders on the remote server</li>
+            <li>Contents of selected folder on your hard drive--leave everything here alone and ONLY NAVIGATE TO YOUR public_html directory. This is your website directory. Feel free to delete anything within /public_html</li>
+            <li>Contents of selected folder on your server</li>
+        </ol>
+    </figcaption>
+  </figure>
+
+  <h2>Folder setup</h2>
+  <p>I would recommend creating a "Sites" folder under your user folder on your hard drive, creating the folder structure below, and uploading this folder structure to your server (within /public_html). This folder should be a mirror image of what's on the server, and should not contain production files (AIs, PSDs, etc.).</p>
+<div class="box">
+    <pre>
+        index.html
+        404.html
+        favicon.ico
+        /projects
+            /project-1
+            /project-2
+            /project-3
+            /project-4
+        /assignments
+            /assignment-1
+            /assignment-2
+            /assignment-3
+            /assignment-4
+            /assignment-5
+            /assignment-6
+            /assignment-7
+            /assignment-8
+            /assignment-9
+            /assignment-10
+      </pre>
+</div>
