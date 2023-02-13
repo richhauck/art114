@@ -1,0 +1,18 @@
+---
+layout: "default.njk"
+title: Exercise 5
+---
+<h2>Static Website</h2>
+
+<p>astro.config.mjs:</p>
+{% highlight "javascript" %}
+import { defineConfig } from 'astro/config';
+
+// https://astro.build/config
+export default defineConfig({
+  base: '/assignments/assignment-5',
+    build: {
+      site: 'http://yoursite.com/assignments/assignment-5/',
+    }
+});
+{% endhighlight %}
