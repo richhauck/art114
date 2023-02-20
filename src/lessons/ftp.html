@@ -12,12 +12,13 @@ title: FTP
             <li> These credentials are supplied by your registrar. The username and password are typically the same credentials you use to log into your registrar.<br>
                 <strong>Host</strong>: your domain (ex: yoursite.com)<br>
                 <strong>Username</strong>: username assigned by your registrar<br>
-                <strong>Password</strong>: Password assigned by your registrar
+                <strong>Password</strong>: Password assigned by your registrar<br>
+                <strong>Port</strong>: Can usually be kept blank
             </li>
             <li>Real-time status of your connection</li>
             <li>Folders on your local hard drive</li>
             <li>Folders on the remote server</li>
-            <li>Contents of selected folder on your hard drive--leave everything here alone and ONLY NAVIGATE TO YOUR public_html directory. This is your website directory. Feel free to delete anything within /public_html</li>
+            <li>Contents of selected folder on your hard drive--leave everything here alone and ONLY NAVIGATE TO YOUR public_html directory. This is your website directory. Feel free to delete anything within /public_html (/cgi-bin, etc.)</li>
             <li>Contents of selected folder on your server</li>
         </ol>
     </figcaption>
@@ -34,7 +35,6 @@ title: FTP
             /project-1
             /project-2
             /project-3
-            /project-4
         /assignments
             /assignment-1
             /assignment-2
@@ -48,3 +48,12 @@ title: FTP
             /assignment-10
       </pre>
 </div>
+
+<aside>
+    <h3>Tips</h3>
+    <ul>
+      <li>Your master FTP account is usually the username/password provided by your hosting provider--it's often the same credentials for logging into the service.</li>
+      <li>Most hosts allow you to create additional FTP accounts in their control panel. You can access this by logging into your host's website.</li>
+      <li>Production files (PSDs, AIs, etc.) should not be a part of the site. These files often take up a lot of space and aren't interpreted by a browser.</li>
+    </ul>
+  </aside>
