@@ -26,23 +26,23 @@
 <script>
 window.addEventListener('load', init, false);
 
-function init(){
+const init = () => {
     // tell javascript to remember the HTML elements
-	var wrapper = document.getElementById('wrapper');
-	var box = document.getElementById('box');
+	const wrapper = document.getElementById('wrapper');
+	const box = document.getElementById('box');
 
     // used to define left position of box in pixels
-	var count = 0;
+	let count = 0;
 
     /* Declare end position as width of wrapper
         use offsetWidth since non-inline CSS values can't be easily calculated
     */
-    var max = parseInt(wrapper.offsetWidth);
+    const max = parseInt(wrapper.offsetWidth);
 
     // call loop every 30 milliseconds
 	setInterval(loop, 30);
 
-	function loop(){
+	const loop = () => {
 		box.style.left = count + 'px';
 
 		count+=10;
