@@ -48,9 +48,6 @@
         );
       })();
 
-      // call init when window has loaded
-      window.addEventListener('load', init, false);
-
       const init = () => {
         // tell javascript to remember the HTML elements
         const wrapper = document.getElementById('wrapper');
@@ -61,11 +58,8 @@
 
         /* Declare end position as width of wrapper
         use offsetWidth since non-inline CSS values can't be easily calculated
-    */
+        */
         const max = parseInt(wrapper.offsetWidth);
-
-        // start loop
-        loop();
 
         // recursively calls itself
         const loop = () => {
@@ -79,7 +73,13 @@
             count = -50;
           }
         };
+
+        // start loop
+        loop();
       };
+
+      // call init when window has loaded
+      window.addEventListener('load', init, false);
     </script>
   </body>
 </html>

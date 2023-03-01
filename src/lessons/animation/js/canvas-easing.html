@@ -12,10 +12,8 @@
       }
     </style>
     <script>
-      window.addEventListener('load', init, false);
-
       const init = () => {
-        var canvas = document.getElementById('canvas');
+        const canvas = document.getElementById('canvas');
         if (canvas.getContext('2d')) {
           main(canvas);
         } else {
@@ -23,8 +21,8 @@
         }
       };
       const main = (canvas) => {
-        var canvas = canvas;
-        var ctx = canvas.getContext('2d');
+        const canvas = canvas;
+        const ctx = canvas.getContext('2d');
 
         const CANVAS_WIDTH = canvas.width;
         const CANVAS_HEIGHT = canvas.height;
@@ -54,8 +52,8 @@
           ctx.fillRect(xPos, 215, 50, 50);
 
           /*
-		If shape is close enough to target, remove interval and avoid Zeno's Paradox!
-		*/
+          If shape is close enough to target, remove interval and avoid Zeno's Paradox!
+          */
           if (Math.abs(movementX) < 1) {
             clearInterval(interval);
           }
@@ -64,6 +62,7 @@
           ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         };
       };
+      window.addEventListener('load', init, false);
     </script>
   </head>
   <body>

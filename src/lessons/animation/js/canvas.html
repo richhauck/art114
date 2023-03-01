@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas Animation Example</title>
+    <style>
+      canvas {
+        background-color: #ccc;
+      }
+    </style>
+    <script>
+      window.addEventListener('load', init, false);
+      function init() {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let count = 0;
+        const CANVAS_WIDTH = canvas.width;
+        const CANVAS_HEIGHT = canvas.height;
+        // size of our box
+        const size = 50;
+
+        // define which function we want to call and the interval (in milliseconds) to call it.
+        setInterval(loop, 30);
+
+        function loop() {
+          // first, we clear the canvas to prevent trails
+          clear();
+
+          // set style
+          ctx.fillStyle = '#f00';
+          ctx.strokeStyle = '#000';
+          ctx.lineWidth = 5;
+
+          // Draw box
+          ctx.fillRect(count, 230, size, size);
+          ctx.strokeRect(count, 230, size, size);
+
+          // if count reaches the right side, set it back to the left.
+          if (count >= CANVAS_WIDTH + size) {
+            count = -size;
+          }
+          count += 10;
+        }
+        /**
+         * Clears the canvas
+         */
+        function clear() {
+          ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500">
+      Your browser does not support HTML5 Canvas.
+    </canvas>
+  </body>
+</html>
