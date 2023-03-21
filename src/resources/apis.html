@@ -1,0 +1,173 @@
+---
+layout: default.njk
+title: APIs
+---
+
+<p>
+  Application Programming Interfaces (APIs) are a way for two computer programs
+  to communicate with one another. With
+  <a href="https://www.w3schools.com/js/js_api_intro.asp">Web APIs</a>, the data
+  is often transferred in
+  <a href="https://www.w3schools.com/js/js_json_intro.asp">JSON</a> format.
+</p>
+
+<hr />
+<h3>Star Wars Example</h3>
+<p>
+  The following example uses <a href="https://swapi.dev/">SWAPI</a> to populate
+  a table with Star Wars Opening Crawl text.
+</p>
+
+<p
+  class="codepen"
+  data-height="300"
+  data-default-tab="html,result"
+  data-slug-hash="ExeeGjq"
+  data-user="richhauck"
+  style="
+    height: 300px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid;
+    margin: 1em 0;
+    padding: 1em;
+  "
+>
+  <span
+    >See the Pen
+    <a href="https://codepen.io/richhauck/pen/ExeeGjq"> SWAPI API Example</a> by
+    Rich Hauck (<a href="https://codepen.io/richhauck">@richhauck</a>) on
+    <a href="https://codepen.io">CodePen</a>.</span
+  >
+</p>
+
+<hr />
+<h3>Library of Congress (LOC) Example</h3>
+<p>
+  This example generates pulls a single instance from the Library of Congress
+  (<a href="https://www.loc.gov">https://www.loc.gov</a>).
+</p>
+<strong>For context:</strong>
+<ul>
+  <li>
+    <a href="https://www.loc.gov/apis/json-and-yaml/requests/endpoints/"
+      >LOC Documentation on JSON Requests</a
+    >
+  </li>
+  <li>
+    Here's the search request:
+    <a href="https://www.loc.gov/search/?q=camden%20yards"
+      >https://www.loc.gov/search/?q=camden%20yards</a
+    >
+  </li>
+  <li>
+    adding <em>&fo=json</em> to the URL will return JSON:
+    <a href="https://www.loc.gov/search/?q=camden%20yards&fo=json"
+      >https://www.loc.gov/search/?q=camden%20yards&fo=json</a
+    >
+  </li>
+  <li>
+    Here's the result page:
+    <a href="https://www.loc.gov/item/2010630835/"
+      >https://www.loc.gov/item/2010630835/</a
+    >
+  </li>
+</ul>
+<p
+  class="codepen"
+  data-height="300"
+  data-default-tab="html,result"
+  data-slug-hash="XWPPoJw"
+  data-user="richhauck"
+  style="
+    height: 300px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid;
+    margin: 1em 0;
+    padding: 1em;
+  "
+>
+  <span
+    >See the Pen
+    <a href="https://codepen.io/richhauck/pen/XWPPoJw">
+      Camden Yards via LOC API</a
+    >
+    by Rich Hauck (<a href="https://codepen.io/richhauck">@richhauck</a>) on
+    <a href="https://codepen.io">CodePen</a>.</span
+  >
+</p>
+<hr />
+
+<h3>Animal Crossing Example</h3>
+<p>
+  This example generates a grid of villagers images and names from
+  <a href="https://acnhapi.com/">https://acnhapi.com/</a>.
+</p>
+<p
+  class="codepen"
+  data-height="300"
+  data-default-tab="html,result"
+  data-slug-hash="BaOOvaw"
+  data-user="richhauck"
+  style="
+    height: 300px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid;
+    margin: 1em 0;
+    padding: 1em;
+  "
+>
+  <span
+    >See the Pen
+    <a href="https://codepen.io/richhauck/pen/BaOOvaw">
+      API - Animal Crossing</a
+    >
+    by Rich Hauck (<a href="https://codepen.io/richhauck">@richhauck</a>) on
+    <a href="https://codepen.io">CodePen</a>.</span
+  >
+</p>
+
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+<aside>
+  <h2>More Resources</h2>
+  <ul>
+    <li>
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON"
+        >MDN Working with JSON</a
+      >
+    </li>
+    <li>
+      <a href="https://www.postman.com/">Postman - Software for testing APIs</a>
+    </li>
+    <li>
+      <a
+        href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en"
+        >Chrome JSON Formatter Extension</a
+      >
+    </li>
+    <li>
+      Tutorial:
+      <a
+        href="https://bootcamp.uxdesign.cc/how-to-create-your-first-figma-plugin-that-pulls-in-api-data-5042572c17a7"
+        >How to create your first API-backed Figma plugin that pulls in API
+        data</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.figma.com/community/plugin/789839703871161985/JSON-to-Figma"
+        >JSON to Figma Plugin</a
+      >
+    </li>
+  </ul>
+</aside>
