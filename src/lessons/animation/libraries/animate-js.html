@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Animate.css example</title>
-  <link rel="stylesheet" href="https://cdnjs.com/libraries/animate.css">
-  <style>
-  	body{
-  		text-align: center;
-  	}
-  	#wrapper{
-  		overflow:hidden;
-  		width:500px;
-  		height:500px;
-  		margin:0 auto;
-  		background-color:#ccc;
-  		position:relative;
-      cursor: pointer;
-  	}
-  	div#box{
-  		position:absolute;
-  		left:150px;
-  		width:200px;
-  		height:200px;
-  		top:150px;
-  		background-color:#f00;
-
-  	}
-  </style>
-</head>
-<body>
-  <div id="wrapper">
-        <div id="box" class="animated"></div>
-	</div>
-  <p>Example of <a href="https://daneden.github.io/animate.css/">Animate.css</a> with <a href="http://jquery.com/">JQuery</a> mouse interaction.</p>
-  <script
-		  src="https://code.jquery.com/jquery-3.3.1.min.js"
-		  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-		  crossorigin="anonymous"></script>
-  <script>
-  $(document).ready(function() {
-      $('#wrapper').hover(function() {
-      $('#box').addClass('bounceIn');
-    });
-      $('#wrapper').mouseout(function() {
-      $('#box').removeClass('bounceIn');
-    });
-  });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animate.css example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      body {
+        text-align: center;
+      }
+      #wrapper {
+        overflow: hidden;
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        background-color: #ccc;
+        position: relative;
+        cursor: pointer;
+      }
+      div#box {
+        position: absolute;
+        left: 150px;
+        width: 200px;
+        height: 200px;
+        top: 150px;
+        background-color: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="box" class="animated"></div>
+    </div>
+    <p>
+      Example of
+      <a href="https://animate.style/">Animate.css</a> with
+      <a href="http://jquery.com/">JQuery</a> mouse interaction.
+    </p>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $('#wrapper').hover(function () {
+          $('#box').addClass('animate__bounceIn');
+        });
+        $('#wrapper').mouseout(function () {
+          $('#box').removeClass('animate__bounceIn');
+        });
+      });
+    </script>
+  </body>
 </html>

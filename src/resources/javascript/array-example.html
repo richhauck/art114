@@ -1,61 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Working With Arrays</title>
     <style>
-        #output{
-            min-height: 200px;
-            border:1px solid #999;
-            background-color: #ccc;
-            padding:10px;
-            margin: 10px 0;
-        }
+      #output {
+        min-height: 200px;
+        border: 1px solid #999;
+        background-color: #ccc;
+        padding: 10px;
+        margin: 10px 0;
+      }
     </style>
-</head>
-<body>
-   
-   <div id="output"></div>
-   <button id="randomBtn">Random Beatle</button>
-   <button id="u2ListBtn">List U2 Members</button>
-    
+  </head>
+  <body>
+    <div id="output"></div>
+    <button id="randomBtn">Random Beatle</button>
+    <button id="u2ListBtn">List U2 Members</button>
+
     <script>
-        // Beatles
-        let beatlesMembers = new Array();
-        beatlesMembers[0] = 'John';
-        beatlesMembers[1] = 'Paul';
-        beatlesMembers[2] = 'George';
-        beatlesMembers[3] = 'Ringo';
-        
-        // U2
-        let u2Members = ['Bono', 'The Edge', 'Adam Clayton', 'Larry Mullen, Jr.'];
-        
-        // Tell JavaScript to remember certain UI elements
-        const randomBtn = document.getElementById('randomBtn');
-        const u2ListBtn = document.getElementById('u2ListBtn');
-        const output = document.getElementById('output');
-        
-        // Tell JavaScript to tell buttons to behave on event
-        randomBtn.onclick = event => {
-            showRandomBeatle(event);
+      // Beatles
+      let beatlesMembers = new Array();
+      beatlesMembers[0] = 'John';
+      beatlesMembers[1] = 'Paul';
+      beatlesMembers[2] = 'George';
+      beatlesMembers[3] = 'Ringo';
+
+      // U2
+      let u2Members = ['Bono', 'The Edge', 'Adam Clayton', 'Larry Mullen, Jr.'];
+
+      // Tell JavaScript to remember certain UI elements
+      const randomBtn = document.getElementById('randomBtn');
+      const u2ListBtn = document.getElementById('u2ListBtn');
+      const output = document.getElementById('output');
+
+      // Tell JavaScript to tell buttons to behave on event
+      randomBtn.onclick = (event) => {
+        showRandomBeatle(event);
+      };
+      u2ListBtn.onclick = (event) => {
+        listU2Members(event);
+      };
+      // Define functions
+      const showRandomBeatle = (event) => {
+        var rand = Math.random() * 3;
+        rand = Math.round(rand);
+        output.innerHTML = beatlesMembers[rand];
+      };
+      const listU2Members = (event) => {
+        let u2List = '<ul>';
+        for (let i = 0; i < u2Members.length; i++) {
+          u2List += `<li> ${u2Members[i]}</li>`;
         }
-        u2ListBtn.onclick = event => {
-            listU2Members(event);
-        }
-        // Define functions
-        const showRandomBeatle = (event) =>{
-            var rand = Math.random()*3;
-            rand = Math.round(rand);
-            output.innerHTML = beatlesMembers[rand];
-        }
-        const listU2Members = (event) =>{
-            let u2List = '<ul>';
-            for (let i = 0; i < u2Members.length; i++) { 
-                u2List += '<li>' + u2Members[i] + '</li>';
-            }
-            u2List += '</ul>';
-            output.innerHTML = u2List;
-        }
+        u2List += '</ul>';
+        output.innerHTML = u2List;
+      };
     </script>
-</body>
+  </body>
 </html>

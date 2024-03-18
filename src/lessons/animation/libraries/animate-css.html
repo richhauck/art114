@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Animate.css example</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <style>
-  	body{
-  		text-align: center;
-  	}
-  	#wrapper{
-  		overflow:hidden;
-  		width:500px;
-  		height:500px;
-  		margin:0 auto;
-  		background-color:#ccc;
-  		position:relative;
-  	}
-  	div#box{
-  		position:absolute;
-  		left:150px;
-  		width:200px;
-  		height:200px;
-  		top:150px;
-  		background-color:#f00;
-      animation-delay: 0.5s;
-  	}
-    div#box2{
-        position:absolute;
-        left:100px;
-        width:300px;
-        height:300px;
-        top:100px;
-        background-color:rgba(0,0,255,0.5);
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animate.css example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      body {
+        text-align: center;
+      }
+      #wrapper {
+        overflow: hidden;
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        background-color: #ccc;
+        position: relative;
+      }
+      div#box {
+        position: absolute;
+        left: 150px;
+        width: 200px;
+        height: 200px;
+        top: 150px;
+        background-color: #f00;
+        animation-delay: 0.5s;
+      }
+      div#box2 {
+        position: absolute;
+        left: 100px;
+        width: 300px;
+        height: 300px;
+        top: 100px;
+        background-color: rgba(0, 0, 255, 0.5);
         animation-delay: 1s;
-  	}
-  </style>
-</head>
-<body>
-  <div id="wrapper">
-    <div id="box" class="animated bounceOut"></div>
-		<div id="box2" class="animated jello"></div>
-	</div>
-  <p>Example of <a href="https://daneden.github.io/animate.css/">Animate.css</a>. Sequences can be achieved with animation delays.</p>
-</body>
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="box" class="animate__animated animate__bounceOut"></div>
+      <div id="box2" class="animate__animated animate__jello"></div>
+    </div>
+    <p>
+      Example of
+      <a href="https://animate.style">Animate.css</a>. Sequences can be achieved
+      with animation delays.
+    </p>
+  </body>
 </html>

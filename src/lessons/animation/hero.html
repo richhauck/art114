@@ -1,106 +1,130 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Hero</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
-<style>
-    *{
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hero Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
         animation-iteration-count: 1;
-		animation-fill-mode: forwards;
-    }
-	body{
-		background-color: #666;
-		text-align: center;
-	}
-	#hero{
-		overflow:hidden;
-		width:800px;
-		height:400px;
-		margin:0 auto;
-		background-color:#ccc;
-		position:relative;
-	}
-	#hero__caption{
+        animation-fill-mode: forwards;
+      }
+      body {
+        background-color: #666;
+        text-align: center;
+      }
+      #hero {
+        overflow: hidden;
+        width: 800px;
+        height: 400px;
+        margin: 0 auto;
+        background-color: #ccc;
+        position: relative;
+      }
+      #hero__caption {
         color: #fff;
-		position:absolute;
-		width:320px;
-		height:380px;
-        right:1200px;
-		top:0;
-		background-color:#000;
+        position: absolute;
+        width: 320px;
+        height: 380px;
+        right: 1200px;
+        top: 0;
+        background-color: #000;
         text-align: left;
         padding: 20px;
 
-		animation-name: moveCaption;
-		animation-duration: 1s;
-		animation-delay: 0;
-	}
-    #bgd{
+        animation-name: moveCaption;
+        animation-duration: 1s;
+        animation-delay: 0;
+      }
+      #bgd {
         width: 800px;
         height: 400px;
         background-image: url(https://picsum.photos/800/400);
         opacity: 0;
         animation-name: fadeBgd;
-		animation-duration: 2s;
-		animation-delay: 1s;
-		transition-timing-function: ease-out;
-    }
-    #hero__title{
+        animation-duration: 2s;
+        animation-delay: 1s;
+        transition-timing-function: ease-out;
+      }
+      #hero__title {
         opacity: 0;
         animation-name: fadeIn;
-		animation-duration: 1s;
-		animation-delay: 2.4s;
-    }
-    #hero__meta{
+        animation-duration: 1s;
+        animation-delay: 2.4s;
+      }
+      #hero__meta {
         opacity: 0;
         animation-name: fadeIn;
-		animation-duration: 1s;
-		animation-delay: 3s;
-    }
-    a#hero__cta{
-		text-decoration: none;
+        animation-duration: 1s;
+        animation-delay: 3s;
+      }
+      a#hero__cta {
+        text-decoration: none;
         opacity: 0;
         animation-name: fadeIn;
-		animation-duration: 1s;
-		animation-delay: 4s;
+        animation-duration: 1s;
+        animation-delay: 4s;
         display: inline-block;
         border: 2px solid #fff;
-        padding:5px 10px;
-    }
-	a#hero__cta:link, a#hero__cta:visited{
-		color: #fff;
-	}
-	a#hero__cta:hover{
-		background-color: #fff;
-		color: #000;
-	}
-	@keyframes moveCaption {
-	    from {right:-1200px;}
-	    to {right:0;}
-	}
+        padding: 5px 10px;
+      }
+      a#hero__cta:link,
+      a#hero__cta:visited {
+        color: #fff;
+      }
+      a#hero__cta:hover {
+        background-color: #fff;
+        color: #000;
+      }
+      @keyframes moveCaption {
+        from {
+          right: -1200px;
+        }
+        to {
+          right: 0;
+        }
+      }
 
-    @keyframes fadeIn {
-	    from {opacity:0;}
-	    to {opacity:1;}
-	}
-    @keyframes fadeBgd {
-	    from {opacity:0; filter:blur(10px); background-size: 200%;}
-	    to {opacity:1; filter:blur(0); background-size: 100%;}
-	}
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeBgd {
+        from {
+          opacity: 0;
+          filter: blur(10px);
+          background-size: 200%;
+        }
+        to {
+          opacity: 1;
+          filter: blur(0);
+          background-size: 100%;
+        }
+      }
+    </style>
+  </head>
 
-</style>
-</head>
-
-<body>
-	<div id="hero">
-	    <div id="bgd"></div>
-		<div id="hero__caption">
-		    <div id="hero__title"><h1>Title goes here</h1></div>
-		    <div id="hero__meta"><p>This is a subtitle</p>
-		    <p>September 25, 2023</p></div>
-            <a id="hero__cta" href="#">Learn More</a>
-		</div>
-	</div>
-</body>
+  <body>
+    <div id="hero">
+      <div id="bgd"></div>
+      <div id="hero__caption">
+        <div id="hero__title"><h1>Title goes here</h1></div>
+        <div id="hero__meta">
+          <p>This is a subtitle</p>
+          <p>September 25, 2023</p>
+        </div>
+        <a id="hero__cta" href="#">Learn More</a>
+      </div>
+    </div>
+  </body>
 </html>
