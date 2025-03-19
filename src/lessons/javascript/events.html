@@ -1,0 +1,214 @@
+---
+layout: default.njk
+title: JavaScript Events
+---
+
+<p>
+  Events are actions that occur in the browser. They can be user interactions or
+  system events. Below is a non-exhaustive list of events. For a list with
+  examples, have a look at W3 Schools'
+  <a href="https://www.w3schools.com/jsref/dom_obj_event.asp"
+    >JavaScript Events</a
+  >
+  page.
+</p>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Event</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td rowspan="9">Mouse Events</td>
+    <td>click</td>
+    <td>Triggered when an element is clicked</td>
+  </tr>
+  <tr>
+    <td>dblclick</td>
+    <td>Triggered when an element is double-clicked</td>
+  </tr>
+  <tr>
+    <td>mousedown</td>
+    <td>Triggered when a mouse button is pressed</td>
+  </tr>
+  <tr>
+    <td>mouseup</td>
+    <td>Triggered when a mouse button is released</td>
+  </tr>
+  <tr>
+    <td>mousemove</td>
+    <td>Triggered when the mouse moves</td>
+  </tr>
+  <tr>
+    <td>mouseover</td>
+    <td>Triggered when the mouse enters an element</td>
+  </tr>
+  <tr>
+    <td>mouseout</td>
+    <td>Triggered when the mouse leaves an element</td>
+  </tr>
+  <tr>
+    <td>mouseenter</td>
+    <td>Triggered when the mouse enters an element (does not bubble)</td>
+  </tr>
+  <tr>
+    <td>mouseleave</td>
+    <td>Triggered when the mouse leaves an element (does not bubble)</td>
+  </tr>
+
+  <tr>
+    <td rowspan="3">Keyboard Events</td>
+    <td>keydown</td>
+    <td>Triggered when a key is pressed down</td>
+  </tr>
+  <tr>
+    <td>keyup</td>
+    <td>Triggered when a key is released</td>
+  </tr>
+  <tr>
+    <td>keypress</td>
+    <td>Deprecated: Use keydown instead</td>
+  </tr>
+
+  <tr>
+    <td rowspan="6">Form Events</td>
+    <td>focus</td>
+    <td>Triggered when an element gains focus</td>
+  </tr>
+  <tr>
+    <td>blur</td>
+    <td>Triggered when an element loses focus</td>
+  </tr>
+  <tr>
+    <td>change</td>
+    <td>Triggered when an input value changes</td>
+  </tr>
+  <tr>
+    <td>input</td>
+    <td>Triggered when the value of an input changes</td>
+  </tr>
+  <tr>
+    <td>submit</td>
+    <td>Triggered when a form is submitted</td>
+  </tr>
+  <tr>
+    <td>reset</td>
+    <td>Triggered when a form is reset</td>
+  </tr>
+
+  <tr>
+    <td rowspan="3">Clipboard Events</td>
+    <td>copy</td>
+    <td>Triggered when content is copied</td>
+  </tr>
+  <tr>
+    <td>cut</td>
+    <td>Triggered when content is cut</td>
+  </tr>
+  <tr>
+    <td>paste</td>
+    <td>Triggered when content is pasted</td>
+  </tr>
+
+  <tr>
+    <td rowspan="7">Drag and Drop Events</td>
+    <td>drag</td>
+    <td>Triggered when an element is dragged</td>
+  </tr>
+  <tr>
+    <td>dragstart</td>
+    <td>Triggered when dragging starts</td>
+  </tr>
+  <tr>
+    <td>dragend</td>
+    <td>Triggered when dragging ends</td>
+  </tr>
+  <tr>
+    <td>dragenter</td>
+    <td>Triggered when a dragged element enters a drop target</td>
+  </tr>
+  <tr>
+    <td>dragleave</td>
+    <td>Triggered when a dragged element leaves a drop target</td>
+  </tr>
+  <tr>
+    <td>dragover</td>
+    <td>Triggered when an element is dragged over a drop target</td>
+  </tr>
+  <tr>
+    <td>drop</td>
+    <td>Triggered when an element is dropped</td>
+  </tr>
+
+  <tr>
+    <td rowspan="5">Window Events</td>
+    <td>load</td>
+    <td>Triggered when the page fully loads</td>
+  </tr>
+  <tr>
+    <td>DOMContentLoaded</td>
+    <td>Triggered when HTML is fully loaded</td>
+  </tr>
+  <tr>
+    <td>resize</td>
+    <td>Triggered when the window is resized</td>
+  </tr>
+  <tr>
+    <td>scroll</td>
+    <td>Triggered when the page is scrolled</td>
+  </tr>
+  <tr>
+    <td>beforeunload</td>
+    <td>Triggered when the page is about to be unloaded</td>
+  </tr>
+
+  <tr>
+    <td rowspan="4">Touch Events</td>
+    <td>touchstart</td>
+    <td>Triggered when a touch starts</td>
+  </tr>
+  <tr>
+    <td>touchmove</td>
+    <td>Triggered when a touch moves</td>
+  </tr>
+  <tr>
+    <td>touchend</td>
+    <td>Triggered when a touch ends</td>
+  </tr>
+  <tr>
+    <td>touchcancel</td>
+    <td>Triggered when a touch is interrupted</td>
+  </tr>
+
+  <tr>
+    <td rowspan="5">Media Events</td>
+    <td>play</td>
+    <td>Triggered when media starts playing</td>
+  </tr>
+  <tr>
+    <td>pause</td>
+    <td>Triggered when media is paused</td>
+  </tr>
+  <tr>
+    <td>ended</td>
+    <td>Triggered when media playback ends</td>
+  </tr>
+  <tr>
+    <td>volumechange</td>
+    <td>Triggered when volume changes</td>
+  </tr>
+  <tr>
+    <td>timeupdate</td>
+    <td>Triggered when playback position updates</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">Network Events</td>
+    <td>online</td>
+    <td>Triggered when browser goes online</td>
+  </tr>
+  <tr>
+    <td>offline</td>
+    <td>Triggered when browser goes offline</td>
+  </tr>
+</table>
