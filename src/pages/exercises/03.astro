@@ -1,0 +1,70 @@
+---
+const title = "Exercises";
+import Layout from "../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <h3>Conditional Statements, Arrays, and Loops</h3>
+  <p>
+    Create a form that accepts name, age, and email address. The form should
+    include validation and require for each field. Upon form submission, it
+    should display “Name, age” on the page with the email address being used as
+    a mailto hyperlink on the name.
+  </p>
+  <!--
+<p>Using the example code below,</p>
+<ol>
+    <li>Add a required email field beneath the fName field</li>
+    <li>Declare the necessary variables</li>
+    <li>Have the username, email, and comment populate the ul#comments</li>
+</ol>
+{% highlight "html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy Content Form</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <ul id="comments">
+
+            </ul>
+            <hr>
+            <form id="comment-form" name="comment-form" action="">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="Your Name" required><br>
+                
+                <textarea name="comment" id="comment" cols="30" rows="10" required></textarea><br><br>
+                
+                <input id="submit" type="submit" value="Submit">
+
+              </form> 
+        </div>
+    </main>
+    <script>
+        document.getElementById('submit').addEventListener('click', function(event){
+            // Prevent form from submitting to action
+            event.preventDefault();
+
+            // Declare variables - both UI elements and form values
+            const commentForm = document.getElementById('comment-form');
+            const fName = commentForm.fname.value;
+
+            // Write to comments list's innerHTML
+
+            // Reset form after submitting
+            commentForm.reset();
+
+        });
+    </script>
+</body>
+</html>
+{% endhighlight %}
+-->
+</Layout>

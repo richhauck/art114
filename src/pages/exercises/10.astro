@@ -1,0 +1,32 @@
+---
+const title = "Exercises";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title={title}>
+  <h3>API - Designing Around Data</h3>
+  <p>
+    Fetch data from an API and render the results of your request to an HTML
+    page. Your final HTML page should be published at by next class.
+  </p>
+  <p>
+    Reference the <a href={`${import.meta.env.BASE_URL}resources/apis/`}
+      >API examples shown in class</a
+    >, but your assignment cannot be a copy of one of these examples. Choose a
+    different endpoint and/or output different content.
+  </p>
+  <p>
+    The API source is up to you. Consider the Library of Congress API, which has
+    <a href="https://www.loc.gov/apis/json-and-yaml/requests/endpoints/"
+      >extensive documentation</a
+    >. Alternatively, you could choose from from this list of
+    <a href="https://github.com/public-apis/public-apis">Public APIs</a>. Do
+    note that APIs typically require authentication (for accountability). If you
+    choose one that has Auth, you may need to register for access.
+  </p>
+
+  <p>
+    Use CSS to make a responsive design for the data you have loaded. Your final
+    HTML page should be published at by next class.
+  </p>
+</Layout>

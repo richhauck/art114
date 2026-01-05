@@ -1,0 +1,193 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.scss";
+import "../styles/grid.css";
+import "../styles/hamburger.css";
+const { title, fullWidth } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPLN8ES51X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WPLN8ES51X");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      href={`${import.meta.env.BASE_URL}favicon.png`}
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href={`${import.meta.env.BASE_URL}favicon.svg`}
+      type="image/svg+xml"
+    />
+    <link
+      rel="apple-touch-icon"
+      href={`${import.meta.env.BASE_URL}apple-touch-icon.png`}
+    />
+    <script is:inline src={`${import.meta.env.BASE_URL}scripts/main.js`}
+    ></script>
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} - Art 114 Interactive Media and Design</title>
+  </head>
+  <body id="top">
+    <button id="toggle-nav" class="hamburger hamburger--squeeze" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <header id="primary-header">
+      <div>
+        <h1>Art 114: <span>Interactive Media and Design</span></h1><p>
+          Spring 2026 | Harrisburg Area Community College
+        </p>
+      </div>
+      <div id="instructor-info">
+        <div>
+          Instructor:
+          <a href="mailto:rdhauck@hacc.edu">Rich Hauck</a>, MPS
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <Navigation />
+      <div id="content">
+        <div id={fullWidth ? "inner-fullwidth" : "inner-content"}>
+          <h1>{title}</h1>
+          <slot />
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  #toggle-nav {
+    transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--bgcolor);
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    display: none;
+    z-index: 100;
+  }
+  #toggle-nav:hover {
+    background-color: var(--blue);
+  }
+  @media (max-width: 767px) {
+    #toggle-nav {
+      display: block;
+    }
+  }
+  #primary-header {
+    background-color: var(--darkGray);
+    z-index: 100;
+    color: #fff;
+    padding: 1.8em 2em 2em 2em;
+    width: 100%;
+    height: var(--headerHeight);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+  }
+  @media (max-width: 1024px) {
+    #primary-header {
+      padding: 1em;
+      flex-direction: column;
+    }
+  }
+  #primary-header #title {
+    display: flex;
+    flex-direction: column;
+  }
+  #primary-header h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 2em;
+    line-height: 1.1em;
+  }
+  #primary-header a {
+    color: #fff;
+  }
+  #primary-header span {
+    color: var(--red);
+  }
+  #primary-header p {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    letter-spacing: 0.158rem;
+  }
+  #primary-header #meta {
+    padding-right: 0.5em;
+    display: flex;
+    align-items: center;
+  }
+  #primary-header #meta a:link,
+  #primary-header #meta a:visited {
+    color: #fff;
+  }
+  #instructor-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #main {
+    overflow: hidden;
+  }
+  #content {
+    margin: var(--headerHeight) 0 0 320px;
+  }
+  #content ol {
+    padding: 1em !important;
+    list-style: decimal;
+  }
+  #content ul {
+    padding: 1em !important;
+    list-style: square;
+  }
+  #content li {
+    padding: 0 0.5em;
+  }
+  @media (max-width: 767px) {
+    #content {
+      margin: var(--headerHeight) 0 0 0;
+    }
+  }
+  #inner-content {
+    padding: 1em;
+    width: 65%;
+    background-color: var(--primary);
+  }
+  #inner-fullwidth {
+    padding: 1em;
+    background-color: var(--primary);
+  }
+  @media (max-width: 1024px) {
+    #inner-content {
+      width: 100%;
+    }
+  }
+</style>

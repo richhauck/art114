@@ -1,0 +1,89 @@
+---
+const title = "WordPress";
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout title={title}>
+  <h2>What is WordPress?</h2>
+  <p>
+    WordPress is the most popular Content Management System (CMS) currently
+    running on the web, with about
+    <a href="https://firstsiteguide.com/cms-stats/#wordpress"
+      >41 percent market share</a
+    >. WordPress achieved this because, unlike competitors like Wix and
+    SquareSpace, it offers the PHP code for free, meaning anyone can download
+    the open source code and choose to host it wherever they want. The company
+    behind WordPress is <a href="https://automattic.com/">Automattic</a>, and
+    they run:
+  </p>
+  <ul>
+    <li>
+      <a href="https://wordpress.com/">WordPress.com</a> (the commercial arm which
+      offers hosting and support) and
+    </li>
+    <li>
+      <a href="https://wordpress.org">WordPress.org</a> (which hosts documentation,
+      community resources, and the open source software).
+    </li>
+  </ul>
+  <hr />
+  <h2>Running WordPress Locally</h2>
+  <p>
+    To run WordPress on your own computer, we will use
+    <a href="https://developer.wordpress.com/studio/">WordPress Studio</a>,
+    which is a software that makes it easy to locally host a PHP/MySQL
+    environment to run WordPress.
+  </p>
+  <hr />
+  <h2>Themes and Plugins</h2>
+  <p>
+    Part of the popularity of WordPress comes from the fact that it can extended
+    with themes and plugins.
+  </p>
+  <p>
+    <strong>Themes</strong> change the appearance of your WordPress website. Besides
+    the themes
+    <a href="https://wordpress.org/themes/">themes on WordPress.org</a>, there
+    are several other for-pay sites on the web (for instance,
+    <a href="https://www.elegantthemes.com/gallery/divi/">Divi</a> is a theme that
+    allows you to customize with a visual interface in the admin).
+  </p>
+  <p>
+    <strong><a href="https://wordpress.org/plugins">Plugins</a></strong> extend the
+    functionality of your WordPress site.
+  </p>
+  <aside>
+    <ul>
+      <li>
+        <a href="https://underscores.me/">Underscores</a> is a great starter theme
+        for learning and building a custom Wordpress design in the classic way using
+        PHP.
+      </li>
+      <li>
+        For Block-based themes, check out
+        <a href="https://fullsiteediting.com/"
+          >Full Site Editing With WordPress</a
+        >
+      </li>
+      <li>
+        Importing
+        <a href="https://github.com/WPTT/theme-test-data">Theme Test Data</a> is
+        a good way to see how dummy content could break your site (<a
+          href="https://codex.wordpress.org/Theme_Unit_Test"
+          >instructions on how to import</a
+        >).
+      </li>
+      <li>
+        Some of the
+        <a href="https://wordpress.org/themes/author/wordpressdotorg/"
+          >early themes by WordPress.org</a
+        >
+        are good ways to start learning to theme
+      </li>
+      <li>
+        <a href="https://learn.wordpress.org/">learn.wordpress.org</a> is a great
+        resource to learn WordPress
+      </li>
+    </ul>
+  </aside>
+</Layout>

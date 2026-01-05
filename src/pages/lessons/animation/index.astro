@@ -1,0 +1,191 @@
+---
+const title = "Animation";
+import Layout from "../../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <p>
+    The process of animating for the web is constantly evolving. As both CSS and
+    JavaScript can perform animations, which should you choose? I'd recommend
+    reading this article on <a
+      href="https://css-tricks.com/myth-busting-css-animations-vs-javascript/"
+      >CSS vs Javascript animation</a
+    > to start.
+  </p>
+  <p>
+    Below are a series of examples in JavaScript and CSS. While the future is
+    most likely going to be the <a
+      href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API"
+      >Web Animations API</a
+    >, there are still advantages and disadvantages to each. Here's a great <a
+      href="https://css-tricks.com/comparison-animation-technologies/"
+      >CSS-Tricks article comparing animation technologies</a
+    >.
+  </p>
+
+  <div class="flex">
+    <section>
+      <h2>CSS</h2>
+      <ul>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/css/transition`}
+            target="_blank">CSS Transition</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/css/keyframes`}
+            target="_blank">Keyframes</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/css/keyframes-stop`}
+            target="_blank">Keyframes Stop</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/css/keyframes-steps`}
+            target="_blank">Keyframes Steps</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/css/keyframes-stop`}
+            target="_blank">Keyframes Stop</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/css/page-fadein`}
+            target="_blank">Page - Fade In</a
+          >
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Javascript</h2>
+      <ul>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/js/setinterval`}
+            target="_blank">Set Interval</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/js/requestanimationframe`}
+            target="_blank">requestAnimationFrame</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/js/canvas`}
+            target="_blank">Keyframes</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/js/canvas-easing`}
+            target="_blank">Keyframes Stop</a
+          >
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>SVG</h2>
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate"
+            >SVG Animation (MDN)</a
+          >
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>External Libraries</h2>
+      <ul>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/libraries/animate-css`}
+            target="_blank">Animate CSS Example</a
+          >
+        </li>
+
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/libraries/animate-js`}
+            target="_blank">Animate CSS with JQuery Example</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/libraries/greensock`}
+            target="_blank">Greensock TweenLite</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/libraries/greensock-timeline`}
+            target="_blank">Greensock Timeline</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/libraries/jquery`}
+            target="_blank">JQuery.animate()</a
+          >
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <aside>
+    <h2>Resources and Other Animation Libraries</h2>
+    <ul>
+      <li><a href="https://easings.net/">Easing cheat sheet</a></li>
+      <li>
+        <a href="https://threejs.org/">Three JS - an animation library for 3D</a
+        >
+      </li>
+      <li>
+        <a href="https://processing.org"
+          >Processing - a coding sketchbook for programmatic art</a
+        >
+      </li>
+      <li>
+        <a href="https://openprocessing.org/"
+          >Open Processing - community for Processing</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance"
+          >CSS vs Javascript animation</a
+        >
+      </li>
+      <li>
+        <a href="http://www.w3schools.com/css/css3_animations.asp">W3Schools</a>
+      </li>
+      <li>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
+          >MDN - Using CSS Animations</a
+        >
+      </li>
+      <li>
+        <a href="https://daneden.github.io/animate.css/">Animate.css</a>
+      </li>
+      <li>
+        <a href="https://css-tricks.com/almanac/properties/a/animation/"
+          >CSS Tricks article on animation</a
+        >
+      </li>
+      <li><a href="https://lottiefiles.com">Lottie Files</a></li>
+    </ul>
+  </aside>
+</Layout>

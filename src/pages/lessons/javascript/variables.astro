@@ -1,0 +1,52 @@
+---
+const title = "JavaScript Variables";
+import Layout from "../../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <p>
+    In JavaScript, variables are ways to hold different types of data in memory.
+  </p>
+  <section>
+    <h3>String</h3>
+    <p>Represents text enclosed in quotes</p>
+    <Code
+      code={`const name = "John Doe"; 
+const prefix = 'Mr. ';
+const fullName = prefix + name;
+const altFullName = \`\${prefix} \${name}\`;`}
+      lang="javascript"
+    />
+    <h3>Number</h3>
+    <Code
+      code={`let age = 25;
+let count = -2342334.234242;`}
+      lang="javascript"
+    />
+
+    <h3>Boolean</h3>
+    <Code
+      code={`let isDarkMode = true; 
+let isRaining = 0; `}
+      lang="javascript"
+    />
+
+    <h3>Array</h3>
+    <Code
+      code={`let fruits = ["apple", "banana", "orange"]; 
+let rand = Math.round(Math.random() * 3) - 1; // Writing out to the page 
+document.getElementById("header").innerText = fruits[rand];`}
+      lang="javascript"
+    />
+    <h3>Object</h3>
+    <Code
+      code={`let person = {
+  name: "John",
+  age: 30,
+  isStudent: false
+};`}
+      lang="javascript"
+    />
+  </section>
+</Layout>

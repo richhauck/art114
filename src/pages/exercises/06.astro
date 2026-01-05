@@ -1,0 +1,90 @@
+---
+const title = "Exercises";
+import Layout from "../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <h2>Static Website</h2>
+
+  <p>
+    Static site generators (SSG) automate the process of building websites with
+    HTML, CSS, and JavaScript. Similar to the previous exercise with PHP, SSGs
+    can cut down code writing, eliminate redundancies, and improve performance.
+    I recommend you read this <a
+      href="https://www.cloudflare.com/learning/performance/static-site-generator/"
+      target="_blank">Cloudflare article</a
+    > to better understand the term.
+  </p>
+  <p>
+    There are many site generators available (see this list at <a
+      href="https://jamstack.org/generators/"
+      target="_blank">JamStack</a
+    >), and for this course we will focus on <a
+      href="https://astro.build/"
+      target="_blank">Astro</a
+    >.
+  </p>
+
+  <p>
+    For this exercise, you will follow <a
+      href="https://docs.astro.build/en/tutorial/0-introduction/
+  "
+      >Astro's tutorial</a
+    > to create a blog using a static site generator. Complete the tutorial up to
+    <a
+      href="https://docs.astro.build/en/tutorial/5-astro-api/3/"
+      target="_blank">unit 5.3</a
+    > (you can skip the parts involving GitHub and Netlify if you want).
+  </p>
+
+  <p>
+    Your finished product should be a working blog with tabs and articles just
+    like Asto's example.
+  </p>
+
+  <h3>Publishing to your site</h3>
+  <p>
+    One last item--we will cover this in class, but when you publish this
+    assignment to your own site (you'll be uploading just the contents of the
+    /dist directory), you will need to take one extra step not covered in the
+    tutorial. Astro assumes it will be placed in the root directory of your
+    website. In order to tell it it will reside in a subfolder, you need to
+    replace the contents of your <strong>astro.config.mjs</strong> file to the code
+    below (replace "yoursite.com" with your domain):
+  </p>
+
+  <Code
+    code={`import { defineConfig } from 'astro/config';
+
+// https://astro.build/config
+export default defineConfig({
+  base: '/assignments/assignment-5',
+  build: {
+    site: 'http://yoursite.com/assignments/assignment-5/',
+  }
+});`}
+    lang="javascript"
+  />
+
+  <p>
+    This is a configuration change that has Astro publish the prefix to all of
+    your links (<a
+      href="https://docs.astro.build/en/reference/configuration-reference/#base"
+      >per their documentation</a
+    >). Now that you've defined the base, you need to apply it to the links
+    you've used:
+  </p>
+  <p>src/components/Navigation.astro should look like this:</p>
+
+  <p>
+    And src/pages/tags/index.astro should include this BASE_URL as well (single
+    quotes below should be backticks):
+  </p>
+  <Code
+    code={`{tags.map((tag) => (
+  <p class="tag"><a href={\'\${import.meta.env.BASE_URL}tags/\${tag}\'}>{tag}</a></p>
+      ))}`}
+    lang="javascript"
+  />
+</Layout>

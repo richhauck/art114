@@ -1,0 +1,106 @@
+---
+const title = "MAMP";
+import Layout from "../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <p>
+    <a href="https://www.mamp.info" target="_blank">MAMP</a> is software that allows
+    us to run a server on our own computer with minimal configuration. This works
+    similar to VS Code's <a
+      href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
+      >Live Server</a
+    > plugin, except it provides support for technologies:
+  </p>
+
+  <ul>
+    <li><strong>A</strong>pache server</li>
+    <li><strong>M</strong>ySQL/Maria DB databsae</li>
+    <li><strong>P</strong>HP programming language</li>
+  </ul>
+
+  <p>
+    For this class, we will use MAMP to leverage <a
+      href={`${import.meta.env.BASE_URL}/lessons/file-includes/`}
+      >PHP File Includes</a
+    >.
+  </p>
+
+  <h3>Setup</h3>
+  <ol>
+    <li>
+      Download <a href="https://www.mamp.info/" target="_blank">MAMP</a> (free version,
+      not MAMP Pro).
+    </li>
+    <li>
+      Click &quot;Preferences&quot;. Under the &quot;Server&quot; tab, choose
+      your Document root. This is the folder on your computer's hard drive that
+      you want to behave like the server &quot;root&quot;, or top-level folder.
+      (NOTE: On Windows, folders synced with One Drive seem to have a conflict,
+      so you may want to keep the default MAMP/htdocs folder).
+      <img
+        src={`${import.meta.env.BASE_URL}images/lessons/ftp/mamp-server.png`}
+        alt="MAMP Server screen"
+      />
+    </li>
+    <li>Hit &quot;OK&quot;</li>
+    <li>Click the &quot;Start&quot; button in the top right corner</li>
+    <li>
+      You should now see the MAMP homepage when visiting <a
+        href="http://localhost:8888/MAMP/?language=English"
+        >http://localhost:8888/MAMP/?language=English.</a
+      > (or possibly just <a href="http://localhost/MAMP/?language=English"
+        >http://localhost/MAMP/?language=English.</a
+      > on Windows)
+      <img
+        src={`${import.meta.env.BASE_URL}images/lessons/mamp/mamp-landing-page.png`}
+        alt="MAMP Landing Page"
+      />
+    </li>
+    <li>
+      If you change the URL to: <a href="http://localhost:8888/" target="_blank"
+        >http://localhost:8888/</a
+      > you should see the contents of the document root you defined in step 2.
+      <img
+        src={`${import.meta.env.BASE_URL}images/lessons/mamp/mamp-index-screen.png`}
+        alt="MAMP Index Page"
+      />
+    </li>
+    <li>
+      Try testing PHP by creating the following file as page.php and then
+      navigating to <a href="http://localhost:8888/page.php"
+        >http://localhost:8888/page.php</a
+      >.
+
+      <Code
+        lang="php"
+        code=`<?php $title="Hello There." ; ?>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    </head>
+    <body>
+    <h1><!--?php echo $title; ?--></h1>
+    </body>
+</html>`
+      />
+      <hr />
+      <p>To stop the server, click "Stop" in the MAMP window or quit MAMP.</p>
+
+      <p>
+        From here, try incorporating <a
+          href={`${import.meta.env.BASE_URL}lessons/file-includes/`}
+        >
+          PHP File Includes</a
+        >.
+      </p>
+    </li>
+  </ol>
+</Layout>
