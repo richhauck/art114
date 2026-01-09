@@ -56,12 +56,6 @@ img {
 .row {
   display: flex;
 }
-.links {
-  display: block;
-  margin: 1em 0;
-  padding: 1em;
-  background-color: rgb(224, 238, 240);
-}
 strong,
 b {
   color: #000;
@@ -247,9 +241,13 @@ aside {
 }
 .links {
   display: block;
-  margin: 1em 0;
+  margin: 2em 0;
   padding: 1em;
   background-color: rgb(224, 238, 240);
+
+  h3 {
+    margin-top: 0;
+  }
 }
 .flex {
   display: flex;

@@ -1,184 +1,47 @@
 ---
-const title = "Project 1: Social Media Prototype Site (180 points)";
+const title = "Project 1: Stock Market App (180 points)";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title={title}>
-  <!-------------------------------------------------------------------------------
-- Consider dark/light mode toggle example
-- Consider favorite button that maintains state
-- Consider Lightbox
-- Consider a table for comments
-- Consider a disabled class that makes the UI opaque and disabled cursor events
-- Login form that persists user name via cookie or local storage
--------------------------------------------------------------------------------->
-<h3>Description:</h3>
-<p>
-  What if your client needed an interactive walk-through of an application with
-  a higher fidelity than Figma? What if they wanted to impress potential
-  investors with the HTML foundation of an application? <br /><br />This isn't
-  an uncommon request in the business world.
-</p>
-<p>
-  Your task is creating the branding and design for a social media site that
-  allows for the sharing, commenting, and uploading of media. Consider this as
-  if it were a tool as a part of a sales pitch for building a website along the
-  lines of
-  <a
-    rel="noopener"
-    href="/content/enforced/315323-39576.202430/Instagram.com"
-    target="_blank"
-    >Instagram.com</a
-  >,
-  <a rel="noopener" href="https://www.flickr.com" target="_blank">Flickr.com</a
-  >,
-  <a rel="noopener" href="https://www.behance.net/" target="_blank"
-    >Behance.net</a
-  >,
-  <a rel="noopener" href="https://dribbble.com/" target="_blank">Dribbble.com</a
-  >, etc. The name, branding, and specific nature of the site's theme are up to
-  you. Will it be for sharing photography? Illustration? Design?
-</p>
-<p>
-  A site of this nature could potentially scale to thousands of pages with many
-  users, so your responsibility will be to identify major page templates used by
-  the site and create a site that someone can navigate through.
-</p>
-<p>
-  The design should include "like" buttons, tagging, commenting, and
-  login/logout indications. You will also need to consider the naming
-  conventions and organization of your CSS. Consider
-  <a rel="noopener" href="https://getbem.com/" target="_blank">BEM</a> or
-  another naming convention.
-</p>
-<p>
-  While the finished site should be visually polished, it needn't be fully
-  functional. For instance, you could place an image upload or comment form, but
-  the forms won't actually function. For the images themselves, you can use
-  placeholder services such as
-  <a rel="noopener" href="http://pravatar.cc" target="_blank"
-    >http://pravatar.cc</a
-  >
-  or
-  <a rel="noopener" href="https://loremfaces.com/" target="_blank"
-    >https://loremfaces.com</a
-  >
-  for avatars and
-  <a rel="noopener" href="https://placeimg.com" target="_blank"
-    >https://placeimg.com</a
-  >
-  or
-  <a rel="noopener" href="https://stablediffusionweb.com/" target="_blank"
-    >https://stablediffusionweb.com/</a
-  >
-  for mock photo uploads. For mock comments, lorem ipsum is fine.
-</p>
-<p>
-  You may want to propose navigation and links that are outside of the scope of
-  your prototype. In cases like this, consider creating a disabled style that
-  visually stands out from plain text. See this
-  <a href="https://css-tricks.com/how-to-disable-links/"
-    >CSS Tricks article on disabling links.</a
-  >
-</p>
-<h3>Development Requirements:</h3>
-<ul>
-  <li>
-    While not fully-functioning, the site should be easy to navigate,
-    responsive, and published to your website.
-  </li>
-  <li>
-    It should be clear what portions of the site are not functional/disabled.
-    Consider creating a disabled class that makes the UI opaque and disabled
-    cursor events.
-  </li>
-  <li>The site must utilize a favicon.</li>
-  <li>The site must contain a table (consider it for comments).</li>
-  <li>Website should contain proper page titles for SEO.</li>
-  <li>
-    The site should incorporate JavaScript in some way--consider a dark/light
-    toggle, favorite button that maintains state, or a Lightbox.
-  </li>
-  <li>The site should incorporate server-side includes with PHP.</li>
-</ul>
-<div class="links">
-  <h3>UX to Consider</h3>
-  <h4>Sign Up, Log-In, Login?</h4>
+
+  <p>You will be designing and building a desktop-only stock (mock) trading application. Your finished project should behave like a click-through prototype--one that has pages respresenting the UI, but isn't actually pulling real data, submitting trades, or linking to banks. That said, it should still look as realistic as possible.</p>
+
+  <p>You will create a logo and color palette (including a dark/light mode), but your design likely won't be reliant upon lots of images. Instead, as an application designer, it's your responsibility to maximize the amount of data displayed on-screen--while keeping it digestible.</p>
+
+  <p></p>
+
+  <h3>Your design should contain:</h3>
   <ul>
-    <li>
-      <a
-        rel="noopener"
-        href="https://uxplanet.org/18-ux-design-tips-for-registration-and-login-forms-f897557358ba"
-        >https://uxplanet.org/18-ux-design-tips-for-registration-and-login-forms-f897557358ba</a
-      >
-    </li>
-    <li>
-      <a
-        rel="noopener"
-        href="https://uxmovement.com/buttons/why-sign-up-and-sign-in-button-labels-confuse-users/"
-        >https://uxmovement.com/buttons/why-sign-up-and-sign-in-button-labels-confuse-users/</a
-      >
-    </li>
-    <li>
-      <a
-        rel="noopener"
-        href="https://uxplanet.org/designing-ux-login-form-and-process-8b17167ed5b9"
-        >https://uxplanet.org/designing-ux-login-form-and-process-8b17167ed5b9</a
-      >
-    </li>
+    <li>A screen size of be 1920px by 1080px. As a desktop app, the page shouldn't scroll, but containers in it can.</li>
+    <li>inline Alerts/notifications that may pop up on any screen</li>
+    <li>Charts or graphs. Look into charting libraries</li>
+    <li>Tables of data</li>
+    <li>Mock user and logout indicator</li>
+    <li>Dark/light mode</li>
+     <li>Built-in news and research--some way for a user to research stocks by company name or ticker (this will be a mock implementation and needn't be fully functioning)</li>
   </ul>
-  <h4>Button Sizes</h4>
-  <ul>
-    <li>
-      <a
-        rel="noopener"
-        href="https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/"
-        >https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/</a
-      >
-    </li>
-    <li>
-      <a
-        rel="noopener"
-        href="https://www.smashingmagazine.com/2012/02/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/"
-        >https://www.smashingmagazine.com/2012/02/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/</a
-      >
-    </li>
-  </ul>
-  <h4>Search Boxes</h4>
-  <ul>
-    <li>
-      <a
-        rel="noopener"
-        href="https://www.uxbooth.com/articles/best-practices-for-search/"
-        >https://www.uxbooth.com/articles/best-practices-for-search/</a
-      >
-    </li>
-    <li>
-      <a
-        rel="noopener"
-        href="https://uxdesign.cc/best-ux-practices-for-search-inputs-c44dba565448"
-        >https://uxdesign.cc/best-ux-practices-for-search-inputs-c44dba565448</a
-      >
-    </li>
-    <li>
-      <a
-        rel="noopener"
-        href="https://uxplanet.org/search-interface-20-things-to-consider-4b1466e98881"
-        >https://uxplanet.org/search-interface-20-things-to-consider-4b1466e98881</a
-      >
-    </li>
-  </ul>
-</div>
+  
 <h3>Process:</h3>
 <ul>
   <li>
-    <strong>Sitemap + Research.</strong> Draw a sitemap in FigJam outlining the
-    structure of the website. Publish a link to it, along with the review of
-    three social media sites to the D2L Discussion board.
+    <strong>Research.</strong> Review three stock trading sites or apps. Post your critique to the D2L Discussion board, and include screenshots. In your research, describe similarities you see across the apps. What kind of color palettes are used? What information is often represented on different pages?
+  </li>
+  <li>
+    <strong>Sitemap.</strong> Publish a sitemap in FigJam outlining the
+    structure of the website. Your sitemap should contain, at a minimum:</p>
+  <ul>
+    <li><strong>A dashboard</strong> containing a summary of information a user might want to see regarding their portfolio, news, or followed stocks. </li>
+    <li><strong>A portfolio screen</strong> showing a summary of the user's assets, balances, and history</li>
+    <li><strong>A stock detail page</strong> displaying relevant information about the company represented by the stock. (NOTE: you only need to create one detailed instance of this page)</li>
+   
+    <li><strong>Alerts and messages summary</strong></li>
+    <li><strong>A settings page</strong></li>
+  </ul> 
   </li>
   <li>
     <strong>Wireframes. </strong>Develop a wireframe outlining all the major
-    pages and interactions.
+    pages templates. You'll want to pressure test your wireframe by ensuring it scales with multiple entries. Charts should be represented but remain B&amp;W
   </li>
   <li>
     <strong>Branding.</strong> Choose a minimum of two fonts and five colors.
@@ -224,7 +87,7 @@ import Layout from "../../layouts/Layout.astro";
         <p>Research + Sitemap</p>
       </td>
       <td>
-        <p>January 27</p>
+        <p>January 14</p>
       </td>
       <td>
         <p>20</p>
@@ -235,7 +98,7 @@ import Layout from "../../layouts/Layout.astro";
         <p>Content + Wireframes</p>
       </td>
       <td>
-        <p>February 3</p>
+        <p>January 26</p>
       </td>
       <td>
         <p>40</p>
@@ -243,10 +106,10 @@ import Layout from "../../layouts/Layout.astro";
     </tr>
     <tr>
       <td>
-        <p>Website Design</p>
+        <p>Wireframe Revisions</p>
       </td>
       <td>
-        <p>February 5</p>
+        <p>January 28</p>
       </td>
       <td>
         <p>60</p>
@@ -254,10 +117,21 @@ import Layout from "../../layouts/Layout.astro";
     </tr>
     <tr>
       <td>
-        <p>Page Template</p>
+        <p>Design</p>
       </td>
       <td>
-        <p>February 10</p>
+        <p>February 2</p>
+      </td>
+      <td>
+        <p>60</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>In-progress template</p>
+      </td>
+      <td>
+        <p>February 4</p>
       </td>
       <td>-</td>
     </tr>
@@ -266,7 +140,7 @@ import Layout from "../../layouts/Layout.astro";
         <p>Published Site</p>
       </td>
       <td>
-        <p>February <span style="text-decoration: line-through">17</span> 19</p>
+        <p>February 11</p>
       </td>
       <td>
         <p>60</p>
@@ -275,4 +149,148 @@ import Layout from "../../layouts/Layout.astro";
   </tbody>
 </table>
 
+<!--
+  <p>
+    Modeled after modern platforms like ThinkorSwim, TradingView, and E-Trade
+    Pro.
+  </p>
+  <ol>
+    <li>
+      <strong>Login &amp; Onboarding</strong>
+      <ol>
+        <li>Login / Sign-In</li>
+        <li>Two-Factor Authentication</li>
+        <li>Account Creation</li>
+        <li>First-Time User Setup / Preferences</li>
+      </ol>
+    </li>
+    <li>
+      <strong>Dashboard / Home Screen</strong><br />
+      <ol>
+        <li>Main Dashboard</li>
+        <li>Quick Market Overview</li>
+        <li>Portfolio snapshot (total value, daily P/L)</li>
+        <li>Watchlist preview</li>
+        <li>Market indexes (S&amp;P 500, NASDAQ, DOW)</li>
+        <li>News ticker</li>
+        <li>Alerts overview</li>
+        <li>Customizable widgets (drag &amp; drop)</li>
+      </ol>
+    </li>
+    <li>
+      <strong>Portfolio</strong>
+      <ol>
+        <li>Holdings Overview</li>
+        <li>Positions Detail</li>
+        <li>Order History</li>
+        <li>Performance Analytics</li>
+        <li>Real-time profit/loss</li>
+        <li>Cost basis and average price</li>
+        <li>Dividend tracking</li>
+        <li>Allocation visualizations (pie/bar charts)</li>
+        <li>Export to CSV/PDF</li>
+        <li>Tax-friendly views (realized gains, wash sale warnings)</li>
+      </ol>
+    </li>
+    <li>
+      <strong>Watchlists</strong>
+      <ol>
+        <li>Multiple Watchlists</li>
+      </ol>
+    </li>
+    <li>
+      <strong>Symbol Details Preview</strong>
+      <ol>
+        <li>Custom list creation</li>
+        <li>Color tagging</li>
+        <li>Bulk import/export tickers</li>
+        <li>Real-time last price, % change, volume</li>
+      </ol>
+    </li>
+    <li>
+      <strong> Stock Detail Page (Symbol Page)</strong><br />
+      <ol>
+        <li><strong>Charting</strong></li>
+        <li><strong>Order Book (Level I / Level II)</strong></li>
+        <li><strong>News</strong></li>
+        <li><strong>Financials</strong></li>
+        <li><strong>Analysis</strong></li>
+        <li><strong>Options Chain</strong></li>
+        <li>Price summary, bid/ask, market cap, volume</li>
+        <li>Key stats &amp; metrics</li>
+        <li><strong>Charting</strong></li>
+      </ol>
+    </li>
+    <li>
+      <strong>Fundamentals</strong>
+      <ol>
+        <li>Earnings</li>
+        <li>Balance sheet / income statement</li>
+        <li>Analyst ratings</li>
+      </ol>
+    </li>
+    <li>
+      <strong> Trading / Order Entry</strong><br />
+      <strong>Pages</strong>
+      <ol>
+        <li>Trade Ticket / Order Entry Panel</li>
+        <li>Active Orders</li>
+        <li>Recent Fills</li>
+        <li>Buy/Sell with market, limit, stop, stop-limit</li>
+        <li>Bracket orders (OCO, OTOCO)</li>
+        <li>Conditional orders</li>
+        <li>Short selling support</li>
+        <li>Margin vs cash selection</li>
+        <li>Real-time estimated cost</li>
+        <li>Hotkeys (buy 100 shares, sell half, close position, etc.)</li>
+      </ol>
+    </li>
+    <li>
+      <strong>News &amp; Research</strong>
+      <ol>
+        <li><strong>Market News Feed</strong></li>
+        <li><strong>Symbol-specific news</strong></li>
+        <li><strong>Earnings Calendar</strong></li>
+        <li><strong>Economic Calendar</strong></li>
+        <li>Filter by category (markets, stocks, crypto, macro)</li>
+        <li>Custom keyword alerts</li>
+        <li>Analyst price targets</li>
+        <li>In-app video news segments</li>
+      </ol>
+    </li>
+    <li>
+      <strong>Alert Management Page</strong>
+      <ol>
+        <li>Price alerts</li>
+        <li>Technical condition alerts</li>
+        <li>News alerts</li>
+        <li>Portfolio alerts (dividend announced, earnings upcoming)</li>
+        <li>System alerts (order filled, rejected)</li>
+        <li>Desktop notifications + email/push</li>
+      </ol>
+    </li>
+    <li>
+      <strong>Account &amp; Settings</strong>
+      <ol>
+        <li>Account Profile</li>
+        <li>Security Settings</li>
+        <li>Billing / Subscription</li>
+        <li>Connected Banks</li>
+        <li>Tax Forms</li>
+        <li>Preference Settings</li>
+      </ol>
+    </li>
+    <li>
+      Support
+      <ol>
+        <li>In-App Support</li>
+        <li>Live Chat</li>
+        <li>Help Center</li>
+        <li>FAQ</li>
+        <li>Tutorial videos</li>
+        <li>Guided walkthrough for beginners</li>
+      </ol>
+    </li>
+  </ol>
+   -->
 </Layout>
