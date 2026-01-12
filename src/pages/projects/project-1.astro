@@ -1,155 +1,210 @@
 ---
-const title = "Project 1: Stock Market App (180 points)";
+const title = "Project 1: Stock Trading App (180 Points)";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title={title}>
+  <p>
+    You will be designing and building a desktop-only stock (mock) trading
+    application. Your finished project should behave like a click-through
+    prototype--one that has pages respresenting the UI, but isn't actually
+    pulling real data, submitting trades, or linking to banks. That said, it
+    should still look as realistic as possible.
+  </p>
 
-  <p>You will be designing and building a desktop-only stock (mock) trading application. Your finished project should behave like a click-through prototype--one that has pages respresenting the UI, but isn't actually pulling real data, submitting trades, or linking to banks. That said, it should still look as realistic as possible.</p>
+  <p>
+    You will create a logo and color palette--including a dark/light mode. Your
+    design likely won't be reliant upon lots of images. Instead, as an
+    application designer, it's your responsibility to maximize the amount of
+    data displayed on-screen--while keeping it digestible.
+  </p>
 
-  <p>You will create a logo and color palette (including a dark/light mode), but your design likely won't be reliant upon lots of images. Instead, as an application designer, it's your responsibility to maximize the amount of data displayed on-screen--while keeping it digestible.</p>
-
-  <p></p>
-
-  <h3>Your design should contain:</h3>
+  <h3>Your site should contain:</h3>
   <ul>
-    <li>A screen size of be 1920px by 1080px. As a desktop app, the page shouldn't scroll, but containers in it can.</li>
-    <li>inline Alerts/notifications that may pop up on any screen</li>
-    <li>Charts or graphs. Look into charting libraries</li>
+    <li>
+      A screen size of be 1920px by 1080px. As a desktop app, the page shouldn't
+      scroll, but containers in it can.
+    </li>
+    <li>Inline Alerts/notifications that may pop up on any screen</li>
+    <li>
+      Charts or graphs. Look into charting libraries:
+      <ul>
+        <li>
+          <a href="https://www.chartjs.org/">Chart.js</a>
+        </li>
+        <li><a href="https://d3js.org/">D3.js</a></li>
+        <li>
+          <a href="https://echarts.apache.org/">eCharts</a>
+        </li>
+        <li>
+          <a href="https://naver.github.io/billboard.js/">Billboard.js</a>
+        </li>
+        <li><a href="https://plotly.com/javascript/">Plotly</a></li>
+        <li><a href="https://apexcharts.com/">ApexCharts</a></li>
+      </ul>
+    </li>
     <li>Tables of data</li>
     <li>Mock user and logout indicator</li>
-    <li>Dark/light mode</li>
-     <li>Built-in news and research--some way for a user to research stocks by company name or ticker (this will be a mock implementation and needn't be fully functioning)</li>
+    <li>
+      Dark/light mode <a
+        href="https://medium.com/@courtneyjordan/figma-variables-for-light-and-dark-mode-made-easy-319c180c449b"
+        >in Figma</a
+      > and <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark"
+        >in code</a
+      >
+    </li>
+    <li>
+      Built-in news and research--some way for a user to research stocks by
+      company name or ticker (this will be a mock implementation and needn't be
+      fully functioning)
+    </li>
+    <li>The site should incorporate server-side includes with PHP.</li>
   </ul>
-  
-<h3>Process:</h3>
-<ul>
-  <li>
-    <strong>Research.</strong> Review three stock trading sites or apps. Post your critique to the D2L Discussion board, and include screenshots. In your research, describe similarities you see across the apps. What kind of color palettes are used? What information is often represented on different pages?
-  </li>
-  <li>
-    <strong>Sitemap.</strong> Publish a sitemap in FigJam outlining the
-    structure of the website. Your sitemap should contain, at a minimum:</p>
-  <ul>
-    <li><strong>A dashboard</strong> containing a summary of information a user might want to see regarding their portfolio, news, or followed stocks. </li>
-    <li><strong>A portfolio screen</strong> showing a summary of the user's assets, balances, and history</li>
-    <li><strong>A stock detail page</strong> displaying relevant information about the company represented by the stock. (NOTE: you only need to create one detailed instance of this page)</li>
-   
-    <li><strong>Alerts and messages summary</strong></li>
-    <li><strong>A settings page</strong></li>
-  </ul> 
-  </li>
-  <li>
-    <strong>Wireframes. </strong>Develop a wireframe outlining all the major
-    pages templates. You'll want to pressure test your wireframe by ensuring it scales with multiple entries. Charts should be represented but remain B&amp;W
-  </li>
-  <li>
-    <strong>Branding.</strong> Choose a minimum of two fonts and five colors.
-    The logo is up to you. Establish iconography.
-  </li>
-  <li>
-    <strong>Design.</strong> Upon wireframe approval, create interactive designs
-    in Figma based on the wireframe. Your files should use components, a color
-    palette, and text styles where applicable.
-  </li>
-  <li>
-    <strong>Design Critique.</strong> You will take part in an in-class design
-    critique where you will provide constructive criticism to your classmates on
-    their designs, as well as receive feedback on yours.
-  </li>
-  <li>
-    <strong>Revisions.</strong> You will revise your design to address
-    improvements uncovered during the critique stage.
-  </li>
-  <li>
-    <strong>Development.</strong> You will proceed to build the website. Upon
-    completion, it will be uploaded to your website.
-  </li>
-  <li>
-    <strong>Final Critique.</strong> You will participate in a final group
-    critique where we review each of the projects.
-  </li>
-</ul>
-<h3>Deadlines and Grading Criteria:</h3>
-<table>
-  <tbody>
-    <tr>
-      <td><strong>Description</strong></td>
-      <td>
-        <p><strong>Due Date</strong></p>
-      </td>
-      <td>
-        <p><strong>Points</strong></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Research + Sitemap</p>
-      </td>
-      <td>
-        <p>January 14</p>
-      </td>
-      <td>
-        <p>20</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Content + Wireframes</p>
-      </td>
-      <td>
-        <p>January 26</p>
-      </td>
-      <td>
-        <p>40</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Wireframe Revisions</p>
-      </td>
-      <td>
-        <p>January 28</p>
-      </td>
-      <td>
-        <p>60</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Design</p>
-      </td>
-      <td>
-        <p>February 2</p>
-      </td>
-      <td>
-        <p>60</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>In-progress template</p>
-      </td>
-      <td>
-        <p>February 4</p>
-      </td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>
-        <p>Published Site</p>
-      </td>
-      <td>
-        <p>February 11</p>
-      </td>
-      <td>
-        <p>60</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
 
-<!--
+  <h3>Process:</h3>
+  <ul>
+    <li>
+      <strong>Research.</strong> Review three stock trading sites or apps. Post your
+      critique to the D2L Discussion board, and include screenshots. In your research,
+      describe similarities you see across the apps. What kind of color palettes
+      are used? What information is often represented on different pages?
+    </li>
+    <li>
+      <strong>Sitemap.</strong> Publish a sitemap in FigJam outlining the structure
+      of the website. Your sitemap should contain, at a minimum:
+    </li>
+    <ul>
+      <li>
+        <strong>A dashboard</strong> containing a summary of information a user might
+        want to see regarding their portfolio, news, or followed stocks.
+      </li>
+      <li>
+        <strong>A portfolio screen</strong> showing a summary of the user's assets,
+        balances, and history
+      </li>
+      <li>
+        <strong>A stock detail page</strong> displaying relevant information about
+        the company represented by the stock. (NOTE: you only need to create one
+        detailed instance of this page)
+      </li>
+
+      <li><strong>Alerts and messages summary</strong></li>
+      <li><strong>A settings page</strong></li>
+    </ul>
+    <li>
+      <strong>Wireframes. </strong>Develop a wireframe outlining all the major
+      pages templates. You'll want to pressure test your wireframe by ensuring
+      it scales with multiple entries. Charts should be represented but remain
+      B&amp;W
+    </li>
+    <li>
+      <strong>Branding.</strong> Choose a minimum of two fonts and five colors. The
+      logo is up to you. Establish iconography.
+    </li>
+    <li>
+      <strong>Design.</strong> Upon wireframe approval, create interactive designs
+      in Figma based on the wireframe. Your files should use components, a color
+      palette, and text styles where applicable.
+    </li>
+    <li>
+      <strong>Design Critique.</strong> You will take part in an in-class design
+      critique where you will provide constructive criticism to your classmates on
+      their designs, as well as receive feedback on yours.
+    </li>
+    <li>
+      <strong>Revisions.</strong> You will revise your design to address improvements
+      uncovered during the critique stage.
+    </li>
+    <li>
+      <strong>Development.</strong> You will proceed to build the website. Upon completion,
+      it will be uploaded to your website.
+    </li>
+    <li>
+      <strong>Final Critique.</strong> You will participate in a final group critique
+      where we review each of the projects.
+    </li>
+  </ul>
+  <h3>Deadlines and Grading Criteria:</h3>
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>Description</strong></td>
+        <td>
+          <p><strong>Due Date</strong></p>
+        </td>
+        <td>
+          <p><strong>Points</strong></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Research + Sitemap</p>
+        </td>
+        <td>
+          <p>January 14</p>
+        </td>
+        <td>
+          <p>20</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Content + Wireframes</p>
+        </td>
+        <td>
+          <p>January 26</p>
+        </td>
+        <td>
+          <p>40</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Wireframe Revisions</p>
+        </td>
+        <td>
+          <p>January 28</p>
+        </td>
+        <td>
+          <p>60</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Design</p>
+        </td>
+        <td>
+          <p>February 2</p>
+        </td>
+        <td>
+          <p>60</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>In-progress template</p>
+        </td>
+        <td>
+          <p>February 4</p>
+        </td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>
+          <p>Published Site</p>
+        </td>
+        <td>
+          <p>February 11</p>
+        </td>
+        <td>
+          <p>60</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--
   <p>
     Modeled after modern platforms like ThinkorSwim, TradingView, and E-Trade
     Pro.

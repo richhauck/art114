@@ -1,112 +1,306 @@
 ---
-const title = "Event Promotion Website (200 points)";
+const title = "Project 2: Social Media Prototype (180 Points)";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title={title}>
-<h3>Project Description:</h3>
-<p>
-  You will create a responsive and interactive design for a mock event website.
-  The venue, event information, and details are up to you--It can be a concert,
-  technical conference, etc.
-</p>
-<p>
-  Your designs should include two interactive pieces—one for desktop (up to
-  1920px width) and one for mobile (320px width to represent portrait mode on
-  mobile devices). Your Figma designs should be using components, text styles,
-  and color variables.
-</p>
-<p>
-  For development, you will partner with another student in which you will swap
-  projects--they will build your project and you will build theirs. Your grade
-  will be based on how well you execute their design. The finished responsive
-  site should be built using Astro.
-</p>
-<h3>Requirements:</h3>
-<ol>
-  <li>Your design should work responsively with no horizontal scrolling.</li>
-  <li>The SVG version of the logo must be used.</li>
-  <li>Your design should use at least one (1) non-system web font.</li>
-  <li>Images should scale responsively.</li>
-  <li>Your page should include a favicon and a touch icon.</li>
-  <li>Your design should have a functioning responsive navigation.</li>
-  <li>Your finished project should be published on your website.</li>
-  <li>
-    this project should be created using
-    <a href="https://astro.build/" target="_blank">Astro</a>.
-  </li>
-</ol>
-<h3>Process:</h3>
-<ol>
-  <li>
-    <strong>Research and Sitemap</strong> Find 3-5 event websites and write a
-    critique. Establish a site map of a minimum of 5 pages.
-  </li>
-  <li>
-    <strong>Sketches/Wireframing.</strong> You will develop a desktop and mobile
-    wireframes outlining all of the major elements in your site.
-  </li>
-  <li>
-    <strong>Design.</strong> Upon wireframe approval, you will create designs
-    based on your wireframes. You should be designing the desktop and mobile
-    versions in parallel, and ensure that both present identical messages.
-  </li>
-  <li>
-    <strong>Design Critique.</strong> You will take part in an in-class design
-    critique where you will provide constructive criticism to your classmates on
-    their designs, as well as receive feedback on yours.
-  </li>
-  <li>
-    <strong>Revisions.</strong> You will revise the design, if necessary, to
-    address improvements uncovered during the critique.
-  </li>
-  <li>
-    <strong>Development.</strong> You will proceed to develop the website in
-    your local environment. Upon completion, the finished site should be
-    published on your website.
-  </li>
-  <li>
-    <strong>Final Critique.</strong> You will participate in a final group
-    critique where we review each of the sites.
-  </li>
-</ol>
-<h3>Deadlines and Grading Criteria:</h3>
-<table>
-  <tr>
-    <td>
-      <strong>Description</strong>
-    </td>
-    <td>
-      <p><strong>Due Date</strong></p>
-    </td>
-    <td>
-      <p><strong>Points</strong></p>
-    </td>
-  </tr>
-  <tr>
-    <td><p>Research and Sitemap</p></td>
-    <td><p>February 19</p></td>
-    <td><p>25</p></td>
-  </tr>
-  <tr>
-    <td><p>Wireframes and Content</p></td>
-    <td><p>February 24</p></td>
-    <td><p>25</p></td>
-  </tr>
-  <tr>
-    <td><p>Design</p></td>
-    <td><p>February 26</p></td>
-    <td><p>50</p></td>
-  </tr>
-  <tr>
-    <td><p>Page Template</p></td>
-    <td><p>March 5</p></td>
-    <td><p>-</p></td>
-  </tr>
-  <tr>
-    <td>Published Site</td>
-    <td><p>March 19</p></td>
-    <td><p>100</p></td>
-  </tr>
-</table>
+  <!-------------------------------------------------------------------------------
+- Consider dark/light mode toggle example
+- Consider favorite button that maintains state
+- Consider Lightbox
+- Consider a table for comments
+- Consider a disabled class that makes the UI opaque and disabled cursor events
+- Login form that persists user name via cookie or local storage
+-------------------------------------------------------------------------------->
+  <h3>Description:</h3>
+  <p>
+    What if your client needed an interactive walk-through of an application
+    with a higher fidelity than Figma? What if they wanted to impress potential
+    investors with the HTML foundation of an application?
+  </p>
+  <p>This is a common request in the business world.</p>
+  <p>
+    You will create the branding and design for a social media site that allows
+    for the sharing, commenting, and uploading of media. Consider this as if it
+    were a tool as a part of a sales pitch for building a website along the
+    lines of
+    <a
+      rel="noopener"
+      href="/content/enforced/315323-39576.202430/Instagram.com"
+      target="_blank">Instagram.com</a
+    >,
+    <a rel="noopener" href="https://www.flickr.com" target="_blank"
+      >Flickr.com</a
+    >,
+    <a rel="noopener" href="https://www.behance.net/" target="_blank"
+      >Behance.net</a
+    >,
+    <a rel="noopener" href="https://dribbble.com/" target="_blank"
+      >Dribbble.com</a
+    >, etc. The name, branding, and theme is up to you. Will it be for sharing
+    photography? Illustration? Design?
+  </p>
+  <p>
+    A site of this nature could potentially scale to thousands of pages with
+    many users, so your responsibility will be to identify major page templates
+    used by the site and create a site that someone can navigate through.
+  </p>
+  <p>
+    While the finished site should be visually polished, it needn't be fully
+    functional. For instance, you could place an image upload or comment form,
+    but the forms won't actually function. For the images themselves, you can
+    use placeholder services such as
+    <a rel="noopener" href="http://pravatar.cc" target="_blank"
+      >http://pravatar.cc</a
+    >
+    or
+    <a rel="noopener" href="https://loremfaces.com/" target="_blank"
+      >https://loremfaces.com</a
+    >
+    for avatars and
+    <a rel="noopener" href="https://placeimg.com" target="_blank"
+      >https://placeimg.com</a
+    >
+    or
+    <a rel="noopener" href="https://stablediffusionweb.com/" target="_blank"
+      >https://stablediffusionweb.com/</a
+    >
+    for mock photo uploads.
+  </p>
+
+  <h3>UI Considerations:</h3>
+  <ul>
+    <li>
+      What does your site look like when the user is logged in versus logged
+      out?
+    </li>
+    <li>
+      The design should include "like" buttons, tagging, commenting, and
+      login/logout indications.
+    </li>
+    <li>
+      Make sure your interface is built to scale. Consider what happens if a
+      comment is a sentence versus several paragraphs or a user has a gallery of
+      10 images versus 100.
+    </li>
+  </ul>
+
+  <h3>Handling Scope:</h3>
+  <ul>
+    <li>
+      Consider pages as templates--while a real site might contain thousands of
+      profile pages, you only need to create one. Despite possibly having
+      multiple "users", all users can link to a single profile with the same
+      content.
+    </li>
+    <li>
+      The same thing goes for a media page--you only need to create one page.
+    </li>
+    <li>
+      Relevant forms should be put present (think logging in, uploading,
+      commenting, etc.), but won't actually submit.
+    </li>
+    <li>
+      You may want to propose navigation and links that are outside of the scope
+      of your prototype. In cases like this, it should be clear what portions of
+      the site are not functional/disabled. Consider creating a disabled style
+      that visually stands out from plain text and has disabled cursor events.
+      See this
+      <a href="https://css-tricks.com/how-to-disable-links/"
+        >CSS Tricks article on disabling links.</a
+      >
+    </li>
+  </ul>
+
+  <h3>Development Requirements:</h3>
+  <ul>
+    <li>
+      While not fully-functioning, the site should be easy to navigate,
+      responsive, and published to your website.
+    </li>
+    <li>
+      The site should incorporate JavaScript in some way--consider a dark/light
+      toggle, favorite button that maintains state, or a Lightbox.
+    </li>
+    <li>The site should use a static site generator.</li>
+  </ul>
+  <div class="links">
+    <h3>UX to Consider</h3>
+    <h4>Sign Up, Log-In, Login?</h4>
+    <ul>
+      <li>
+        <a
+          rel="noopener"
+          href="https://uxplanet.org/18-ux-design-tips-for-registration-and-login-forms-f897557358ba"
+          >https://uxplanet.org/18-ux-design-tips-for-registration-and-login-forms-f897557358ba</a
+        >
+      </li>
+      <li>
+        <a
+          rel="noopener"
+          href="https://uxmovement.com/buttons/why-sign-up-and-sign-in-button-labels-confuse-users/"
+          >https://uxmovement.com/buttons/why-sign-up-and-sign-in-button-labels-confuse-users/</a
+        >
+      </li>
+      <li>
+        <a
+          rel="noopener"
+          href="https://uxplanet.org/designing-ux-login-form-and-process-8b17167ed5b9"
+          >https://uxplanet.org/designing-ux-login-form-and-process-8b17167ed5b9</a
+        >
+      </li>
+    </ul>
+    <h4>Button Sizes</h4>
+    <ul>
+      <li>
+        <a
+          rel="noopener"
+          href="https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/"
+          >https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/</a
+        >
+      </li>
+      <li>
+        <a
+          rel="noopener"
+          href="https://www.smashingmagazine.com/2012/02/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/"
+          >https://www.smashingmagazine.com/2012/02/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/</a
+        >
+      </li>
+    </ul>
+    <h4>Search Boxes</h4>
+    <ul>
+      <li>
+        <a
+          rel="noopener"
+          href="https://www.uxbooth.com/articles/best-practices-for-search/"
+          >https://www.uxbooth.com/articles/best-practices-for-search/</a
+        >
+      </li>
+      <li>
+        <a
+          rel="noopener"
+          href="https://uxdesign.cc/best-ux-practices-for-search-inputs-c44dba565448"
+          >https://uxdesign.cc/best-ux-practices-for-search-inputs-c44dba565448</a
+        >
+      </li>
+      <li>
+        <a
+          rel="noopener"
+          href="https://uxplanet.org/search-interface-20-things-to-consider-4b1466e98881"
+          >https://uxplanet.org/search-interface-20-things-to-consider-4b1466e98881</a
+        >
+      </li>
+    </ul>
+  </div>
+  <h3>Process:</h3>
+  <ul>
+    <li>
+      <strong>Research.</strong> Review three social media sites and post your critique
+      to the D2L Discussion board. In your research, describe similarities you see
+      across the sites. What image aspect ratios are used? What kind of color palettes
+      are used?
+    </li>
+    <li>
+      <strong>Sitemap.</strong> Publish a sitemap in FigJam outlining the structure
+      of the website.
+    </li>
+    <li>
+      <strong>Wireframes. </strong>Develop a wireframe outlining all the major
+      pages templates. You'll want to pressure test your wireframe by ensuring
+      it scales with multiple entries.
+    </li>
+    <li>
+      <strong>Branding.</strong> Choose a minimum of two fonts and five colors. The
+      logo is up to you. Establish iconography.
+    </li>
+    <li>
+      <strong>Design.</strong> Upon wireframe approval, create interactive designs
+      in Figma based on the wireframe. Your files should use components, a color
+      palette, and text styles where applicable.
+    </li>
+    <li>
+      <strong>Design Critique.</strong> You will take part in an in-class design
+      critique where you will provide constructive criticism to your classmates on
+      their designs, as well as receive feedback on yours.
+    </li>
+    <li>
+      <strong>Revisions.</strong> You will revise your design to address improvements
+      uncovered during the critique stage.
+    </li>
+    <li>
+      <strong>Development.</strong> You will proceed to build the website. Upon completion,
+      it will be uploaded to your website.
+    </li>
+    <li>
+      <strong>Final Critique.</strong> You will participate in a final group critique
+      where we review each of the projects.
+    </li>
+  </ul>
+  <h3>Deadlines and Grading Criteria:</h3>
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>Description</strong></td>
+        <td>
+          <p><strong>Due Date</strong></p>
+        </td>
+        <td>
+          <p><strong>Points</strong></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Research + Sitemap</p>
+        </td>
+        <td>
+          <p>February 11</p>
+        </td>
+        <td>
+          <p>20</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Content + Wireframes</p>
+        </td>
+        <td>
+          <p>February 16</p>
+        </td>
+        <td>
+          <p>40</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Website Design</p>
+        </td>
+        <td>
+          <p>February 18</p>
+        </td>
+        <td>
+          <p>60</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Page Template</p>
+        </td>
+        <td>
+          <p>February 25</p>
+        </td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>
+          <p>Published Site</p>
+        </td>
+        <td>
+          <p>March 11</p>
+        </td>
+        <td>
+          <p>60</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </Layout>
