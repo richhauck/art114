@@ -109,11 +109,13 @@ const { title, fullWidth } = Astro.props;
     position: fixed;
     top: 0;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 700px) {
     #primary-header {
-      padding: 1em;
+      padding: 1rem;
+      line-height: 1rem;
       flex-direction: column;
       text-align: center;
+      height: auto;
     }
   }
   #primary-header #title {
@@ -154,7 +156,23 @@ const { title, fullWidth } = Astro.props;
     justify-content: center;
     align-items: center;
   }
-
+  @media (max-width: 1024px) {
+    #primary-header h1 {
+      font-size: 1.4em;
+      margin-bottom: 0.5rem;
+    }
+    #instructor-info,
+    #primary-header p {
+      letter-spacing: 0;
+      font-size: 0.75em;
+      margin-bottom: 0.5rem;
+    }
+  }
+  @media (max-width: 420px) {
+    #primary-header h1 {
+      font-size: 1.2em;
+    }
+  }
   #main {
     overflow: hidden;
   }
