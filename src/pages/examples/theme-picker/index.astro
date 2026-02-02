@@ -1,0 +1,37 @@
+---
+const title = "Theme Picker Example";
+import Layout from "../../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <iframe
+    src={`${import.meta.env.BASE_URL}examples/theme-picker/example/index.html`}
+    style="width:100%; height: 300px;"></iframe>
+
+  <Code
+    code={`--text: light-dark(#000, #fff);
+`}
+    lang="css"
+  />
+  <p>
+    This uses the CSS <code>light-dark()</code> function from the CSS Color Module
+    Level 5 specification. It allows you to define different values for light and
+    dark themes.
+  </p>
+
+  <Code
+    code={`&:has(#theme-dark:checked) {
+  color-scheme: dark;
+}
+`}
+    lang="css"
+  />
+  <p>By using radio buttons, no JavaScript is needed to switch themes.</p>
+
+  <a
+    class="button"
+    href={`${import.meta.env.BASE_URL}examples/theme-picker/example/index.html`}
+    >View Example</a
+  >
+</Layout>

@@ -1,0 +1,58 @@
+---
+const title = "UI Examples";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title={title} fullWidth={true}>
+  <div class="cards">
+    <div class="card">
+      <a href={`${import.meta.env.BASE_URL}examples/dialog`}
+        ><img
+          src={`${import.meta.env.BASE_URL}examples/dialog.avif`}
+          alt="Dialog"
+        /></a
+      >
+      <h3>
+        <a href={`${import.meta.env.BASE_URL}examples/dialog`}>Dialog</a>
+      </h3>
+      <p>
+        An accessible UI component that overlays content on top of the main page
+      </p>
+    </div>
+
+    <div class="card">
+      <a href={`${import.meta.env.BASE_URL}examples/theme-picker`}
+        ><img
+          src={`${import.meta.env.BASE_URL}examples/theme-picker.avif`}
+          alt="Theme Picker"
+        /></a
+      >
+      <h3>
+        <a href={`${import.meta.env.BASE_URL}examples/theme-picker`}
+          >Theme Picker</a
+        >
+      </h3>
+      <p>
+        An accessible UI component that allows users to switch between light and
+        dark themes
+      </p>
+    </div>
+
+    <div class="card">
+      <a href={`${import.meta.env.BASE_URL}examples/radio-tabs`}
+        ><img
+          src={`${import.meta.env.BASE_URL}examples/radio-tabs.avif`}
+          alt="Radio Tabs"
+        /></a
+      >
+      <h3>
+        <a href={`${import.meta.env.BASE_URL}examples/radio-tabs`}>Radio Tabs</a
+        >
+      </h3>
+      <p>
+        An accessible UI component that uses radio buttons to create tabbed
+        navigation
+      </p>
+    </div>
+  </div>
+</Layout>

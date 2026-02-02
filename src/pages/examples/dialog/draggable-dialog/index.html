@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draggable Dialog</title>
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
+        padding: 40px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin: 0;
+      }
+
+      .open-btn {
+        background: white;
+        color: #667eea;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+
+      dialog {
+        border: none;
+        border-radius: 12px;
+        padding: 0;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 500px;
+        width: 90%;
+        position: fixed;
+      }
+
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+      }
+
+      .dialog-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 16px 20px;
+        border-radius: 12px 12px 0 0;
+        cursor: move;
+        user-select: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .dialog-title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .close-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .close-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .dialog-content {
+        padding: 24px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .dragging {
+        cursor: move !important;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="open-btn" id="openDialog">Open Dialog</button>
+
+    <dialog id="myDialog">
+      <div class="dialog-header" id="dialogHeader">
+        <h2 class="dialog-title">Draggable Dialog</h2>
+        <button class="close-btn" id="closeDialog" title="Close">
+          &times;
+        </button>
+      </div>
+      <div class="dialog-content">
+        <p>This is a draggable dialog!</p>
+      </div>
+    </dialog>
+
+    <script>
+      const dialog = document.getElementById("myDialog");
+      const openBtn = document.getElementById("openDialog");
+      const closeBtn = document.getElementById("closeDialog");
+      const dialogHeader = document.getElementById("dialogHeader");
+
+      let isDragging = false;
+      let currentX;
+      let currentY;
+      let initialX;
+      let initialY;
+      let xOffset = 0;
+      let yOffset = 0;
+
+      // Open dialog
+      openBtn.addEventListener("click", () => {
+        dialog.showModal();
+        // Center the dialog initially
+        const rect = dialog.getBoundingClientRect();
+        xOffset = 0;
+        yOffset = 0;
+      });
+
+      // Close dialog with button
+      closeBtn.addEventListener("click", () => {
+        dialog.close();
+      });
+
+      // Close dialog when clicking outside
+      dialog.addEventListener("click", (e) => {
+        const rect = dialog.getBoundingClientRect();
+        if (
+          e.clientX < rect.left ||
+          e.clientX > rect.right ||
+          e.clientY < rect.top ||
+          e.clientY > rect.bottom
+        ) {
+          dialog.close();
+        }
+      });
+
+      // Dragging functionality
+      dialogHeader.addEventListener("mousedown", dragStart);
+      document.addEventListener("mousemove", drag);
+      document.addEventListener("mouseup", dragEnd);
+
+      function dragStart(e) {
+        if (e.target === closeBtn || e.target.closest(".close-btn")) {
+          return;
+        }
+
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+
+        isDragging = true;
+        dialogHeader.classList.add("dragging");
+      }
+
+      function drag(e) {
+        if (isDragging) {
+          e.preventDefault();
+
+          currentX = e.clientX - initialX;
+          currentY = e.clientY - initialY;
+
+          xOffset = currentX;
+          yOffset = currentY;
+
+          setTranslate(currentX, currentY, dialog);
+        }
+      }
+
+      function dragEnd(e) {
+        initialX = currentX;
+        initialY = currentY;
+
+        isDragging = false;
+        dialogHeader.classList.remove("dragging");
+      }
+
+      function setTranslate(xPos, yPos, el) {
+        el.style.transform = `translate(${xPos}px, ${yPos}px)`;
+      }
+
+      // Reset position when dialog closes
+      dialog.addEventListener("close", () => {
+        xOffset = 0;
+        yOffset = 0;
+        dialog.style.transform = "translate(0, 0)";
+      });
+    </script>
+  </body>
+</html>
