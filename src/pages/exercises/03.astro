@@ -1,70 +1,64 @@
 ---
-const title = "Exercises";
+const title = "Exercise 3: Form Handling with Validation";
 import Layout from "../../layouts/Layout.astro";
 import { Code } from "astro:components";
 ---
 
 <Layout title={title}>
-  <h3>Conditional Statements, Arrays, and Loops</h3>
   <p>
     Create a form that accepts name, age, and email address. The form should
     include validation and require for each field. Upon form submission, it
     should display “Name, age” on the page with the email address being used as
     a mailto hyperlink on the name.
   </p>
-  <!--
-<p>Using the example code below,</p>
-<ol>
-    <li>Add a required email field beneath the fName field</li>
+  <p>Using the example code below,</p>
+  <ol>
+    <li>Add email and age fields</li>
     <li>Declare the necessary variables</li>
-    <li>Have the username, email, and comment populate the ul#comments</li>
-</ol>
-{% highlight "html" %}
-
-<!DOCTYPE html>
+    <li>
+      Have the username link to the email followed by a comma with the age.
+    </li>
+  </ol>
+  <Code
+    code={`<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dummy Content Form</title>
-</head>
-<body>
-    <main>
-        <div class="container">
-            <ul id="comments">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms and Variables</title>
+    <style>
+      label,
+      input {
+        display: block;
+        margin-bottom: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Forms and Variables</h1>
+    <form name="myForm">
+      <label for="name">Name:</label>
+      <input id="name" type="text" placeholder="Your Name" required />
 
-            </ul>
-            <hr>
-            <form id="comment-form" name="comment-form" action="">
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname" placeholder="Your Name" required><br>
-                
-                <textarea name="comment" id="comment" cols="30" rows="10" required></textarea><br><br>
-                
-                <input id="submit" type="submit" value="Submit">
+      <!-- Create age and email fields -->
 
-              </form> 
-        </div>
-    </main>
+      <input type="submit" value="Submit" />
+    </form>
+    <div id="output"></div>
     <script>
-        document.getElementById('submit').addEventListener('click', function(event){
-            // Prevent form from submitting to action
-            event.preventDefault();
+      // Assign action to form when submitted
+      document.forms['myForm'].onsubmit = () => {
+        // retrieve submitted values
+        const name = document.forms['myForm']['name'].value;
 
-            // Declare variables - both UI elements and form values
-            const commentForm = document.getElementById('comment-form');
-            const fName = commentForm.fname.value;
-
-            // Write to comments list's innerHTML
-
-            // Reset form after submitting
-            commentForm.reset();
-
-        });
+        // write name linked to an email, followed by the submigged age into output div
+        
+        // don't actually submit the form to an action
+        return false;
+      };
     </script>
-</body>
-</html>
-{% endhighlight %}
--->
+  </body>
+</html>`}
+    lang="html"
+  />
 </Layout>

@@ -1,0 +1,124 @@
+---
+const title = "Email Form";
+import Layout from "../../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <p>
+    This example shows how to create an accessible email form with a honeypot
+    field to prevent spam. The form includes fields for the user's email,
+    subject, and message. The honeypot field is hidden from users but can be
+    detected by bots. If the honeypot field is filled out, the form submission
+    is ignored.
+  </p>
+  <Code
+    code={`<!doctype html>
+<html>
+  <head>
+    <title>Form Template</title>
+    <meta charset="UTF-8" />
+    <style>
+      #timezone {
+        display: none;
+      }
+      body,
+      textarea {
+        font-family:
+          "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post" action="sendmail.php">
+      <fieldset>
+        <div class="row">
+          <label for="email">Your Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Your Email"
+            required
+          />
+        </div>
+
+        <div class="row">
+          <label for="subject">Subject</label>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            placeholder="Subject"
+            required
+          />
+        </div>
+
+        <div class="row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" type="text" required></textarea>
+        </div>
+
+        <div id="timezone">
+          <label class="control-label" for="timezone"
+            >Prove you are human. Do not complete this field.</label
+          >
+          <input type="text" name="timezone" alt="Leave this field blank" />
+        </div>
+
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Clear" />
+      </fieldset>
+    </form>
+  </body>
+</html>
+`}
+    lang="html"
+  />
+  <h2>sendmail.php</h2>
+
+  <Code
+    code={`<?php
+// check honeypot named "timezone" is empty and at least one other field is filled out
+if($_POST['timezone'] == '' && (!empty($_POST['email']) || !empty($_POST['subject']) || !empty($_POST['message']))){
+
+// Create variables to hold form data
+$to = "youremail@yourwebsite.com";
+$subject = stripslashes($_POST['subject']);
+$body = stripslashes($_POST['message']);
+$header = "From: <" . $_POST['email'] . ">";
+$header .= "Reply-To: <" . $_POST['email'] . ">";
+$header .= "X-Mailer: PHP/" . phpversion() . "";
+
+// Send the email
+if(@mail($to, $subject, $body, $header)){
+    // Redirect to thank you page
+    header('Location: thanks.html');
+    exit;
+} else {
+    echo "error";
+}
+} else {
+echo "invalid";
+}
+?>
+
+`}
+    lang="php"
+  />
+
+  <h2>thanks.html</h2>
+  <Code
+    code={`<!doctype html>
+<html>
+<head>
+<title>Thanks!</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<h1>Thanks!</h1>
+</body>
+</html>`}
+    lang="html"
+  />
+</Layout>

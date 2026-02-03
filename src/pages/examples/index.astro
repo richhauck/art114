@@ -1,5 +1,5 @@
 ---
-const title = "UI Examples";
+const title = "Examples";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -52,6 +52,22 @@ import Layout from "../../layouts/Layout.astro";
       <p>
         An accessible UI component that uses radio buttons to create tabbed
         navigation
+      </p>
+    </div>
+
+    <div class="card">
+      <a href={`${import.meta.env.BASE_URL}examples/email-form`}
+        ><img
+          src={`${import.meta.env.BASE_URL}examples/email-form.avif`}
+          alt="Email Form"
+        /></a
+      >
+      <h3>
+        <a href={`${import.meta.env.BASE_URL}examples/email-form`}>Email Form</a
+        >
+      </h3>
+      <p>
+        An accessible UI component that allows users to submit an email form
       </p>
     </div>
   </div>
