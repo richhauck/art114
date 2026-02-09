@@ -1,0 +1,58 @@
+---
+const title = "Block Theme Tutorial";
+import Layout from "../../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <h2>Steps to create a custom Block theme</h2>
+  <ol>
+    <li>
+      Install Wordpress. <br />
+      This will vary according to your shared hosting. You may need to download it
+      from <a href="https://wordpress.org/download/">WordPress.org</a>.
+    </li>
+    <li>
+      Install the
+      <a href="https://wordpress.org/plugins/create-block-theme/"
+        >Create Block Theme</a
+      >
+      plugin.
+      <ol>
+        <li>Install and activate it.</li>
+        <li>Under "Appearance", choose "Create a new Blank Theme"</li>
+        <li>
+          Provide a Theme Name, Theme Description, and list yourself as the
+          Author. Then clicke the "Create and Activate Blank Theme".
+        </li>
+      </ol>
+    </li>
+    <li>
+      Create a file in your theme named functions.php. Add the code below. This
+      will load CSS you add to style.css into your custom theme. <br />
+      <Code
+        lang="php"
+        code=`<?php
+// Enqueues style.css on the front.
+if ( ! function_exists( 'mytheme_enqueue_styles' ) ) :
+	/**
+	 * Enqueues style.css on the front.
+	 * @return void
+	 */
+	function mytheme_enqueue_styles() {
+		wp_enqueue_style(
+			'mytheme-style',
+			get_parent_theme_file_uri( 'style.css' ),
+			array(),
+			wp_get_theme()->get( 'Version' ) ); } endif; add_action( 'wp_enqueue_scripts',
+    'mytheme_enqueue_styles' );`
+      />
+    </li>
+    <li>
+      <a
+        href="https://wordpress.org/documentation/article/create-a-static-front-page/"
+        >Create Static Front Page</a
+      >
+    </li>
+  </ol>
+</Layout>

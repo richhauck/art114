@@ -1,0 +1,256 @@
+---
+const title = "Hybrid Theme Tutorial";
+import Layout from "../../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <p>
+    This tutorial will get you started on building your own custom
+    &quot;Classic&quot; WordPress theme.
+  </p>
+  <h2>What's a WordPress Theme?</h2>
+  <p>
+    Themes dictate the look and feel of your WordPress site. Ultimately, it's a
+    folder that contains the template files for your design. At the absolute
+    minimum, a custom WordPress theme needs:
+  </p>
+  <ul>
+    <li>A theme folder</li>
+    <li>A style.css file</li>
+    <li>An index.php file</li>
+  </ul>
+  <hr />
+  <h2>Creating a WordPress Theme</h2>
+  <ol>
+    <li>
+      <strong>Create the theme folder</strong>
+      <ol>
+        <li>
+          In your WordPress folder, navigate to /wp-content/themes. This is
+          where all of your installed themes are located.
+        </li>
+        <li>
+          Create a new folder. The name of the folder should be lowercase with
+          no spaces. You can name it what you like, but for this tutorial we'll
+          use my-first-theme. The path should be
+          /wp-content/themes/my-first-theme/
+        </li>
+      </ol>
+    </li>
+    <li>
+      <strong>Create your style.css file</strong>
+      <ol>
+        <li>
+          Inside of your theme folder, create a file named style.css. Within
+          that file, add the following code:
+          <Code
+            lang="css"
+            code=`/*
+Theme Name: My First Theme
+Theme URI: https://example.com/my-first-theme
+Author: Your Name
+Author URI: https://example.com
+Description: My custom WordPress theme.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: my-first-theme
+*/`
+          />
+
+          <p>
+            This comment block is required, as it is what displays when you
+            navigate to the appearance portion of your WordPress admin. Feel
+            free to customize it with your own information.
+          </p>
+        </li>
+        <li>Below this, you can start adding your own custom CSS.</li>
+      </ol>
+    </li>
+    <li>
+      <strong>Create a screenshot.png</strong>
+      <ol>
+        <li>
+          Create a 1200x900px image named screenshot.png (No transparency) that
+          represents your theme. This will serve as the image preview within the
+          WordPress admin, so you might want to use a screenshot of your design.
+        </li>
+        <li>
+          Save this file in your custom theme folder. WordPress will
+          automatically detect it.
+        </li>
+      </ol>
+    </li>
+    <li>
+      <strong>Creating index.php with &quot;the Loop&quot;</strong>
+      <ol>
+        <li>
+          Inside of your theme folder, create a file named index.php. Add the
+          following into the file:
+          <Code
+            lang="php"
+            code=`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <main>
+  <?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) : the_post(); ?>
+      <article>
+        <h2><?php the_title(); ?></h2>
+        <div><?php the_content(); ?></div>
+      </article>
+    <?php endwhile; ?>
+  <?php else : ?>
+    <p>No content found.</p>
+  <?php endif; ?>
+</main>
+<?php wp_footer(); ?>
+</body>
+</html>
+`
+          />
+        </li>
+        <p>
+          This adds the "loop", which is the PHP code that loops through all of
+          the posts on a page and displays them. In this example, we're
+          displaying the title and content of each post.
+        </p>
+        <p>
+          You can read more about the loop and all of the different template
+          tags you can use in the
+          <a href="https://developer.wordpress.org/themes/basics/the-loop/"
+            >WordPress documentation on the loop</a
+          >.
+        </p>
+        <p>
+          This index.php file serves as the main template of your theme, and all
+          pages and posts ultimately get rendered through this page. However,
+          you can create additional template files to customize the look of
+          different types of pages. For example, you could create a single.php
+          file to customize the look of individual posts, or a page.php file to
+          customize the look of static pages. If WordPress detects these files,
+          it will use them instead of index.php for the appropriate pages. For
+          complete documentation of the naming conventions, see the <a
+            href="https://developer.wordpress.org/themes/classic-themes/basics/template-hierarchy/"
+            >WordPress documentation on the template hierarchy</a
+          >.
+        </p>
+      </ol>
+    </li>
+    <li>
+      <strong>Create a header.php and footer.php</strong>
+      <p>
+        It's common to create header.php and footer.php files that contain all
+        of the HTML and PHP code that is shared across all pages in your theme.
+      </p>
+      <p><strong>header.php</strong></p>
+      <p>
+        This example retrieves the title, pulls in the stylesheet, and calls
+        wp_head().
+      </p>
+      <Code
+        lang="php"
+        code=`<?php
+/**
+ * @package WordPress
+ * @subpackage My Custom Theme
+ */
+?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php wp_title('«', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+    	<style type="text/css" media="screen">
+		@import url( <?php bloginfo('stylesheet_url'); ?> );
+	</style>
+    <?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>`
+      />
+
+      <p>
+        To reference files in your theme folder, you can inject this PHP code:
+      </p>
+      <Code lang="php" code=`<?php bloginfo('stylesheet_directory'); ?>` />
+      <p>
+        For instance, here's an example of loading a file from
+        /my-first-theme/css/defaults.css:
+      </p>
+      <Code
+        lang="php"
+        code=`<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/defaults.css" type="text/css" media="all" />`
+      />
+      <p><strong>footer.php</strong></p>
+      <p>
+        The footer calls wp_footer(), which is a WordPress function that outputs
+        necessary code for the theme to function properly.
+      </p>
+      <Code lang="php" code=`<?php wp_footer(); ?>
+</body>
+</html>
+` />
+      <p>Here's the end result:</p>
+      <Code
+        lang="php"
+        code=`<?php get_header(); ?>
+<main>
+  <?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) : the_post(); ?>
+      <article>
+        <h2><?php the_title(); ?></h2>
+        <div><?php the_content(); ?></div>
+      </article>
+    <?php endwhile; ?>
+  <?php else : ?>
+    <p>No content found.</p>
+  <?php endif; ?>
+</main>
+<?php get_footer(); ?>`
+      />
+    </li>
+  </ol>
+  <hr />
+  <aside>
+    <h2>Next Steps</h2>
+    <ul>
+      <li>
+        <a href="https://underscores.me/">Underscores</a> is a great starter theme
+        for learning and building a custom Wordpress design in the classic way using
+        PHP.
+      </li>
+      <li>
+        For Block-based themes, check out
+        <a href="https://fullsiteediting.com/"
+          >Full Site Editing With WordPress</a
+        >
+      </li>
+      <li>
+        Importing
+        <a href="https://github.com/WPTT/theme-test-data">Theme Test Data</a> is
+        a good way to see how dummy content could break your site (<a
+          href="https://codex.wordpress.org/Theme_Unit_Test"
+          >instructions on how to import</a
+        >).
+      </li>
+      <li>
+        Some of the
+        <a href="https://wordpress.org/themes/author/wordpressdotorg/"
+          >early themes by WordPress.org</a
+        >
+        are good ways to start learning to theme
+      </li>
+      <li>
+        <a href="https://learn.wordpress.org/">learn.wordpress.org</a> is a great
+        resource to learn WordPress
+      </li>
+    </ul>
+  </aside>
+</Layout>

@@ -205,6 +205,9 @@ svg.lucide {
   li {
     padding: 0 0.5em;
   }
+  li li {
+    list-style-type: lower-alpha;
+  }
 }
 
 #code-sample {
