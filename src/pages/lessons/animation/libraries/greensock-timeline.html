@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -31,19 +31,19 @@
       <div id="box"></div>
     </div>
     <p><a href="https://gsap.com/">GSAP</a> Timeline Example</p>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script>
       window.onload = () => {
-        const box = document.getElementById('box');
+        const box = document.getElementById("box");
         const tl = new TimelineMax({ onComplete: onTweenComplete });
 
-        tl.to(box, 1, { left: '450px' });
-        tl.to(box, 1, { top: '450px' });
-        tl.to(box, 1, { left: '0' });
-        tl.to(box, 1, { top: '0' });
+        tl.to(box, 1, { left: "450px" });
+        tl.to(box, 1, { top: "450px" });
+        tl.to(box, 1, { left: "0" });
+        tl.to(box, 1, { top: "0" });
       };
       const onTweenComplete = () => {
-        alert('animation done');
+        alert("animation done");
       };
     </script>
   </body>

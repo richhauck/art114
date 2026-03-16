@@ -1,18 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Canvas Animation Example</title>
     <style>
+      body {
+        text-align: center;
+      }
       canvas {
         background-color: #ccc;
       }
     </style>
     <script>
-      window.addEventListener('load', init, false);
+      window.addEventListener("load", init, false);
       function init() {
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
         let count = 0;
         const CANVAS_WIDTH = canvas.width;
         const CANVAS_HEIGHT = canvas.height;
@@ -27,8 +30,8 @@
           clear();
 
           // set style
-          ctx.fillStyle = '#f00';
-          ctx.strokeStyle = '#000';
+          ctx.fillStyle = "#f00";
+          ctx.strokeStyle = "#000";
           ctx.lineWidth = 5;
 
           // Draw box

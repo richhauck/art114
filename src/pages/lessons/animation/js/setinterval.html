@@ -24,8 +24,6 @@
 	 }
 </style>
 <script>
-window.addEventListener('load', init, false);
-
 const init = () => {
     // tell javascript to remember the HTML elements
 	const wrapper = document.getElementById('wrapper');
@@ -38,21 +36,19 @@ const init = () => {
         use offsetWidth since non-inline CSS values can't be easily calculated
     */
     const max = parseInt(wrapper.offsetWidth);
-
-    // call loop every 30 milliseconds
-	setInterval(loop, 30);
-
-	const loop = () => {
+		const loop = () => {
 		box.style.left = count + 'px';
-
 		count+=10;
-
         // if target is reached, reset position to start
 		if(count >= max){
 			count = -50;
 		}
 	}
+
+    // call loop every 30 milliseconds
+	setInterval(loop, 30);
 }
+window.addEventListener('load', init, false);
 </script>
 </head>
 <body>

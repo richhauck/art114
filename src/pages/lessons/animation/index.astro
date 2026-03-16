@@ -23,11 +23,11 @@ import { Code } from "astro:components";
       >CSS-Tricks article comparing animation technologies</a
     >.
   </p>
-
+  <h2>Examples</h2>
   <div class="flex">
     <section>
-      <h2>CSS</h2>
-      <ul>
+      <h3>CSS</h3>
+      <ol>
         <li>
           <a
             href={`${import.meta.env.BASE_URL}lessons/animation/css/transition`}
@@ -64,11 +64,17 @@ import { Code } from "astro:components";
             target="_blank">Page - Fade In</a
           >
         </li>
-      </ul>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}lessons/animation/css/sprite`}
+            target="_blank">Sprite Animation</a
+          >
+        </li>
+      </ol>
     </section>
     <section>
-      <h2>Javascript</h2>
-      <ul>
+      <h3>Javascript</h3>
+      <ol>
         <li>
           <a
             href={`${import.meta.env.BASE_URL}lessons/animation/js/setinterval`}
@@ -93,10 +99,10 @@ import { Code } from "astro:components";
             target="_blank">Keyframes Stop</a
           >
         </li>
-      </ul>
+      </ol>
     </section>
     <section>
-      <h2>SVG</h2>
+      <h3>SVG</h3>
       <ul>
         <li>
           <a
@@ -107,7 +113,7 @@ import { Code } from "astro:components";
       </ul>
     </section>
     <section>
-      <h2>External Libraries</h2>
+      <h3>External Libraries</h3>
       <ul>
         <li>
           <a
@@ -146,46 +152,51 @@ import { Code } from "astro:components";
 
   <aside>
     <h2>Resources and Other Animation Libraries</h2>
-    <ul>
-      <li><a href="https://easings.net/">Easing cheat sheet</a></li>
-      <li>
-        <a href="https://threejs.org/">Three JS - an animation library for 3D</a
-        >
-      </li>
-      <li>
-        <a href="https://processing.org"
-          >Processing - a coding sketchbook for programmatic art</a
-        >
-      </li>
-      <li>
-        <a href="https://openprocessing.org/"
-          >Open Processing - community for Processing</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance"
-          >CSS vs Javascript animation</a
-        >
-      </li>
-      <li>
-        <a href="http://www.w3schools.com/css/css3_animations.asp">W3Schools</a>
-      </li>
-      <li>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
-          >MDN - Using CSS Animations</a
-        >
-      </li>
-      <li>
-        <a href="https://daneden.github.io/animate.css/">Animate.css</a>
-      </li>
-      <li>
-        <a href="https://css-tricks.com/almanac/properties/a/animation/"
-          >CSS Tricks article on animation</a
-        >
-      </li>
-      <li><a href="https://lottiefiles.com">Lottie Files</a></li>
-    </ul>
+    <div style="column-count: 2;">
+      <ul>
+        <li><a href="https://easings.net/">Easing cheat sheet</a></li>
+        <li>
+          <a href="https://threejs.org/"
+            >Three JS - an animation library for 3D</a
+          >
+        </li>
+        <li>
+          <a href="https://processing.org"
+            >Processing - a coding sketchbook for programmatic art</a
+          >
+        </li>
+        <li>
+          <a href="https://openprocessing.org/"
+            >Open Processing - community for Processing</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance"
+            >CSS vs Javascript animation</a
+          >
+        </li>
+        <li>
+          <a href="http://www.w3schools.com/css/css3_animations.asp"
+            >W3Schools</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
+            >MDN - Using CSS Animations</a
+          >
+        </li>
+        <li>
+          <a href="https://daneden.github.io/animate.css/">Animate.css</a>
+        </li>
+        <li>
+          <a href="https://css-tricks.com/almanac/properties/a/animation/"
+            >CSS Tricks article on animation</a
+          >
+        </li>
+        <li><a href="https://lottiefiles.com">Lottie Files</a></li>
+      </ul>
+    </div>
   </aside>
 </Layout>

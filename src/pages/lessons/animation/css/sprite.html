@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example of a sprite animation</title>
+    <style>
+      .sprite-container {
+        width: 60px; /* Width of a single frame */
+        height: 100px; /* Height of a single frame */
+        background-image: url("/art114/images/star.avif");
+        animation: play 1s steps(6) infinite; /* 1s duration, 6 frames, loops forever */
+        border: 1px solid lightgray;
+      }
+
+      @keyframes play {
+        from {
+          background-position: 0px;
+        }
+        to {
+          background-position: -360px;
+        } /* Total width of the sprite sheet (60px * 6 frames) */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sprite-container"></div>
+  </body>
+</html>
