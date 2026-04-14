@@ -1,0 +1,60 @@
+---
+const title = "Featured Images in WordPress";
+import Layout from "../../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <img
+    src={`${import.meta.env.BASE_URL}images/lessons/wordpress/featured-images.avif`}
+    alt="Featured Image"
+  />
+  <p>
+    Featured images, also known as post thumbnails, allow you to associate an
+    image with a post, page, or custom post type. <a
+      href="https://developer.wordpress.org/themes/classic-themes/functionality/featured-images-post-thumbnails/"
+      >Here's the official documentation from WordPress.org</a
+    >.
+  </p>
+
+  <h2>Enabling Featured Images in your custom theme</h2>
+  <p>
+    Ensure you have added the following code to your theme's functions.php file:
+  </p>
+  <Code lang="php" code=`
+      <?php
+add_theme_support( 'post-thumbnails' );` />
+
+  <h2>Setting a Featured Image</h2>
+  <p>To set a featured image for a post or page, follow these steps:</p>
+  <ol>
+    <li>Go to the WordPress dashboard.</li>
+    <li>Navigate to the post or page you want to edit.</li>
+    <li>
+      In the editor, look for the "Featured Image" meta box on the right-hand
+      side.
+    </li>
+    <li>Click on "Set featured image."</li>
+    <li>
+      Upload an image from your computer or select one from the media library.
+    </li>
+    <li>Once you've chosen your image, click "Set featured image."</li>
+  </ol>
+
+  <h2>Displaying Featured Images in Your Theme Files</h2>
+  <p>
+    To display featured images in your WordPress theme, you can use the
+    following code snippet in your theme's template files (e.g., single.php):
+  </p>
+
+  <Code
+    lang="php"
+    code=`
+    <?php
+    if(
+        has_post_thumbnail()
+    )
+    {the_post_thumbnail();}
+    ?>`
+  />
+</Layout>

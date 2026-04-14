@@ -1,0 +1,85 @@
+---
+const title = "Export Wordpress Content";
+import Layout from "../../../layouts/Layout.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title={title}>
+  <p>
+    Once you've completed your local WordPress site in <a
+      href="https://developer.wordpress.com/studio/"
+      >Studio,
+    </a> you'll want to deploy it to your shared hosting.
+  </p>
+  <ol>
+    <li>
+      <p>
+        In your local WordPress site, go to <strong>Tools</strong> > <strong
+          >Export</strong
+        >. Under WordPress, click "Install Now".
+      </p>
+      <img
+        src={`${import.meta.env.BASE_URL}images/lessons/wordpress/import-settings.avif`}
+        alt="Import settings"
+      />
+    </li>
+    <li>
+      <p>
+        This will bring up the export options. Choose "All Content", then click
+        the "Download Export File" button. This will generate an XML file
+        containing all of your posts, pages, comments, custom fields,
+        categories, and tags and save it to your computer.
+      </p>
+      <img
+        src={`${import.meta.env.BASE_URL}images/lessons/wordpress/export.avif`}
+        alt="Export options"
+      />
+    </li>
+    <li>
+      <p>
+        Once the export is complete, open it in VS Code. Do a search and replace
+        to update the URLs in the file to match your new hosting environment.
+      </p>
+      <img
+        src={`${import.meta.env.BASE_URL}images/lessons/wordpress/search-replace.avif`}
+        alt="Search and Replace"
+      />
+    </li>
+    <li>
+      <p>
+        Create a new WordPress site on your shared hosting either manually in
+        CPanel or using a one-click installer like <a
+          href="https://www.softaculous.com/">Softaculous</a
+        >.
+      </p>
+      <p>
+        In that WordPress admin, Navigate to <strong>Tools</strong> > <strong
+          >Import</strong
+        >. and upload the XML file.
+      </p>
+      <img
+        src={`${import.meta.env.BASE_URL}images/lessons/wordpress/import.avif`}
+        alt="Import options"
+      />
+    </li>
+    <li>
+      <p>
+        Once the import is complete, you'll have your written content and
+        structure from your local site's database, but you'll still need to
+        upload your media files. In your local WordPress site, go to the
+        "wp-content/uploads" folder and upload all of the files in that folder
+        to the same location on your shared hosting using FTP.
+      </p>
+      <img
+        src={`${import.meta.env.BASE_URL}images/lessons/wordpress/files.avif`}
+        alt="Files list"
+      />
+    </li>
+
+    <p>
+      You might need to upload any plugins or themes as well, so for the last
+      step you could also just upload the "wp-content" folder. Otherwise, that's
+      it!
+    </p>
+  </ol>
+</Layout>

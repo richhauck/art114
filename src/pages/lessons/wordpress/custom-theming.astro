@@ -1,7 +1,6 @@
 ---
 const title = "Custom Theming";
 import Layout from "../../../layouts/Layout.astro";
-import { Code } from "astro:components";
 ---
 
 <Layout title={title}>
@@ -12,193 +11,204 @@ import { Code } from "astro:components";
     <a href="https://codex.wordpress.org/Theme_Development">Codex</a> and in their
     <a href="https://developer.wordpress.org/themes/">theme handbook</a>.
   </p>
-  <h2>Block vs. Classic vs. Hybrid theme</h2>
+  <h2>Theme Types</h2>
   <table border="1">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Features</th>
+        <th>Examples</th>
+        <th>Best for...</th>
+      </tr></thead
+    >
     <tbody>
       <tr>
-        <th>Classic</th>
-        <th>Block (Full Site Editing - FSE)</th>
-        <th>Hybrid</th>
-        <th>Headless</th>
-      </tr>
-      <tr>
-        <td>
-          <ul>
+        <td>Classic</td>
+        <td
+          ><ul>
             <li>
-              <strong>Traditional PHP-based themes</strong> that rely on the WordPress
+              Traditional PHP-based themes that rely on the WordPress
               Customizer, widgets, and theme options for customization.
             </li>
+          </ul>
+          <ul>
             <li>
               Uses PHP template files (e.g., header.php, footer.php, index.php)
               to render different parts of a website.
             </li>
+          </ul>
+          <ul>
             <li>
               Support shortcodes, widgets, and meta boxes for additional
               functionality.
             </li>
+          </ul>
+          <ul>
             <li>
               Use the Customizer for settings rather than full-site editing.
             </li>
-            <li>Examples: Astra, GeneratePress, OceanWP.</li>
           </ul>
-        </td>
-        <td>
           <ul>
+            <li>Examples: Astra, GeneratePress, OceanWP.</li>
+          </ul></td
+        >
+        <td
+          ><ul>
             <li>
-              Built entirely with <strong>blocks</strong>, using the
-              <strong>WordPress Site Editor</strong> for designing all parts of the
-              website, including headers, footers, and templates.
-            </li>
-            <li>
-              Use <strong>HTML template parts</strong> (header.html, footer.html)
-              instead of PHP template files.
-            </li>
-            <li>
-              No reliance on the Customizer, widgets, or theme
-              options—everything is controlled via the <strong
-                >block editor (Gutenberg).</strong
+              <a
+                href="https://www.hardcodelabs.com/themes/astra/"
+                target="_blank">Astra</a
               >
             </li>
             <li>
-              Utilize <strong>theme.json</strong> for global styles (colors, fonts,
-              layout).
+              <a href="https://www.generatepress.com/" target="_blank"
+                >GeneratePress</a
+              >
             </li>
-            <li>Examples: Twenty Twenty-Two through Twenty Twenty-Five.</li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li>
-              A <strong>mix of Classic and Block themes</strong>, allowing
-              partial Full Site Editing features while retaining PHP-based
-              templating.
-            </li>
-            <li>
-              Support both <strong>customizer-based settings</strong> and block-based
-              features like theme.json for global styles.
-            </li>
-            <li>
-              Allow developers to transition gradually from classic themes to
-              block themes.
-            </li>
-            <li>Examples: Kadence, Neve, Blocksy.</li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li>
-              This uses the WordPress admin panel for managing content, but the
-              frontend is rendered completely separate
-            </li>
-            <li>
-              Uses
-              <a
-                href="https://developer.wordpress.org/rest-api/"
-                target="_blank">WordPress's REST API</a
-              >.
-            </li>
-            <li>
-              Examples:
-              <a href="https://faustjs.org/" target="_blank">Faust.js</a>
-            </li>
-          </ul>
+            <li><a href="https://oceanwp.org/" target="_blank">OceanWP</a></li>
+          </ul></td
+        >
+        <td
+          >Users who prefer traditional WordPress themes and developers who are
+          comfortable with PHP-based template editing.
         </td>
       </tr>
       <tr>
-        <td>
-          <strong>Best for:</strong> Users who prefer traditional WordPress themes
-          and developers who are comfortable with PHP-based template editing.
+        <td>Block</td>
+        <td
+          ><ul>
+            <li>
+              Built entirely with blocks, using the WordPress Site Editor for
+              designing all parts of the website, including headers, footers,
+              and templates.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              Use HTML template parts (header.html, footer.html) instead of PHP
+              template files.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              No reliance on the Customizer, widgets, or theme
+              options—everything is controlled via the block editor (Gutenberg).
+            </li>
+            <ul>
+              <li>
+                Utilize theme.json for global styles (colors, fonts, layout).
+              </li>
+            </ul>
+          </ul>
+          <td
+            ><ul>
+              <li>
+                <a href="https://wordpress.com/theme/twentytwentyfive"
+                  >Twenty Twenty-Five</a
+                >
+              </li>
+            </ul></td
+          >
+          <td>Users who want to make a theme without needing to edit code. </td>
         </td>
-        <td>
-          <strong>Best for:</strong> Users who want to make a theme without needing
-          to edit code.
-        </td>
-        <td>
-          <strong>Best for:</strong> Users who want the flexibility of classic themes
-          but also want to incorporate new block-based customization options.
-        </td>
-        <td>
-          <strong>Best for:</strong> Performance, security, and developers who don't
-          want to use older technologies like PHP.
-        </td>
+        <tr>
+          <td>Hybrid</td>
+          <td
+            ><ul>
+              <li>
+                A mix of Classic and Block themes, allowing partial Full Site
+                Editing features while retaining PHP-based templating.
+              </li>
+            </ul>
+            <ul>
+              <li>
+                Support both customizer-based settings and block-based features
+                like theme.json for global styles.
+              </li>
+            </ul>
+            <ul>
+              <li>
+                Allow developers to transition gradually from classic themes to
+                block themes.
+              </li>
+            </ul></td
+          >
+          <td
+            ><ul>
+              <li>
+                <a href="https://www.kadencewp.com/" target="_blank">Kadence</a>
+              </li>
+              <li>
+                <a href="https://www.themeisle.com/themes/neve/" target="_blank"
+                  >Neve</a
+                >
+              </li>
+              <li>
+                <a href="https://www.blocksy.com/" target="_blank">Blocksy</a>
+              </li>
+            </ul></td
+          >
+          <td
+            >Users who want the flexibility of classic themes but also want to
+            incorporate new block-based customization options.
+          </td>
+        </tr>
+        <tr>
+          <td>Headless</td>
+          <td
+            ><ul>
+              <li>
+                This uses the WordPress admin panel for managing content, but
+                the frontend is rendered completely separate
+              </li>
+              <li>
+                Uses <a
+                  href="https://developer.wordpress.org/rest-api/"
+                  target="_blank">WordPress's REST API</a
+                >.
+              </li>
+            </ul></td
+          >
+          <td
+            ><ul>
+              <li>
+                <a href="https://faustjs.org/" target="_blank">Faust.js</a>
+              </li>
+            </ul></td
+          >
+          <td
+            >Performance, security, and developers who don't want to use older
+            technologies like PHP.
+          </td>
+        </tr>
       </tr>
     </tbody>
   </table>
-  <br />
   <p style="text-align: center">
     <em>For this class, we'll be looking at hybrid themes.</em>
   </p>
-  <hr />
-  <h2>Popular starter themes</h2>
-  <ul>
-    <li><a href="https://underscores.me/" target="_blank">Underscores</a></li>
-    <li>
-      <a href="https://wordpress.org/themes/classic/" target="_blank"
-        >WordPress Classic Theme</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://fullsiteediting.com/block-theme-generator/"
-        target="_blank">Block Theme Generator</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://wordpress.org/plugins/create-block-theme/"
-        target="_blank">Create Block Theme</a
-      >
-    </li>
-  </ul>
-  <hr />
-  <h2>Steps to create a custom Block theme</h2>
-  <ol>
-    <li>
-      Install Wordpress. <br />
-      This will vary according to your shared hosting. You may need to download it
-      from <a href="https://wordpress.org/download/">WordPress.org</a>.
-    </li>
-    <li>
-      Install the
-      <a href="https://wordpress.org/plugins/create-block-theme/"
-        >Create Block Theme</a
-      >
-      plugin.
-      <ol>
-        <li>Install and activate it.</li>
-        <li>Under "Appearance", choose "Create a new Blank Theme"</li>
-        <li>
-          Provide a Theme Name, Theme Description, and list yourself as the
-          Author. Then clicke the "Create and Activate Blank Theme".
-        </li>
-      </ol>
-    </li>
-    <li>
-      Create a file in your theme named functions.php. Add the code below. This
-      will load CSS you add to style.css into your custom theme. <br />
-      <Code
-        lang="php"
-        code=`<?php
-// Enqueues style.css on the front.
-if ( ! function_exists( 'mytheme_enqueue_styles' ) ) :
-	/**
-	 * Enqueues style.css on the front.
-	 * @return void
-	 */
-	function mytheme_enqueue_styles() {
-		wp_enqueue_style(
-			'mytheme-style',
-			get_parent_theme_file_uri( 'style.css' ),
-			array(),
-			wp_get_theme()->get( 'Version' ) ); } endif; add_action( 'wp_enqueue_scripts',
-    'mytheme_enqueue_styles' );`
-      />
-    </li>
-    <li>
-      <a
-        href="https://wordpress.org/documentation/article/create-a-static-front-page/"
-        >Create Static Front Page</a
-      >
-    </li>
-  </ol>
+
+  <aside>
+    <h2>Popular starter themes</h2>
+    <ul>
+      <li><a href="https://underscores.me/" target="_blank">Underscores</a></li>
+      <li>
+        <a href="https://wordpress.org/themes/classic/" target="_blank"
+          >WordPress Classic Theme</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://fullsiteediting.com/block-theme-generator/"
+          target="_blank">Block Theme Generator</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://wordpress.org/plugins/create-block-theme/"
+          target="_blank">Create Block Theme</a
+        >
+      </li>
+    </ul>
+  </aside>
 </Layout>
