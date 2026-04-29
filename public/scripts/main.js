@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // Toggle Nav
   const toggleNav = document.getElementById("toggle-nav");
   toggleNav.addEventListener("click", () => {
-    console.log("toggle nav");
     document.body.classList.toggle("nav-open");
     toggleNav.classList.toggle("is-active");
   });

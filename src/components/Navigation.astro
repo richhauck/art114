@@ -1,10 +1,20 @@
+---
+const { pathname } = Astro.url;
+const base = import.meta.env.BASE_URL;
+
+const projectsOpen = ['project-1', 'project-2', 'project-3', 'project-4']
+  .some(p => pathname.startsWith(`${base}projects/${p}`));
+
+const exercisesOpen = ['01','02','03','04','05','06','07','08','09','10']
+  .some(n => pathname.startsWith(`${base}exercises/${n}`));
+---
 <nav id="primary-nav">
   <div id="inner-nav">
     <ul>
       <li><a href={`${import.meta.env.BASE_URL}`}>Syllabus</a></li>
       <li><a href={`${import.meta.env.BASE_URL}schedule`}>Schedule</a></li>
       <li>
-        <details>
+        <details open={projectsOpen}>
           <summary>Projects</summary>
           <div class="content">
             <ul>
@@ -34,7 +44,7 @@
         </details>
       </li>
       <li>
-        <details>
+        <details open={exercisesOpen}>
           <summary>Exercises</summary>
           <div class="content">
             <ul>
